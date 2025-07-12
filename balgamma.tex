@@ -135,8 +135,8 @@
 \title{An equality for balanced digraphs}
 \author{Darij Grinberg\thanks{Drexel University, Philadelphia, PA.
 \href{mailto:darijgrinberg@gmail.com}{\texttt{darijgrinberg@gmail.com}}},
-Benny Liber\thanks{Drexel University, Philadelphia, PA.
-\href{mailto:TODO_add_email@gmail.com}{\texttt{TODO\_add\_email@gmail.com}}}}
+Benjamin Liber\thanks{Drexel University, Philadelphia, PA.
+\href{mailto:TODO_add_email@gmail.com}{\texttt{bl839@drexel.edu}}}}
 \date{ROUGH DRAFT, \today}
 \maketitle
 
@@ -414,7 +414,7 @@ s\right)  $ as follows: Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus
 V_{1}  &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
 V_{2}  &  =V\setminus V_{1}.
 \end{align*}
-Then, let $f\left(  B\right)  :=(B \setminus A(V_1,V_2)) \cup \phi_{V_1,V_2}(B \cap A(V_1,V_2))$.
+Then, let $f\left(  B\right)  :=(B \setminus A(V_1,V_2)) \cup \phi_{V_1,V_2}(B \cap A(V_1,V_2))$. 
 
 \item Define a map $g:\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
 s\right)  \rightarrow\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
@@ -424,7 +424,7 @@ t\right)  $ as follows: Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus
 W_{2}  &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}  ;\\
 W_{1}  &  =V\setminus W_{2}.
 \end{align*}
-Then, let $g\left(  B\right)  :=\phi_{W_{1},W_{2}}^{-1}\left(  B\right)  $.
+Then, let $g\left(  B\right)  := (B \setminus A(W_{2},W_{1}) \cup \phi_{W_{1},W_{2}}^{-1}\left( B \cap A(W_{2},W_{1})\right)  $.
 \end{itemize}
 
 We must show that $f\circ g=\operatorname*{id}$ and $g\circ
