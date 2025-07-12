@@ -437,6 +437,16 @@ principle, but it might also just be analogous (note that $\phi_{V_{2},V_{1}%
 }^{-1}$ is \textquotedblleft another option\textquotedblright\ for
 $\phi_{V_{1},V_{2}}$).
 
+\begin{lemma}
+    Let $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(t)$, and apply $f(B)$. Let $W_{2}^{f} := \{\text{vertices that can $f(B)$-reach $s$}\}$ and $W_{1}^f := V \setminus W_{2}^f$. Then $W_{2}^f = V_{2}$, where $V_{2} = \{\text{vertices that cannot $B$-reach $t$}\}$.
+\end{lemma}
+
+\begin{proof}
+    Note that since $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(t)$, there exists $v \in V$ such that $v$ cannot $B$-reach $t$. So, $V_{2} \neq \emptyset$.
+
+    First, let us show that $V_{2} \subseteq W_{2}^f$. If, after applying $f$ to $B$, $v$ does not $f(B)$-reach $s$, then either 1) $v$ does not $f(B)$-reach $s$ nor does $v$ $f(B)$-reach $s$ or 2) $v$ $f(B)$-reaches $t$, but $t$ does not $f(B)$-reach $s$. Let us show that neither case is possible. Suppose $v$ does not $f(B)$-reach $s$ nor does $v$ $f(B)$-reach $t$. Then \textit{I will continue working on this tomorrow...}
+\end{proof}
+
 \section{Further remarks on $s$-convergences}
 
 \begin{itemize}
