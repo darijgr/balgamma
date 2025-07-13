@@ -758,7 +758,9 @@ so that $\left(  g\circ f\right)  \left(  B\right)  =\Psi_{P^{\prime
 },Q^{\prime}}\left(  B^{\prime}\right)  =B$. This will complete the proof of
 Claim 3.
 
-So, let us first suppose $v \in Q$. Then $v$ cannot $B$-reach $t$. Since $B \in \Gamma_{k}(s,t)$, this means that $v$ can $B$-reach $s$. Suppose towards contradiction that $v \notin Q'$. Then on the unique path in $B$ from $v$ to $s$, there must exist some vertex $w \in P$, for otherwise the entire path is contained in $Q$ and thus remains a path in $\Phi_{P,Q}(B)$. But if $w \in P$, then $v$ can $B$-reach $t$, a contradiction. Hence, $v \in Q'$, so $Q \subseteq Q'$.
+So, let us first suppose $v \in Q$. Then $v$ cannot $B$-reach $t$. Since $B \in \Gamma_{k}(s,t)$, this means that $v$ can $B$-reach $s$. Suppose towards contradiction that $v \notin Q'$. Then on the  path in $B$ from $v$ to $s$, there must exist some vertex $w \in P$, for otherwise the entire path is contained in $Q$ and thus remains a path in $\Phi_{P,Q}(B)$. But if $w \in P$, then $v$ can $B$-reach $t$, a contradiction. Hence, $v \in Q'$, so $Q \subseteq Q'$.
+
+On the other hand, suppose $v \in Q'$. Suppose towards contradiction that $v \notin Q$. Then $v$ can $B$-reach $t$. But then $v$ can $B'$-reach $t$ as well. TODO
 
 
 \end{proof}
