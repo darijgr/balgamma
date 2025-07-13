@@ -669,35 +669,10 @@ we only need to show that each vertex $v\in V$ can $\Phi_{P,Q}\left(
 B\right)  $-reach $s$ or $t$. So let $v\in V$ be any vertex. Since $B\in
 \Gamma_{k}\left(  s,t\right)  $, we know that $v$ can $B$-reach $s$ or $t$.
 That is, the digraph $D\left\langle B\right\rangle $ has a path $\mathbf{p}$
-from $v$ to $s$ or $t$. If this path no longer exists in $D\left\langle
-\Phi_{P,Q}\left(  B\right)  \right\rangle $, then it must contain one of the
-arcs in $B\cap A\left(  P,Q\right)  $ that get forward-reflected in
-$\Phi_{P,Q}\left(  B\right)  $. In this case, TODO!
-
-\begin{itemize}
-\item Let $v\in V$. We must show that $v$ can $\Phi_{P,Q}\left(  B\right)
-$-reach $s$ or $t$.
-
-\item If $v$ can $B$-reach $t$, then the path stays within $P$ and thus
-remains a path in $\Phi_{P,Q}\left(  B\right)  $, so we're done.
-
-\item If not, then the path stays entirely within $Q$ (otherwise, we could
-reach $t$ from $v$) and thus remains a path in $\Phi_{P,Q}\left(  B\right)  $,
-so we're done.
-\end{itemize}
+from $v$ to $s$ or $t$. If $v$ can $B$-reach $t$, then all vertices of $\mathbf{p}$ are in $P$. Hence, all arcs of $\mathbf{p}$ are in $A(P,P)$, so $\mathbf{p}$ remains a path in $\Phi_{P,Q}(B)$. On the other hand, if $v$ cannot $B$-reach $t$ (and hence must $B$-reach $s$), then all vertices of $\mathbf{p}$ must be in $Q$, for otherwise $v$ would have a path in $B$ to $t$. Hence, all arcs of $\mathbf{p}$ are in $A(Q,Q)$, so $\mathbf{p}$ remains a path in $\Phi_{P,Q}(B)$. Hence, we see that $v$ can $\Phi_{P,Q}(B)$-reach $s$ or $t$, so $\Phi_{P,Q}(B) \in \Gamma_{k}(s,t)$.
 
 Finally, we shall show that $\Phi_{P,Q}\left(  B\right)  \notin\Gamma
-_{k}\left(  s\right)  $. Indeed, the vertex $t$ cannot $\Phi_{P,Q}\left(
-B\right)  $-reach $s$, since TODO!
-
-\begin{itemize}
-\item The vertex $s$ cannot $B$-reach $t$, since $B\notin\Gamma_{k}\left(
-t\right)  $. So $s\in Q$. But $t\in P$ obviously. A $P$-vertex cannot
-$\Phi_{P,Q}\left(  B\right)  $-reach a $Q$-vertex, since  $\Phi_{P,Q}\left(
-B\right)  \cap A\left(  P,Q\right)  =\varnothing$. Hence $t$ cannot
-$\Phi_{P,Q}\left(  B\right)  $-reach $s$. Therefore, $\Phi_{P,Q}\left(
-B\right)  \notin\Gamma_{k}\left(  s\right)  $.
-\end{itemize}
+_{k}\left(  s\right)  $. Indeed, the vertex $s$ cannot $B$-reach $t$, since $B \notin \Gamma_{k}(t)$. So, $s \in Q$. But clearly, $t \in P$. A vertex in $P$ cannot $\Phi_{P,Q}(B)$-reach a vertex in $Q$, since $\Phi_{P,Q}(B) \cap A(P,Q) = \emptyset$. Hence, $t$ cannot $\Phi_{P,Q}(B)$-reach $s$. Therefore, $\Phi_{P,Q}(B) \notin \Gamma_{k}(s)$.
 
 Combining these, we obtain $\Phi_{P,Q}\left(  B\right)  \in\Gamma_{k}\left(
 s,t\right)  \setminus\Gamma_{k}\left(  s\right)  $. This proves Claim 1.
