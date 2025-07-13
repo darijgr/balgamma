@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, July 12, 2025 20:56:52}
+%TCIDATA{LastRevised=Sunday, July 13, 2025 19:55:42}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -136,12 +136,18 @@
 \author{Darij Grinberg\thanks{Drexel University, Philadelphia, PA.
 \href{mailto:darijgrinberg@gmail.com}{\texttt{darijgrinberg@gmail.com}}},
 Benjamin Liber\thanks{Drexel University, Philadelphia, PA.
-\href{mailto:TODO_add_email@gmail.com}{\texttt{bl839@drexel.edu}}}}
+\href{mailto:bl839@drexel.edu}{\texttt{bl839@drexel.edu}}}}
 \date{ROUGH DRAFT, \today}
 \maketitle
 
 \begin{abstract}
-We prove that ...
+Consider a directed multigraph $D$ that is balanced (i.e., at each vertex, the
+indegree equals the outdegree). Let $A$ be its set of arcs. Fix an integer
+$k\in\mathbb{N}$. Let $s$ be a vertex of $D$. We show that the number of
+$k$-element subsets $B$ of $A$ that contain no cycles but contain a path from
+each vertex to $s$ (we call them \textquotedblleft$s$%
+-convergences\textquotedblright) is independent on $s$. This generalizes known
+facts about spanning arborescences and about acyclic orientations.
 
 \end{abstract}
 
@@ -192,9 +198,9 @@ denote the number of $s$-convergences of size $k$ (that is, with $k$ arcs).
 In this note, we shall prove the following result:
 
 \begin{theorem}
-\label{thm.balgamma}This number $\gamma_{k}\left(  s\right)  $ does not depend
-on $s$. In other words, $\gamma_{k}\left(  s\right)  =\gamma_{k}\left(
-t\right)  $ for any $s,t\in V$.
+\label{thm.balgamma}Let $k\in\mathbb{N}$. Then, the number $\gamma_{k}\left(
+s\right)  $ does not depend on $s$. In other words, $\gamma_{k}\left(
+s\right)  =\gamma_{k}\left(  t\right)  $ for any $s,t\in V$.
 \end{theorem}
 
 \begin{example}
@@ -294,35 +300,27 @@ noticeable. The present note is the result of following this scent.
 
 Some particular cases of Theorem \ref{thm.balgamma} are known:
 
-\begin{proposition}
-    When $k \leq |V|-1$, Theorem \ref{thm.balgamma} holds.
-\end{proposition}
-
-\begin{proof}
-    First, if $k < |V|-1$, then a spanning subdigraph $D\left\langle
-B\right\rangle $ with fewer than $\left\vert V\right\vert -1$ arcs cannot have a to-root. So, $\gamma_{k}(s) = 0$ for all $s \in V$. On the other hand, when $k=\left\vert V\right\vert -1$, the $s$-convergences are precisely
+\begin{enumerate}
+\item When $k=\left\vert V\right\vert -1$, the $s$-convergences are precisely
 the spanning arborescences of $D$ rooted to $s$. Indeed, the condition
 $\left\vert B\right\vert =\left\vert V\right\vert -1$, combined with the
 to-rootness of $s$, forces $D\left\langle B\right\rangle $ to be an
-arborescence rooted to $s$ (by \cite[Theorem 5.10.5]{22s}). Hence, Theorem \ref{thm.balgamma} is just
-\cite[Corollary 5.12.1]{22s}. \end{proof}
+arborescence rooted to $s$ (by \cite[Theorem 5.10.5]{22s}). Thus, in the case
+$k=\left\vert V\right\vert -1$, Theorem \ref{thm.balgamma} is just
+\cite[Corollary 5.12.1]{22s}.
 
-\begin{proposition}
-    If $D=G^{\operatorname*{bidir}}$ for some (undirected) multigraph
+Likewise, if $k<\left\vert V\right\vert -1$, then Theorem \ref{thm.balgamma}
+is just saying that $0=0$, since a spanning subdigraph $D\left\langle
+B\right\rangle $ with fewer than $\left\vert V\right\vert -1$ arcs cannot have
+a to-root.
+
+\item If $D=G^{\operatorname*{bidir}}$ for some (undirected) multigraph
 $G=\left(  V,E,\varphi\right)  $, and if $k=\left\vert E\right\vert
-=\left\vert A\right\vert /2$, then Theorem \ref{thm.balgamma} holds.
-\end{proposition}
-
-\begin{proof}
-    In this case, the $s$-convergences are just the acyclic orientations of $G$ with unique sink $s$. Indeed, if some $s$-convergence contained the two oriented arcs of one edge, then it would not be acyclic. Hence, an $s$-convergence of size $k = |E|$ of $G^{\operatorname*{bidir}}$ must contain exactly one oriented arc per edge. Moreover, if an $s$-convergence had two sinks, then there would be a directed path from one sink to the other and vice-versa, creating a cycle. Hence, the sink $s$ is unique.
-
-    And so, in this case, Theorem \ref{thm.balgamma} is saying that the number of acyclic orientations of a
-    given multigraph $G$ with unique sink $s$ does not depend on $s$. This is a
-    recent result by Foissy \cite[Proposition 4.6]{Foissy22}.
-    
-\end{proof}
-
-\begin{enumerate}
+=\left\vert A\right\vert /2$, then the $s$-convergences are just the acyclic
+orientations of $G$ with unique sink $s$ (why?). Thus, in this case, Theorem
+\ref{thm.balgamma} is saying that the number of acyclic orientations of a
+given multigraph $G$ with unique sink $s$ does not depend on $s$. This is a
+recent result by Foissy \cite[Proposition 4.6]{Foissy22}.
 
 \item I think \cite[Proposition 3.7]{PerPha15} is Theorem \ref{thm.balgamma}
 for the maximum possible $k$ for which $\sum_{s\in V}\gamma_{k}\left(
@@ -334,68 +332,227 @@ s\right)  \neq0$. (Check this!)
 Our proof of Theorem \ref{thm.balgamma} uses an idea from the proof of
 \cite[Proposition 3.7]{PerPha15}.
 
-The main idea is simple: If we decompose $V$ as $V=V_{1}\sqcup V_{2}$ for two
-disjoint subsets $V_{1}$ and $V_{2}$, then $\left\vert A\left(  V_{1}%
-,V_{2}\right)  \right\vert =\left\vert A\left(  V_{2},V_{1}\right)
-\right\vert $, where $A\left(  P,Q\right)  $ denotes the number of arcs in $A$
-with source in $P$ and target in $Q$ (see \cite[Exercise 9.1]{22s}). Thus, if
-we pick such a decomposition $V=V_{1}\sqcup V_{2}$ and a bijection
-$\phi_{V_{1},V_{2}}:A\left(  V_{1},V_{2}\right)  \rightarrow A\left(
-V_{2},V_{1}\right)  $, then we can change a subset $B$ of $A$ by applying
-$\phi_{V_{1},V_{2}}$ to its subset $B\cap A\left(  V_{1},V_{2}\right)  $. In
-other words, we replace $B$ by%
+For two sets $P$ and $Q$, we shall use the notation $P\sqcup Q$ for the union
+$P\cup Q$ if the intersection $P\cap Q$ is empty. If $P\cap Q$ is nonempty,
+then writing $P\sqcup Q$ is not allowed. Of course, if $P\sqcup Q$ exists,
+then $\left\vert P\sqcup Q\right\vert =\left\vert P\right\vert +\left\vert
+Q\right\vert $.
+
+For any subsets $P$ and $Q$ of $V$, we shall let $A\left(  P,Q\right)  $
+denote the number of arcs in $A$ whose source belongs to $P$ and whose target
+belongs to $Q$. The following fact is simple but crucial:
+
+\begin{proposition}
+\label{prop.A-symmetry}Let $P$ and $Q$ be two subsets of $V$ such that
+$P\sqcup Q=V$. Then,
 \[
-\left(  B\setminus A\left(  V_{1},V_{2}\right)  \right)  \cup\phi_{V_{1}%
-,V_{2}}\left(  B\cap A\left(  V_{1},V_{2}\right)  \right)  .
+\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(  Q,P\right)
+\right\vert .
 \]
-This transformation -- which I will call the $\left(  V_{1},V_{2}\right)
-$\emph{-realignment} -- always preserves the acyclicity of $B$ (why?).
-However, it can decrease the size of $B$ if $B\cap A\left(  V_{2}%
-,V_{1}\right)  \neq\varnothing$.
 
-We can be more strategic about this: Let's say we have an $s$-convergence $B$
-and want to make it into a $t$-convergence for another vertex $t$. We let
-$V_{1}$ be the set of all vertices $v$ that have a $B$-path to $t$ (that is,
-there exists a path from $v$ to $t$ using only edges from $B$), and we let
-$V_{2}=V\setminus V_{1}$ be the complement of $V_{1}$ in $V$. Thus, we obtain
-a decomposition $V=V_{1}\sqcup V_{2}$ with the property that $B\cap A\left(
-V_{2},V_{1}\right)  =\varnothing$ (why?). Therefore, $\left(  V_{1}%
-,V_{2}\right)  $-realignment transforms $B$ into a new acyclic subset
-$B^{\prime}$ of $A$ with the same size as $B$, but (unless we are in some
-degenerate case?) with a larger set of vertices that have a path to $t$ (in
-fact, each vertex that had a $B$-path to $t$ will still have a $B^{\prime}%
-$-path to $t$, but there will be at least one further vertex with a
-$B^{\prime}$-path to $t$).
+\end{proposition}
 
-I think that by repeatedly applying such realignments, we eventually end up
-with a $t$-convergence. Thus, we have defined a map from $\left\{
-s\text{-convergences}\right\}  $ to $\left\{  t\text{-convergences}\right\}  $.
+\begin{proof}
+This is a known fact (see, e.g., \cite[Exercise 9.1]{22s}). The easiest way to
+prove it is by observing that%
+\[
+A\left(  P,V\right)  =A\left(  P,P\right)  \sqcup A\left(  P,Q\right)
+\]
+(since the target of an arc belongs to either $P$ or $Q$ but not to both), so
+that%
+\[
+\left\vert A\left(  P,V\right)  \right\vert =\left\vert A\left(  P,P\right)
+\right\vert +\left\vert A\left(  P,Q\right)  \right\vert .
+\]
+However, we can count the arcs in $A\left(  P,V\right)  $ according to their
+sources $p\in P$. This yields%
+\begin{equation}
+\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}%
+p,\label{pf.prop.A-symmetry.3}%
+\end{equation}
+since each arc in $A\left(  P,V\right)  $ is counted in the outdegree of
+exactly one $p\in P$ (namely, of its source). Comparing these two equalities,
+we obtain%
+\begin{equation}
+\sum_{p\in P}\deg^{+}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
+A\left(  P,Q\right)  \right\vert .\label{pf.prop.A-symmetry.4}%
+\end{equation}
 
-This map is a bijection! But we can do better:
+
+On the other hand, $A\left(  V,P\right)  =A\left(  Q,P\right)  \sqcup A\left(
+P,P\right)  $ and thus%
+\[
+\left\vert A\left(  V,P\right)  \right\vert =\left\vert A\left(  Q,P\right)
+\right\vert +\left\vert A\left(  P,P\right)  \right\vert .
+\]
+However, similarly to (\ref{pf.prop.A-symmetry.3}), we can show that%
+\[
+\left\vert A\left(  V,P\right)  \right\vert =\sum_{p\in P}\deg^{-}p.
+\]
+Comparing these two equalities, we obtain%
+\begin{equation}
+\sum_{p\in P}\deg^{-}p=\left\vert A\left(  Q,P\right)  \right\vert +\left\vert
+A\left(  P,P\right)  \right\vert .\label{pf.prop.A-symmetry.5}%
+\end{equation}
+
+
+The left hand sides of the equalities (\ref{pf.prop.A-symmetry.4}) and
+(\ref{pf.prop.A-symmetry.5}) are equal (since $D$ is balanced, so that each
+$p\in P$ satisfies $\deg^{+}p=\deg^{-}p$). Hence, their right hand sides must
+be equal as well. That is,%
+\[
+\left\vert A\left(  P,P\right)  \right\vert +\left\vert A\left(  P,Q\right)
+\right\vert =\left\vert A\left(  Q,P\right)  \right\vert +\left\vert A\left(
+P,P\right)  \right\vert .
+\]
+Subtracting $\left\vert A\left(  P,P\right)  \right\vert $ from this equality,
+we obtain $\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
+Q,P\right)  \right\vert $. Thus, Proposition \ref{prop.A-symmetry} is proved.
+\end{proof}
+
+Whenever $P$ and $Q$ are two subsets of $V$ satisfying $P\sqcup Q=V$, we
+\textbf{fix a bijection} $\phi_{P,Q}:A\left(  P,Q\right)  \rightarrow A\left(
+Q,P\right)  $. (Such a bijection exists because Proposition
+\ref{prop.A-symmetry} says that the sets $A\left(  P,Q\right)  $ and $A\left(
+Q,P\right)  $ have the same size.) There are some more and less natural ways
+to choose such bijections, but we content ourselves with any choice, as long
+as we leave it fixed.
+
+We shall refer to the bijection $\phi_{P,Q}:A\left(  P,Q\right)  \rightarrow
+A\left(  Q,P\right)  $ as \emph{forward reflection} with respect to $\left(
+P,Q\right)  $. When we apply this bijection $\phi_{P,Q}$ to an arc $a\in
+A\left(  P,Q\right)  $, we say that we are \emph{forward-reflecting} it with
+respect to $\left(  P,Q\right)  $. Likewise, $\phi_{P,Q}^{-1}$ will be called
+\emph{backward reflection} with respect to $\left(  P,Q\right)  $. The
+\textquotedblleft reflection\textquotedblright\ terminology should be taken
+with a grain of salt: It does not mean that the source of the arc becomes the
+target and vice versa, but only that it turns from an arc having source in $P$
+and target in $Q$ into an arc having source in $Q$ and target in $P$.
+
+We need some more definitions: If $P$ and $Q$ are two subsets of $V$
+satisfying $P\sqcup Q=V$, then we define a map%
+\[
+\Phi_{P,Q}:\left\{  \text{subsets of }A\right\}  \rightarrow\left\{
+\text{subsets of }A\right\}
+\]
+by%
+\[
+\Phi_{P,Q}\left(  B\right)  :=\left(  B\setminus A\left(  P,Q\right)  \right)
+\cup\phi_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)  \qquad\text{for all
+}B\subseteq A.
+\]
+In other words, $\Phi_{P,Q}\left(  B\right)  $ is obtained from $B$ by
+forward-reflecting all arcs in $A\left(  P,Q\right)  $.
+
+Likewise, if $P$ and $Q$ are two subsets of $V$ satisfying $P\sqcup Q=V$, then
+we define a map%
+\[
+\Psi_{P,Q}:\left\{  \text{subsets of }A\right\}  \rightarrow\left\{
+\text{subsets of }A\right\}
+\]
+by%
+\[
+\Psi_{P,Q}\left(  B\right)  :=\left(  B\setminus A\left(  Q,P\right)  \right)
+\cup\phi_{P,Q}^{-1}\left(  B\cap A\left(  Q,P\right)  \right)  \qquad\text{for
+all }B\subseteq A.
+\]
+In other words, $\Psi_{P,Q}\left(  B\right)  $ is obtained from $B$ by
+backward-reflecting all arcs in $A\left(  Q,P\right)  $.
+
+\begin{lemma}
+\label{lem.realignment-acyc}Let $B$ be a subset of $V$. Let $P$ and $Q$ be two
+subsets of $V$ satisfying $P\sqcup Q=V$.
+
+Assume that $B\cap A\left(  Q,P\right)  =\varnothing$. Then:
+
+\begin{enumerate}
+\item[\textbf{(a)}] We have $\left\vert \Phi_{P,Q}\left(  B\right)
+\right\vert =\left\vert B\right\vert $.
+
+\item[\textbf{(b)}] If the set $B$ is acyclic, then so is $\Phi_{P,Q}\left(
+B\right)  $.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\textbf{(a)} The set $\phi_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)  $
+is a subset of $A\left(  Q,P\right)  $ and thus disjoint from $B$ (since
+$B\cap A\left(  Q,P\right)  =\varnothing$) and therefore also disjoint from
+its subset $B\setminus A\left(  P,Q\right)  $. Hence,%
+\begin{align*}
+& \left\vert \left(  B\setminus A\left(  P,Q\right)  \right)  \cup\phi
+_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)  \right\vert \\
+& =\underbrace{\left\vert B\setminus A\left(  P,Q\right)  \right\vert
+}_{=\left\vert B\right\vert -\left\vert B\cap A\left(  P,Q\right)  \right\vert
+}+\underbrace{\left\vert \phi_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)
+\right\vert }_{\substack{=\left\vert B\cap A\left(  P,Q\right)  \right\vert
+\\\text{(since }\phi_{P,Q}\text{ is a bijection)}}}\\
+& =\left\vert B\right\vert -\left\vert B\cap A\left(  P,Q\right)  \right\vert
++\left\vert B\cap A\left(  P,Q\right)  \right\vert =\left\vert B\right\vert .
+\end{align*}
+Since the set on the left hand side here is $\Phi_{P,Q}\left(  B\right)  $, we
+thus have shown that $\left\vert \Phi_{P,Q}\left(  B\right)  \right\vert
+=\left\vert B\right\vert $. This proves Lemma \ref{lem.realignment-acyc}
+\textbf{(a)}. \medskip
+
+\textbf{(b)} Assume that the set $B$ is acyclic. We must show that $\Phi
+_{P,Q}\left(  B\right)  $ is acyclic as well.
+
+Assume the contrary. Thus, the digraph $D\left\langle \Phi_{P,Q}\left(
+B\right)  \right\rangle $ has a cycle $\mathbf{c}$. If all the vertices of
+$\mathbf{c}$ are contained in $P$, then $\mathbf{c}$ is also a cycle of
+$D\left\langle B\right\rangle $ (since the sets $B$ and $\Phi_{P,Q}\left(
+B\right)  $ differ only in the arcs that run between the sets $P$ and $Q$, not
+in the arcs that stay within $P$ or within $Q$), which is absurd (since $B$ is
+acyclic). Thus, not all the vertices of $\mathbf{c}$ are contained in $P$.
+Similarly, not all the vertices of $\mathbf{c}$ are contained in $Q$.
+Therefore, the cycle $\mathbf{c}$ contains both a vertex in $P$ and a vertex
+in $Q$. Consequently, $\mathbf{c}$ must contain an arc with source in $P$ and
+target in $Q$. This arc must therefore belong to $A\left(  P,Q\right)  $ and
+to $\Phi_{P,Q}\left(  B\right)  $ (since $\mathbf{c}$ is a cycle of
+$D\left\langle \Phi_{P,Q}\left(  B\right)  \right\rangle $). In other words,
+it must belong to $\Phi_{P,Q}\left(  B\right)  \cap A\left(  P,Q\right)  $.
+
+However, this is impossible, since the construction of $\Phi_{P,Q}\left(
+B\right)  $ ensures that $\Phi_{P,Q}\left(  B\right)  \cap A\left(
+P,Q\right)  =\varnothing$ (in fact, both sets $B\setminus A\left(  P,Q\right)
+$ and $\phi_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)  $ are disjoint
+from $A\left(  P,Q\right)  $, so their union $\Phi_{P,Q}\left(  B\right)  $ is
+disjoint from $A\left(  P,Q\right)  $ as well). This contradiction completes
+our proof of Lemma \ref{lem.realignment-acyc} \textbf{(b)}.
+\end{proof}
+
+Now, we shall prove Theorem \ref{thm.balgamma}.
+
+Given a subset $B$ of $A$ and two vertices $v,w\in V$, we say that
+\textquotedblleft$v$ can $B$-reach $w$\textquotedblright\ if the digraph
+$D\left\langle B\right\rangle $ has a path from $v$ to $w$ (or, equivalently,
+a walk from $v$ to $w$).
+
+We fix $k\in\mathbb{N}$ and two vertices $s,t\in V$. We must show that
+$\gamma_{k}\left(  s\right)  =\gamma_{k}\left(  t\right)  $. This is obvious
+if $s=t$, so we WLOG assume that $s\neq t$.
 
 Let $\mathcal{P}_{k}\left(  A\right)  $ denote the set of all $k$-element
-subsets of $A$. Fix two vertices $s\neq t$ of $D$ (it is clear that
-$\gamma_{k}\left(  s\right)  =\gamma_{k}\left(  t\right)  $ holds if $s=t$),
-and define
+subsets of $A$. Define the subsets
 \begin{align*}
-\Gamma_{k}\left(  s\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  s\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}s\right\} \\
-=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
+}s\right\}  \\
+= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
 }s\text{-convergence}\right\}  ;\\
-\Gamma_{k}\left(  t\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  t\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}t\right\} \\
-=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
+}t\right\}  \\
+= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
 }t\text{-convergence}\right\}  ;\\
-\Gamma_{k}\left(  s,t\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  s,t\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}s\text{ or }t\right\}  ,
+}s\text{ or }t\right\}
 \end{align*}
-where \textquotedblleft$B$-reach\textquotedblright\ means \textquotedblleft
-reach through a path of $D\left\langle B\right\rangle $\textquotedblright.
-Clearly, $\Gamma_{k}\left(  s,t\right)  $ contains both $\Gamma_{k}\left(
-s\right)  $ and $\Gamma_{k}\left(  t\right)  $ as subsets. Thus,
+of $\mathcal{P}_{k}\left(  A\right)  $. Clearly, both $\Gamma_{k}\left(
+s\right)  $ and $\Gamma_{k}\left(  t\right)  $ are subsets of $\Gamma
+_{k}\left(  s,t\right)  $. Thus,
 \[
 \left\vert \Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(  t\right)
 \right\vert =\left\vert \Gamma_{k}\left(  s,t\right)  \right\vert
@@ -407,11 +564,12 @@ and likewise $\left\vert \Gamma_{k}\left(  s,t\right)  \setminus\Gamma
 _{k}\left(  s\right)  \right\vert =\left\vert \Gamma_{k}\left(  s,t\right)
 \right\vert -\gamma_{k}\left(  s\right)  $. Thus, in order to prove that
 $\gamma_{k}\left(  s\right)  =\gamma_{k}\left(  t\right)  $, it suffices to
+prove that $\left\vert \Gamma_{k}\left(  s,t\right)  \setminus\Gamma
+_{k}\left(  s\right)  \right\vert =\left\vert \Gamma_{k}\left(  s,t\right)
+\setminus\Gamma_{k}\left(  t\right)  \right\vert $. For this purpose, we shall
 construct a bijection $\Gamma_{k}\left(  s,t\right)  \setminus\Gamma
 _{k}\left(  t\right)  \rightarrow\Gamma_{k}\left(  s,t\right)  \setminus
-\Gamma_{k}\left(  s\right)  $.
-
-To do so, we proceed as follows:
+\Gamma_{k}\left(  s\right)  $. We construct it as follows:
 
 \begin{itemize}
 \item Define a map $f:\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
@@ -419,45 +577,122 @@ t\right)  \rightarrow\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
 s\right)  $ as follows: Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus
 \Gamma_{k}\left(  t\right)  $. Set%
 \begin{align*}
-V_{1}  &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
-V_{2}  &  =V\setminus V_{1}.
+P &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
+Q &  =V\setminus P.
 \end{align*}
-Then, let $f\left(  B\right)  :=(B \setminus A(V_1,V_2)) \cup \phi_{V_1,V_2}(B \cap A(V_1,V_2))$. 
+Then, let $f\left(  B\right)  :=\Phi_{P,Q}\left(  B\right)  $. We will soon
+(Claim 1) see that this really belongs to $\Gamma_{k}\left(  s,t\right)
+\setminus\Gamma_{k}\left(  s\right)  $, so that the map $f$ is well-defined.
 
 \item Define a map $g:\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
 s\right)  \rightarrow\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
 t\right)  $ as follows: Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus
 \Gamma_{k}\left(  s\right)  $. Set%
 \begin{align*}
-W_{2}  &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}  ;\\
-W_{1}  &  =V\setminus W_{2}.
+Q^{\prime} &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}  ;\\
+P^{\prime} &  =V\setminus Q^{\prime}.
 \end{align*}
-Then, let $g\left(  B\right)  := (B \setminus A(W_{2},W_{1})) \cup \phi_{W_{2},W_{1}}^{-1}\left( B \cap A(W_{2},W_{1})\right)  $.
+Then, let $g\left(  B\right)  :=\Psi_{P^{\prime},Q^{\prime}}\left(  B\right)
+$. We will soon (Claim 2) see that this really belongs to $\Gamma_{k}\left(
+s,t\right)  \setminus\Gamma_{k}\left(  t\right)  $, so that the map $f$ is well-defined.
 \end{itemize}
 
-We must show that $f\circ g=\operatorname*{id}$ and $g\circ
-f=\operatorname*{id}$. Obviously, the main step for proving $g\circ
-f=\operatorname*{id}$ is to prove that when we apply $g$ to $f\left(
-B\right)  $, then the $W_{1}$ and $W_{2}$ constructed will be precisely the
-$V_{1}$ and $V_{2}$ that were used in the application of $f$ to $B$. The proof
-of $f\circ g=\operatorname*{id}$ can be avoided using the pigeonhole
-principle, but it might also just be analogous (note that $\phi_{V_{2},V_{1}%
-}^{-1}$ is \textquotedblleft another option\textquotedblright\ for
-$\phi_{V_{1},V_{2}}$).
+We now claim the following:
 
-\begin{lemma}
-    Let $B \in \Gamma_{k}(s)$, and apply $f(B)$. Let $W_{2}^{f} := \{\text{vertices that can $f(B)$-reach $s$}\}$ and $W_{1}^f := V \setminus W_{2}^f$. Then $W_{2}^f = V_{2}$, where $V_{2} = \{\text{vertices that cannot $B$-reach $t$}\}$. \textit{\textcolor{red}{Note that, so far, I can only do this for $B \in \Gamma_{k}(s)$, not necessarily $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(t)$...}}
-\end{lemma}
+\begin{statement}
+\textit{Claim 1:} Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus\Gamma
+_{k}\left(  t\right)  $, and set%
+\begin{align*}
+P &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
+Q &  =V\setminus P.
+\end{align*}
+Then, $\Phi_{P,Q}\left(  B\right)  \in\Gamma_{k}\left(  s,t\right)
+\setminus\Gamma_{k}\left(  s\right)  $.
+\end{statement}
 
+\begin{statement}
+\textit{Claim 2:} Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus\Gamma
+_{k}\left(  s\right)  $, and set%
+\begin{align*}
+Q^{\prime} &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}  ;\\
+P^{\prime} &  =V\setminus Q^{\prime}.
+\end{align*}
+Then, $\Psi_{P^{\prime},Q^{\prime}}\left(  B\right)  \in\Gamma_{k}\left(
+s,t\right)  \setminus\Gamma_{k}\left(  s\right)  $.
+\end{statement}
+
+\begin{statement}
+\textit{Claim 3:} We have $\Psi_{P^{\prime},Q^{\prime}}\circ\Phi
+_{P,Q}=\operatorname*{id}$.
+\end{statement}
+
+\begin{statement}
+\textit{Claim 4:} We have $\Phi_{P,Q}\circ\Psi_{P^{\prime},Q^{\prime}%
+}=\operatorname*{id}$.
+\end{statement}
 
 \begin{proof}
-    Note that since $B \in \Gamma_{k}(s)$, $V_{2} \neq \emptyset$ (namely, at least $s \in V_{2}$, since $s$ cannot $B$-reach $t$).
+[Proof of Claim 1.] First of all, if there was some arc $a\in B\cap A\left(
+Q,P\right)  $, say with source $v$ and target $w$, then the vertex $w$ could
+$B$-reach $t$ but $v$ could not; but this is absurd, since $v$ could $B$-reach
+$t$ via this arc $a$ and the vertex $w$. Hence, there exists no such arc $a$.
+In other words, $B\cap A\left(  Q,P\right)  =\varnothing$. Hence, Lemma
+\ref{lem.realignment-acyc} \textbf{(a)} yields $\left\vert \Phi_{P,Q}\left(
+B\right)  \right\vert =\left\vert B\right\vert =k$ (since $B\in\Gamma
+_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(  t\right)  \subseteq
+\Gamma_{k}\left(  s,t\right)  \subseteq\mathcal{P}_{k}\left(  A\right)  $). In
+other words, $\Phi_{P,Q}\left(  B\right)  \in\mathcal{P}_{k}\left(  A\right)
+$. Moreover, Lemma \ref{lem.realignment-acyc} \textbf{(b)} yields that
+$\Phi_{P,Q}\left(  B\right)  $ is acyclic (since $B\in\Gamma_{k}\left(
+s,t\right)  $ shows that $B$ is acyclic).
 
-    First, let us show that $V_{2} \subseteq W_{2}^f$. Let $v \in V_{2}$, and suppose towards contradiction that $v \notin W_{2}^f$. Since $v$ could $B$-reach $s$ but cannot $f(B)$-reach $s$, there must exist some arc $a \in B \cap A(V_{1},V_{2})$ on the $B$-path from $v$ to $s$. But this implies that there exists some vertex $w \in V_{1}$ along the $B$-path from $v$ to $s$. Hence, $v$ has a $B$-path to $w$, which in turn has a $B$-path to $t$. So, $v$ has a $B$-path to $t$, a contradiction. Hence, $v \in W_{2}^f$. 
+Next, we shall show that $\Phi_{P,Q}\left(  B\right)  \in\Gamma_{k}\left(
+s,t\right)  $. Since we know that $\Phi_{P,Q}\left(  B\right)  $ is acyclic,
+we only need to show that each vertex $v\in V$ can $\Phi_{P,Q}\left(
+B\right)  $-reach $s$ or $t$. So let $v\in V$ be any vertex. Since $B\in
+\Gamma_{k}\left(  s,t\right)  $, we know that $v$ can $B$-reach $s$ or $t$.
+That is, the digraph $D\left\langle B\right\rangle $ has a path $\mathbf{p}$
+from $v$ to $s$ or $t$. If this path no longer exists in $D\left\langle
+\Phi_{P,Q}\left(  B\right)  \right\rangle $, then it must contain one of the
+arcs in $B\cap A\left(  P,Q\right)  $ that get forward-reflected in
+$\Phi_{P,Q}\left(  B\right)  $. In this case, TODO!
 
-    On the other hand, suppose $v \in W_{2}^f$.
+Finally, we shall show that $\Phi_{P,Q}\left(  B\right)  \notin\Gamma
+_{k}\left(  s\right)  $. Indeed, the vertex $t$ cannot $\Phi_{P,Q}\left(
+B\right)  $-reach $t$, since TODO!
 \end{proof}
 
+\begin{proof}
+[Proof of Claim 2.] Claim 2 is the same as Claim 1, but with $s$, $t$, $P$,
+$Q$, $\phi_{P,Q}$ and $\Phi_{P,Q}$ renamed as $t$, $s$, $Q^{\prime}$,
+$P^{\prime}$, $\phi_{P^{\prime},Q^{\prime}}^{-1}$ and $\Psi_{P^{\prime
+},Q^{\prime}}$. (In fact, since $\phi_{P^{\prime},Q^{\prime}}$ is a bijection
+from $A\left(  P^{\prime},Q^{\prime}\right)  $ to $A\left(  Q^{\prime
+},P^{\prime}\right)  $, we know that $\phi_{P^{\prime},Q^{\prime}}^{-1}$ is a
+bijection from $A\left(  Q^{\prime},P^{\prime}\right)  $ to $A\left(
+P^{\prime},Q^{\prime}\right)  $, so that the situations really are comparable.)
+\end{proof}
+
+\begin{proof}
+[Proof of Claim 3.] TODO.
+\end{proof}
+
+\begin{proof}
+[Proof of Claim 4.] TODO.
+\end{proof}
+
+Claim 3 and Claim 4 show that the maps $\Phi_{P,Q}$ and $\Psi_{P^{\prime
+},Q^{\prime}}$ are mutually inverse. Hence, $\Phi_{P,Q}$ is a bijection. Thus,
+the bijection principle yields%
+\[
+\left\vert \Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(  t\right)
+\right\vert =\left\vert \Gamma_{k}\left(  s,t\right)  \setminus\Gamma
+_{k}\left(  s\right)  \right\vert .
+\]
+As we explained above, this leads to $\gamma_{k}\left(  s\right)  =\gamma
+_{k}\left(  t\right)  $, and thus Theorem \ref{thm.balgamma} is proved.
+
+\protect\begin{proof}
 \section{Further remarks on $s$-convergences}
 
 \begin{itemize}
@@ -505,6 +740,7 @@ Arc Set Problem and NP-Hardness of Minimum Recurrent Configuration Problem of
 Chip-Firing Game on Directed Graphs}, Annals of Combinatorics \textbf{19}
 (2015), pages 373--396.
 \end{thebibliography}
+\end{proof}
 
 
 \end{document}
