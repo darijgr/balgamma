@@ -524,20 +524,22 @@ from $A\left(  P,Q\right)  $, so their union $\Phi_{P,Q}\left(  B\right)  $ is
 disjoint from $A\left(  P,Q\right)  $ as well). This contradiction completes
 our proof of Lemma \ref{lem.realignment-acyc} \textbf{(b)}. \medskip
 
-\textbf{(c)} For ease of notation, let $C := A(P,Q)$ and $D := A(Q,P)$. Also, let $\Phi := \Phi_{P,Q}$, $\Psi := \Psi_{P,Q}$, $\phi := \phi_{P,Q}$ and $\psi := \psi_{P,Q}$. We have \begin{align*}
-    \Psi(\Phi(B)) &= (\Phi(B) \setminus D) \cup \phi^{-1}(\Phi(B) \cap D) \\
-    &= \Big([(B \setminus C) \cup \phi(B \cap C)] \setminus D \Big) \cup \phi^{-1}\Big([(B \setminus C) \cup \phi(B \cap C)] \cap D \Big) \\
-    &= [(B \setminus C) \setminus D] \cup [\phi(B \cap C) \setminus D] \cup \phi^{-1}\Big([(B \setminus C) \cap D] \cup [\phi(B \cap C) \cap D] \Big) \\
-    &= [B \setminus (C \cup D) ] \cup [\phi(B) \cap \phi(C) \cap D^c] \cup [\phi^{-1}((B \setminus C) \cap D)] \cup [\phi^{-1}(\phi(B \cap C) \cap D)] \\
-    &= [B \setminus (C \cup D)] \cup [\phi(B) \cap D \cap D^c] \cup [\phi^{-1}(B \cap C^c) \cap \phi^{-1}(D)] \cup [\phi^{-1}(\phi(B \cap C)) \cap \phi^{-1}(D)] \\
-    &= [B \cap (C \cup D)^c] \cup \emptyset \cup [\phi^{-1}(B) \cap \phi^{-1}(C^c) \cap \phi^{-1}(D)] \cup [B \cap C \cap \phi^{-1}(D)] \\
-    &= [B \cap (C \cup D)^c] \cup [\phi^{-1}(B) \cap D^c \cap C] \cup [B \cap C \cap C] \\
-    &= [B \cap (C \cup D)^c] \cup [\phi^{-1}(B) \cap C] \cup [B \cap C] \\
-    &= [B \cap (C \cup D)^c] \cup \phi^{-1}(B) \cup [B \cap C]
-\end{align*}
+\textbf{(c)} For ease of notation, let $C := A(P,Q)$ and $D := A(Q,P)$. Also, let $\Phi := \Phi_{P,Q}$, $\Psi := \Psi_{P,Q}$, $\phi := \phi_{P,Q}$ and $\psi := \psi_{P,Q}$. We have 
 
-\textcolor{red}{[I'm running into some issue and can't seem to find where it is...]}
-\end{proof}
+\begin{align*}
+    \Psi(\Phi(B)) &= (\Phi(B) \setminus D) \cup \phi^{-1}(\Phi(B) \cap D) \\
+    &= \Big([(B \setminus C) \cup \phi(B \cap C)] \setminus D \Big) \cup \phi^{-1}\Big([(B \setminus C) \cup \phi(B \cap C)] \cap D\Big) \\
+    &= [(B \setminus C) \setminus D] \cup [\phi(B \cap C) \setminus D] \cup \phi^{-1}\Big([(B \setminus C) \cap D] \cup [\phi(B \cap C) \cap D]\Big) \\
+    &= [\underbrace{B \setminus (C \cup D)}_{=B \cap C^c \cap D^c}] \cup [\phi(B) \cap \underbrace{\phi(C)}_{=D} \cap D^c] \cup [\phi^{-1}(\underbrace{(B \setminus C) \cap D}_{=\emptyset \text{ since }B \cap D = \emptyset})] \cup [\phi^{-1}(\phi(B \cap C) \cap D] \\
+    &= [B \cap C^c \cap D^c] \cup [\phi(B) \cap \underbrace{D \cap D^c}_{=\emptyset}] \cup [\underbrace{\phi^{-1}(\emptyset)}_{=\emptyset}] \cup [\underbrace{\phi^{-1}(\phi(B\cap C))}_{=B \cap C} \cap \underbrace{\phi^{-1}(D)}_{=C}] \\
+    &= [B \cap C^c \cap D^c] \cup [\underbrace{\phi(B) \cap \emptyset}_{=\emptyset}] \cup [B \cap C \cap C] \\
+    &= [B \cap C^c \cap D^c] \cup [B \cap C] \\
+    &= B \cap [(C^c \cap D^c) \cup C] \\
+    &= B \cap [\underbrace{(C^c \cup C)}_{=A} \cap (D^c \cup C)] \\
+    &= B \cap \underbrace{(D^c \cup C)}_{=D^c \text{ since } D \cap C = \emptyset} \\
+    &= \underbrace{B \cap D^c}_{=B \text{ since } B \cap D = \emptyset} \\
+    &= B.
+\end{align*} \end{proof}
 
 Now, we shall prove Theorem \ref{thm.balgamma}.
 
