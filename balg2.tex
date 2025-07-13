@@ -524,7 +524,19 @@ from $A\left(  P,Q\right)  $, so their union $\Phi_{P,Q}\left(  B\right)  $ is
 disjoint from $A\left(  P,Q\right)  $ as well). This contradiction completes
 our proof of Lemma \ref{lem.realignment-acyc} \textbf{(b)}. \medskip
 
-\textbf{(c)} TODO!
+\textbf{(c)} For ease of notation, let $C := A(P,Q)$ and $D := A(Q,P)$. Also, let $\Phi := \Phi_{P,Q}$, $\Psi := \Psi_{P,Q}$, $\phi := \phi_{P,Q}$ and $\psi := \psi_{P,Q}$. We have \begin{align*}
+    \Psi(\Phi(B)) &= (\Phi(B) \setminus D) \cup \phi^{-1}(\Phi(B) \cap D) \\
+    &= \Big([(B \setminus C) \cup \phi(B \cap C)] \setminus D \Big) \cup \phi^{-1}\Big([(B \setminus C) \cup \phi(B \cap C)] \cap D \Big) \\
+    &= [(B \setminus C) \setminus D] \cup [\phi(B \cap C) \setminus D] \cup \phi^{-1}\Big([(B \setminus C) \cap D] \cup [\phi(B \cap C) \cap D] \Big) \\
+    &= [B \setminus (C \cup D) ] \cup [\phi(B) \cap \phi(C) \cap D^c] \cup [\phi^{-1}((B \setminus C) \cap D)] \cup [\phi^{-1}(\phi(B \cap C) \cap D)] \\
+    &= [B \setminus (C \cup D)] \cup [\phi(B) \cap D \cap D^c] \cup [\phi^{-1}(B \cap C^c) \cap \phi^{-1}(D)] \cup [\phi^{-1}(\phi(B \cap C)) \cap \phi^{-1}(D)] \\
+    &= [B \cap (C \cup D)^c] \cup \emptyset \cup [\phi^{-1}(B) \cap \phi^{-1}(C^c) \cap \phi^{-1}(D)] \cup [B \cap C \cap \phi^{-1}(D)] \\
+    &= [B \cap (C \cup D)^c] \cup [\phi^{-1}(B) \cap D^c \cap C] \cup [B \cap C \cap C] \\
+    &= [B \cap (C \cup D)^c] \cup [\phi^{-1}(B) \cap C] \cup [B \cap C] \\
+    &= [B \cap (C \cup D)^c] \cup \phi^{-1}(B) \cup [B \cap C]
+\end{align*}
+
+\textcolor{red}{[I'm running into some issue and can't seem to find where it is...]}
 \end{proof}
 
 Now, we shall prove Theorem \ref{thm.balgamma}.
