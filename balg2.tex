@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, July 13, 2025 19:55:42}
+%TCIDATA{LastRevised=Sunday, July 13, 2025 21:03:51}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -367,15 +367,15 @@ that%
 However, we can count the arcs in $A\left(  P,V\right)  $ according to their
 sources $p\in P$. This yields%
 \begin{equation}
-\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}%
-p,\label{pf.prop.A-symmetry.3}%
+\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}p,
+\label{pf.prop.A-symmetry.3}%
 \end{equation}
 since each arc in $A\left(  P,V\right)  $ is counted in the outdegree of
 exactly one $p\in P$ (namely, of its source). Comparing these two equalities,
 we obtain%
 \begin{equation}
 \sum_{p\in P}\deg^{+}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
-A\left(  P,Q\right)  \right\vert .\label{pf.prop.A-symmetry.4}%
+A\left(  P,Q\right)  \right\vert . \label{pf.prop.A-symmetry.4}%
 \end{equation}
 
 
@@ -392,7 +392,7 @@ However, similarly to (\ref{pf.prop.A-symmetry.3}), we can show that%
 Comparing these two equalities, we obtain%
 \begin{equation}
 \sum_{p\in P}\deg^{-}p=\left\vert A\left(  Q,P\right)  \right\vert +\left\vert
-A\left(  P,P\right)  \right\vert .\label{pf.prop.A-symmetry.5}%
+A\left(  P,P\right)  \right\vert . \label{pf.prop.A-symmetry.5}%
 \end{equation}
 
 
@@ -471,6 +471,9 @@ Assume that $B\cap A\left(  Q,P\right)  =\varnothing$. Then:
 
 \item[\textbf{(b)}] If the set $B$ is acyclic, then so is $\Phi_{P,Q}\left(
 B\right)  $.
+
+\item[\textbf{(c)}] We have $\Psi_{P,Q}\left(  \Phi_{P,Q}\left(  B\right)
+\right)  =B$.
 \end{enumerate}
 \end{lemma}
 
@@ -480,14 +483,14 @@ is a subset of $A\left(  Q,P\right)  $ and thus disjoint from $B$ (since
 $B\cap A\left(  Q,P\right)  =\varnothing$) and therefore also disjoint from
 its subset $B\setminus A\left(  P,Q\right)  $. Hence,%
 \begin{align*}
-& \left\vert \left(  B\setminus A\left(  P,Q\right)  \right)  \cup\phi
+&  \left\vert \left(  B\setminus A\left(  P,Q\right)  \right)  \cup\phi
 _{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)  \right\vert \\
-& =\underbrace{\left\vert B\setminus A\left(  P,Q\right)  \right\vert
+&  =\underbrace{\left\vert B\setminus A\left(  P,Q\right)  \right\vert
 }_{=\left\vert B\right\vert -\left\vert B\cap A\left(  P,Q\right)  \right\vert
 }+\underbrace{\left\vert \phi_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)
 \right\vert }_{\substack{=\left\vert B\cap A\left(  P,Q\right)  \right\vert
 \\\text{(since }\phi_{P,Q}\text{ is a bijection)}}}\\
-& =\left\vert B\right\vert -\left\vert B\cap A\left(  P,Q\right)  \right\vert
+&  =\left\vert B\right\vert -\left\vert B\cap A\left(  P,Q\right)  \right\vert
 +\left\vert B\cap A\left(  P,Q\right)  \right\vert =\left\vert B\right\vert .
 \end{align*}
 Since the set on the left hand side here is $\Phi_{P,Q}\left(  B\right)  $, we
@@ -519,7 +522,9 @@ P,Q\right)  =\varnothing$ (in fact, both sets $B\setminus A\left(  P,Q\right)
 $ and $\phi_{P,Q}\left(  B\cap A\left(  P,Q\right)  \right)  $ are disjoint
 from $A\left(  P,Q\right)  $, so their union $\Phi_{P,Q}\left(  B\right)  $ is
 disjoint from $A\left(  P,Q\right)  $ as well). This contradiction completes
-our proof of Lemma \ref{lem.realignment-acyc} \textbf{(b)}.
+our proof of Lemma \ref{lem.realignment-acyc} \textbf{(b)}. \medskip
+
+\textbf{(c)} TODO!
 \end{proof}
 
 Now, we shall prove Theorem \ref{thm.balgamma}.
@@ -536,17 +541,17 @@ if $s=t$, so we WLOG assume that $s\neq t$.
 Let $\mathcal{P}_{k}\left(  A\right)  $ denote the set of all $k$-element
 subsets of $A$. Define the subsets
 \begin{align*}
-\Gamma_{k}\left(  s\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  s\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}s\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
+}s\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
 }s\text{-convergence}\right\}  ;\\
-\Gamma_{k}\left(  t\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  t\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}t\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
+}t\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
 }t\text{-convergence}\right\}  ;\\
-\Gamma_{k}\left(  s,t\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  s,t\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
 }s\text{ or }t\right\}
 \end{align*}
@@ -577,8 +582,8 @@ t\right)  \rightarrow\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
 s\right)  $ as follows: Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus
 \Gamma_{k}\left(  t\right)  $. Set%
 \begin{align*}
-P &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
-Q &  =V\setminus P.
+P  &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
+Q  &  =V\setminus P.
 \end{align*}
 Then, let $f\left(  B\right)  :=\Phi_{P,Q}\left(  B\right)  $. We will soon
 (Claim 1) see that this really belongs to $\Gamma_{k}\left(  s,t\right)
@@ -589,8 +594,9 @@ s\right)  \rightarrow\Gamma_{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(
 t\right)  $ as follows: Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus
 \Gamma_{k}\left(  s\right)  $. Set%
 \begin{align*}
-Q^{\prime} &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}  ;\\
-P^{\prime} &  =V\setminus Q^{\prime}.
+Q^{\prime}  &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}
+;\\
+P^{\prime}  &  =V\setminus Q^{\prime}.
 \end{align*}
 Then, let $g\left(  B\right)  :=\Psi_{P^{\prime},Q^{\prime}}\left(  B\right)
 $. We will soon (Claim 2) see that this really belongs to $\Gamma_{k}\left(
@@ -614,25 +620,24 @@ Then, $\Phi_{P,Q}\left(  B\right)  \in\Gamma_{k}\left(  s,t\right)
 \textit{Claim 2:} Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus\Gamma
 _{k}\left(  s\right)  $, and set%
 \begin{align*}
-Q^{\prime} &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}  ;\\
-P^{\prime} &  =V\setminus Q^{\prime}.
+Q^{\prime}  &  =\left\{  \text{vertices that can }B\text{-reach }s\right\}
+;\\
+P^{\prime}  &  =V\setminus Q^{\prime}.
 \end{align*}
 Then, $\Psi_{P^{\prime},Q^{\prime}}\left(  B\right)  \in\Gamma_{k}\left(
 s,t\right)  \setminus\Gamma_{k}\left(  s\right)  $.
 \end{statement}
 
 \begin{statement}
-\textit{Claim 3:} We have $\Psi_{P^{\prime},Q^{\prime}}\circ\Phi
-_{P,Q}=\operatorname*{id}$.
+\textit{Claim 3:} We have $g\circ f=\operatorname*{id}$.
 \end{statement}
 
 \begin{statement}
-\textit{Claim 4:} We have $\Phi_{P,Q}\circ\Psi_{P^{\prime},Q^{\prime}%
-}=\operatorname*{id}$.
+\textit{Claim 4:} We have $f\circ g=\operatorname*{id}$.
 \end{statement}
 
 \begin{proof}
-[Proof of Claim 1.] First of all, if there was some arc $a\in B\cap A\left(
+[Proof of Claim 1.]First of all, if there was some arc $a\in B\cap A\left(
 Q,P\right)  $, say with source $v$ and target $w$, then the vertex $w$ could
 $B$-reach $t$ but $v$ could not; but this is absurd, since $v$ could $B$-reach
 $t$ via this arc $a$ and the vertex $w$. Hence, there exists no such arc $a$.
@@ -657,13 +662,37 @@ from $v$ to $s$ or $t$. If this path no longer exists in $D\left\langle
 arcs in $B\cap A\left(  P,Q\right)  $ that get forward-reflected in
 $\Phi_{P,Q}\left(  B\right)  $. In this case, TODO!
 
+\begin{itemize}
+\item Let $v\in V$. We must show that $v$ can $\Phi_{P,Q}\left(  B\right)
+$-reach $s$ or $t$.
+
+\item If $v$ can $B$-reach $t$, then the path stays within $P$ and thus
+remains a path in $\Phi_{P,Q}\left(  B\right)  $, so we're done.
+
+\item If not, then the path stays entirely within $Q$ (otherwise, we could
+reach $t$ from $v$) and thus remains a path in $\Phi_{P,Q}\left(  B\right)  $,
+so we're done.
+\end{itemize}
+
 Finally, we shall show that $\Phi_{P,Q}\left(  B\right)  \notin\Gamma
 _{k}\left(  s\right)  $. Indeed, the vertex $t$ cannot $\Phi_{P,Q}\left(
-B\right)  $-reach $t$, since TODO!
+B\right)  $-reach $s$, since TODO!
+
+\begin{itemize}
+\item The vertex $s$ cannot $B$-reach $t$, since $B\notin\Gamma_{k}\left(
+t\right)  $. So $s\in Q$. But $t\in P$ obviously. A $P$-vertex cannot
+$\Phi_{P,Q}\left(  B\right)  $-reach a $Q$-vertex, since  $\Phi_{P,Q}\left(
+B\right)  \cap A\left(  P,Q\right)  =\varnothing$. Hence $t$ cannot
+$\Phi_{P,Q}\left(  B\right)  $-reach $s$. Therefore, $\Phi_{P,Q}\left(
+B\right)  \notin\Gamma_{k}\left(  s\right)  $.
+\end{itemize}
+
+Combining these, we obtain $\Phi_{P,Q}\left(  B\right)  \in\Gamma_{k}\left(
+s,t\right)  \setminus\Gamma_{k}\left(  s\right)  $. This proves Claim 1.
 \end{proof}
 
 \begin{proof}
-[Proof of Claim 2.] Claim 2 is the same as Claim 1, but with $s$, $t$, $P$,
+[Proof of Claim 2.]Claim 2 is the same as Claim 1, but with $s$, $t$, $P$,
 $Q$, $\phi_{P,Q}$ and $\Phi_{P,Q}$ renamed as $t$, $s$, $Q^{\prime}$,
 $P^{\prime}$, $\phi_{P^{\prime},Q^{\prime}}^{-1}$ and $\Psi_{P^{\prime
 },Q^{\prime}}$. (In fact, since $\phi_{P^{\prime},Q^{\prime}}$ is a bijection
@@ -674,11 +703,54 @@ P^{\prime},Q^{\prime}\right)  $, so that the situations really are comparable.)
 \end{proof}
 
 \begin{proof}
-[Proof of Claim 3.] TODO.
+[Proof of Claim 3.]Let $B\in\Gamma_{k}\left(  s,t\right)  \setminus\Gamma
+_{k}\left(  t\right)  $. We must show that $\left(  g\circ f\right)  \left(
+B\right)  =B$.
+
+Note that $B\cap A\left(  Q,P\right)  =\varnothing$ (as we saw in the proof of
+Claim 1).
+
+Set $B^{\prime}:=f\left(  B\right)  $. Define
+\begin{align*}
+P &  =\left\{  \text{vertices that can }B\text{-reach }t\right\}  ;\\
+Q &  =V\setminus P.
+\end{align*}
+Then, $B^{\prime}=f\left(  B\right)  =\Phi_{P,Q}\left(  B\right)  $ by the
+definition of $f$.
+
+Define
+\begin{align*}
+Q^{\prime} &  =\left\{  \text{vertices that can }B^{\prime}\text{-reach
+}s\right\}  ;\\
+P^{\prime} &  =V\setminus Q^{\prime}.
+\end{align*}
+Then, $g\left(  B^{\prime}\right)  =\Psi_{P^{\prime},Q^{\prime}}\left(
+B^{\prime}\right)  $ by the definition of $g$. But
+\[
+\left(  g\circ f\right)  \left(  B\right)  =g\left(  \underbrace{f\left(
+B\right)  }_{=B^{\prime}}\right)  =g\left(  B^{\prime}\right)  =\Psi
+_{P^{\prime},Q^{\prime}}\left(  B^{\prime}\right)  .
+\]
+
+
+We shall show that $P^{\prime}=P$ and $Q^{\prime}=Q$. Once shown, this will
+entail
+\begin{align*}
+\Psi_{P^{\prime},Q^{\prime}}\left(  B^{\prime}\right)    & =\Psi_{P,Q}\left(
+\underbrace{B^{\prime}}_{=\Phi_{P,Q}\left(  B\right)  }\right)  =\Psi
+_{P,Q}\left(  \Phi_{P,Q}\left(  B\right)  \right)  \\
+& =B\ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.realignment-acyc}
+\textbf{(c)}}\right)  ,
+\end{align*}
+so that $\left(  g\circ f\right)  \left(  B\right)  =\Psi_{P^{\prime
+},Q^{\prime}}\left(  B^{\prime}\right)  =B$. This will complete the proof of
+Claim 3.
+
+TODO. 
 \end{proof}
 
 \begin{proof}
-[Proof of Claim 4.] TODO.
+[Proof of Claim 4.]TODO.
 \end{proof}
 
 Claim 3 and Claim 4 show that the maps $\Phi_{P,Q}$ and $\Psi_{P^{\prime
