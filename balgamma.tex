@@ -438,13 +438,14 @@ principle, but it might also just be analogous (note that $\phi_{V_{2},V_{1}%
 $\phi_{V_{1},V_{2}}$).
 
 \begin{lemma}
-    Let $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(t)$, and apply $f(B)$. Let $W_{2}^{f} := \{\text{vertices that can $f(B)$-reach $s$}\}$ and $W_{1}^f := V \setminus W_{2}^f$. Then $W_{2}^f = V_{2}$, where $V_{2} = \{\text{vertices that cannot $B$-reach $t$}\}$.
+    Let $B \in \Gamma_{k}(s)$, and apply $f(B)$. Let $W_{2}^{f} := \{\text{vertices that can $f(B)$-reach $s$}\}$ and $W_{1}^f := V \setminus W_{2}^f$. Then $W_{2}^f = V_{2}$, where $V_{2} = \{\text{vertices that cannot $B$-reach $t$}\}$. \textit{\textcolor{red}{Note that, so far, I can only do this for $B \in \Gamma_{k}(s)$, not necessarily $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(t)$...}}
 \end{lemma}
 
-\begin{proof}
-    Note that since $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(t)$, there exists $v \in V$ such that $v$ cannot $B$-reach $t$. So, $V_{2} \neq \emptyset$.
 
-    First, let us show that $V_{2} \subseteq W_{2}^f$.
+\begin{proof}
+    Note that since $B \in \Gamma_{k}(s)$, $V_{2} \neq \emptyset$ (namely, at least $s \in V_{2}$, since $s$ cannot $B$-reach $t$).
+
+    First, let us show that $V_{2} \subseteq W_{2}^f$. Let $v \in V_{2}$, and suppose towards contradiction that $v \notin W_{2}^f$. Since $v$ could $B$-reach $s$ but cannot $f(B)$-reach $s$, there must exist some arc $a \in B \cap A(V_{1},V_{2})$ on the $B$-path from $v$ to $s$. But this implies that there exists some vertex $w \in V_{1}$ along the $B$-path from $v$ to $s$. Hence, $v$ has a $B$-path to $w$, which in turn has a $B$-path to $t$. So, $v$ has a $B$-path to $t$, a contradiction. Hence, $v \in W_{2}^f$. 
 \end{proof}
 
 \section{Further remarks on $s$-convergences}
