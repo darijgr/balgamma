@@ -487,6 +487,8 @@ B\right)  $.
 
 \item[\textbf{(c)}] We have $\Psi_{P,Q}\left(  \Phi_{P,Q}\left(  B\right)
 \right)  =B$.
+
+\item[\textbf{(d)}] If $B \cap A(P,Q) = \emptyset$ instead, we then have $\Phi_{Q,P}\left( \Psi_{Q,P}\left( B \right) \right) = B$.
 \end{enumerate}
 \end{lemma}
 
@@ -559,8 +561,12 @@ We have \begin{align*}
     &= B \cap [\underbrace{(A^{\complement}(P,Q) \cup A(P,Q))}_{=A} \cap (A^{\complement}(Q,P) \cup A(P,Q))] \\
     &= B \cap \underbrace{(A^{\complement}(Q,P) \cup A(P,Q))}_{=A^{\complement}(Q,P) \text{ since } A(Q,P) \cap A(P,Q) = \emptyset} \\
     &= \underbrace{B \cap A^{\complement}(Q,P)}_{=B \text{ since } B \cap A(Q,P) = \emptyset} \\
-    &= B. \qedhere
-\end{align*}\end{proof}
+    &= B. 
+\end{align*}
+
+\medskip
+\textbf{(d)} It is clear that $\phi_{Q,P} = \phi_{P,Q}^{-1}$ and $\phi_{Q,P}^{-1} = \phi_{P,Q}$. Hence, $\Phi_{Q,P}(B) = (B \setminus A(Q,P)) \cup \phi_{Q,P}(B \cap A(Q,P)) = (B \setminus A(Q,P)) \cup \phi_{P,Q}^{-1}(B \cap A(Q,P)) = \Psi_{P,Q}(B)$ and similarly, $\Psi_{Q,P}(B) = \Phi_{P,Q}(B)$. So, under the assumption that $B \cap A(Q,P) = \emptyset$, a similar calculation to the previous part yields $\Phi_{Q,P}(\Psi_{Q,P}(B)) = B$.
+\end{proof}
 
 Now, we shall prove Theorem \ref{thm.balgamma}.
 
@@ -723,7 +729,7 @@ _{P,Q}\left(  \Phi_{P,Q}\left(  B\right)  \right)  \\
 \end{align*}
 so that $\left(  g\circ f\right)  \left(  B\right)  =\Psi_{P^{\prime
 },Q^{\prime}}\left(  B^{\prime}\right)  =B$. This will complete the proof of
-Claim 3. Note that $s \in Q$, for else $B \in \Gamma_{k}(t)$.
+Lemma \ref{claim3}. Note that $s \in Q$, for else $B \in \Gamma_{k}(t)$.
 
 Let us first suppose $v \in Q$. Then $v$ cannot $B$-reach $t$. Since $B \in \Gamma_{k}(s,t)$, this means that $v$ can $B$-reach $s$. Suppose towards contradiction that $v \notin Q'$. Then on the  path in $B$ from $v$ to $s$, there must exist some vertex $w \in P$, for otherwise the entire path is contained in $Q$ and thus remains a path in $\Phi_{P,Q}(B)$. But if $w \in P$, then $v$ can $B$-reach $t$, a contradiction. Hence, $v \in Q'$, so $Q \subseteq Q'$.
 
@@ -738,7 +744,7 @@ All together, we see that $Q = Q' \implies P = P'$. And so, $(g \circ f)(B) = B$
 
 \begin{proof}
 \label{claim4}
-    TODO.
+   Let $B \in \Gamma_{k}(s,t) \setminus \Gamma_{k}(s)$. The proof of Lemma \ref{claim4} is the same as Lemma \ref{claim3}, but with $s,t,f,g,P,Q,P',Q',\Phi_{P,Q}$ and $\Psi_{P',Q'}$ renamed as $t,s,g,f,Q',P',Q,P,\Psi_{Q,P}$, and $\Phi_{Q',P'}$, and by envoking Lemma \ref{claim3} \textbf{(d)} instead of Lemma \ref{claim3} \textbf{(c)}.
 \end{proof}
 
 Lemma \ref{claim3} and Lemma \ref{claim4} show that the maps $\Phi_{P,Q}$ and $\Psi_{P^{\prime
