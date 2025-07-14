@@ -301,30 +301,43 @@ noticeable. The present note is the result of following this scent.
 Some particular cases of Theorem \ref{thm.balgamma} are known:
 
 \begin{enumerate}
-\item When $k=\left\vert V\right\vert -1$, the $s$-convergences are precisely
-the spanning arborescences of $D$ rooted to $s$. Indeed, the condition
-$\left\vert B\right\vert =\left\vert V\right\vert -1$, combined with the
-to-rootness of $s$, forces $D\left\langle B\right\rangle $ to be an
-arborescence rooted to $s$ (by \cite[Theorem 5.10.5]{22s}). Thus, in the case
-$k=\left\vert V\right\vert -1$, Theorem \ref{thm.balgamma} is just
-\cite[Corollary 5.12.1]{22s}.
+\item When $k=\left\vert V\right\vert -1$, the $s$-convergences $B$ of size
+$k$ (or, more precisely, the respective subdigraphs $D\left\langle
+B\right\rangle $ of $D$) are precisely the spanning arborescences of $D$
+rooted to $s$ (see \cite[Definition 5.10.1 \textbf{(b)}]{22s} for the
+definition of this). Indeed, the condition $\left\vert B\right\vert
+=\left\vert V\right\vert -1$, combined with the to-rootness of $s$, forces
+$D\left\langle B\right\rangle $ to be an arborescence rooted to $s$ (by
+\cite[Theorem 5.10.5]{22s}), and conversely, if $D\left\langle B\right\rangle
+$ is a spanning arborescence rooted to $s$, then \cite[Theorem 5.10.5]{22s}
+shows that $B$ is acyclic and $\left\vert B\right\vert =\left\vert
+V\right\vert -1$. Thus, in the case $k=\left\vert V\right\vert -1$, Theorem
+\ref{thm.balgamma} is just \cite[Corollary 5.12.1]{22s}.
 
 Likewise, if $k<\left\vert V\right\vert -1$, then Theorem \ref{thm.balgamma}
 is just saying that $0=0$, since a spanning subdigraph $D\left\langle
 B\right\rangle $ with fewer than $\left\vert V\right\vert -1$ arcs cannot have
 a to-root.
 
-\item If $D=G^{\operatorname*{bidir}}$ for some (undirected) multigraph
-$G=\left(  V,E,\varphi\right)  $, and if $k=\left\vert E\right\vert
-=\left\vert A\right\vert /2$, then the $s$-convergences are just the acyclic
-orientations of $G$ with unique sink $s$ (why?). Thus, in this case, Theorem
+\item If $D=G^{\operatorname*{bidir}}$ for some undirected multigraph
+$G=\left(  V,E,\varphi\right)  $ (this means that $D$ is obtained from $G$ by
+\textquotedblleft splitting\textquotedblright\ each edge $e$ into two arcs
+$e^{\rightarrow}$ and $e^{\leftarrow}$, going in opposite directions), and if
+$k=\left\vert E\right\vert =\left\vert A\right\vert /2$, then the
+$s$-convergences $B$ are just the acyclic orientations of $G$ with unique sink
+$s$ (because the acyclicity condition forbids $B$ from containing both
+$e^{\rightarrow}$ and $e^{\leftarrow}$ for any given edge $e\in E$, but the
+size condition $\left\vert B\right\vert =k=\left\vert E\right\vert $ forces
+$B$ to contain at least one of these two arcs). Thus, in this case, Theorem
 \ref{thm.balgamma} is saying that the number of acyclic orientations of a
-given multigraph $G$ with unique sink $s$ does not depend on $s$. This is a
-recent result by Foissy \cite[Proposition 4.6]{Foissy22}.
+given multigraph $G$ with unique sink $s$ does not depend on $s$. This is part
+of a result by Greene and Zaslavsky \cite[Theorem 7.3]{GreZas83}, proved using
+hyperplane arrangement, and has recently been reproved combinatorially by
+Foissy \cite[Proposition 4.6]{Foissy22}.
 
-\item I think \cite[Proposition 3.7]{PerPha15} is Theorem \ref{thm.balgamma}
-for the maximum possible $k$ for which $\sum_{s\in V}\gamma_{k}\left(
-s\right)  \neq0$. (Check this!)
+\item Up to reversing the directions of the arcs, \cite[Proposition
+3.7]{PerPha15} is Theorem \ref{thm.balgamma} for a specific value of $k$
+(namely, the maximum possible that makes $\gamma_{k}\left(  s\right)  $ nonzero).
 \end{enumerate}
 
 \section{Proof of the theorem}
@@ -794,6 +807,12 @@ that each vertex $v$ of $D$ has $\deg^{-}v=\deg^{+}v\geq2$.
 \href{https://arxiv.org/abs/2201.11974v5}{Lo\"{\i}c Foissy, \textit{Bialgebras
 in cointeraction, the antipode and the eulerian idempotent},
 arXiv:2201.11974v5.}
+
+\bibitem[GreZas83]{GreZas83}%
+\href{https://doi.org/10.1090/S0002-9947-1983-0712251-1}{Curtis Greene,
+Thomas Zaslavsky, \textit{On the interpretation of Whitney numbers through
+arrangement of hyperplanes, zonotopes, non-Radon partitions, and orientations
+of graphs}. Trans. Amer. Math. Soc. \textbf{280}(1) (1983), pp. 97--126.}
 
 \bibitem[LeiVal24]{LeiVal24}\href{https://arxiv.org/abs/2402.09914v3}{Karla
 Leipold, Frank Vallentin, \textit{Computing the EHZ capacity is NP-hard},
