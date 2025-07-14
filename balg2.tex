@@ -537,22 +537,30 @@ from $A\left(  P,Q\right)  $, so their union $\Phi_{P,Q}\left(  B\right)  $ is
 disjoint from $A\left(  P,Q\right)  $ as well). This contradiction completes
 our proof of Lemma \ref{lem.realignment-acyc} \textbf{(b)}. \medskip
 
-\textbf{(c)} For ease of notation, let $C := A(P,Q)$ and $D := A(Q,P)$. Also, let $\Phi := \Phi_{P,Q}$, $\Psi := \Psi_{P,Q}$, $\phi := \phi_{P,Q}$ and $\psi := \psi_{P,Q}$. We have 
+\textbf{(c)} Let $A^{\complement}(P,Q) := (A(P,Q))^{\complement} = A \setminus A(P,Q)$ and $A^{\complement}(Q,P) := (A(Q,P))^{\complement} = A \setminus A(Q,P)$. 
 
-\begin{align*}
-    \Psi(\Phi(B)) &= (\Phi(B) \setminus D) \cup \phi^{-1}(\Phi(B) \cap D) \\
-    &= \Big([(B \setminus C) \cup \phi(B \cap C)] \setminus D \Big) \cup \phi^{-1}\Big([(B \setminus C) \cup \phi(B \cap C)] \cap D\Big) \\
-    &= [(B \setminus C) \setminus D] \cup [\phi(B \cap C) \setminus D] \cup \phi^{-1}\Big([(B \setminus C) \cap D] \cup [\phi(B \cap C) \cap D]\Big) \\
-    &= [\underbrace{B \setminus (C \cup D)}_{=B \cap C^c \cap D^c}] \cup [\phi(B) \cap \underbrace{\phi(C)}_{=D} \cap D^c] \cup [\phi^{-1}(\underbrace{(B \setminus C) \cap D}_{=\emptyset \text{ since }B \cap D = \emptyset})] \cup [\phi^{-1}(\phi(B \cap C) \cap D] \\
-    &= [B \cap C^c \cap D^c] \cup [\phi(B) \cap \underbrace{D \cap D^c}_{=\emptyset}] \cup [\underbrace{\phi^{-1}(\emptyset)}_{=\emptyset}] \cup [\underbrace{\phi^{-1}(\phi(B\cap C))}_{=B \cap C} \cap \underbrace{\phi^{-1}(D)}_{=C}] \\
-    &= [B \cap C^c \cap D^c] \cup [\underbrace{\phi(B) \cap \emptyset}_{=\emptyset}] \cup [B \cap C \cap C] \\
-    &= [B \cap C^c \cap D^c] \cup [B \cap C] \\
-    &= B \cap [(C^c \cap D^c) \cup C] \\
-    &= B \cap [\underbrace{(C^c \cup C)}_{=A} \cap (D^c \cup C)] \\
-    &= B \cap \underbrace{(D^c \cup C)}_{=D^c \text{ since } D \cap C = \emptyset} \\
-    &= \underbrace{B \cap D^c}_{=B \text{ since } B \cap D = \emptyset} \\
-    &= B.
-\end{align*} \end{proof}
+We have \begin{align*}
+    \Psi_{P,Q}(\Phi_{P,Q}(B)) &= (\Phi_{P,Q}(B) \setminus A(Q,P)) \cup \phi_{P,Q}^{-1}(\Phi_{P,Q}(B) \cap A(Q,P)) \\
+    &= \Big([(B \setminus A(P,Q) ) \cup \phi_{P,Q}( B \cap A(P,Q))] \setminus A(Q,P)\Big) \\ 
+    & \ \ \ \  \ \ \cup \phi^{-1}_{P,Q}\Big([(B \setminus A(P,Q)) \cup \phi_{P,Q}(B \cap A(P,Q))] \cap A(Q,P)\Big) \\
+    &= [(B \setminus A(P,Q)) \setminus A(Q,P))] \cup [\phi_{P,Q}(B \cap A(P,Q)) \setminus A(Q,P)] \\
+    & \ \ \ \ \ \ \cup \phi^{-1}_{P,Q}\Big([(B \setminus A(P,Q)) \cap A(Q,P)] \\
+    & \ \ \ \ \ \ \cup [\phi_{P,Q}(B \cap A(P,Q)) \cap A(Q,P)]\Big) \\
+    &= [\underbrace{B \setminus (A(P,Q) \cup A(Q,P))}_{=B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)}] \\
+    & \ \ \ \ \ \ \cup [\phi_{P,Q}(B) \cap \underbrace{\phi_{P,Q}(A(P,Q))}_{=A(Q,P)} \cap A^{\complement}(Q,P)] \\
+    & \ \ \ \ \ \ \cup[\phi^{-1}_{P,Q}(\underbrace{(B \setminus A(P,Q)) \cap A(Q,P)}_{=\emptyset \text{ since } B \cap A(Q,P) = \emptyset}] \\
+    & \ \ \ \ \ \ \cup [\phi^{-1}_{P,Q}(\phi_{P,Q}(B \cap A(P,Q)) \cap A(Q,P))] \\
+    &= [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup [\phi_{P,Q}(B) \cap \underbrace{A(Q,P) \cap A^{\complement}(Q,P)}_{=\emptyset}] \\
+    & \ \ \ \ \ \ \cup [\underbrace{\phi^{-1}_{P,Q}(\emptyset)}_{=\emptyset}] \cup [\underbrace{\phi^{-1}_{P,Q}(\phi_{P,Q}(B \cap A(P,Q)))}_{=B \cap A(P,Q)} \cap \underbrace{\phi^{-1}_{P,Q}(A(Q,P))}_{=A(P,Q)}] \\
+    &= [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup [\underbrace{\phi_{P,Q}(B) \cap \emptyset}_{=\emptyset}] \\
+    & \ \ \ \ \ \ \cup [B \cap A(P,Q) \cap A(P,Q)] \\
+    &= [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup [B \cap A(P,Q)] \\
+    &= B \cap [(A^{\complement}(P,Q) \cap A^{\complement}(Q,P)) \cup A(P,Q)] \\
+    &= B \cap [\underbrace{(A^{\complement}(P,Q) \cup A(P,Q))}_{=A} \cap (A^{\complement}(Q,P) \cup A(P,Q))] \\
+    &= B \cap \underbrace{(A^{\complement}(Q,P) \cup A(P,Q))}_{=A^{\complement}(Q,P) \text{ since } A(Q,P) \cap A(P,Q) = \emptyset} \\
+    &= \underbrace{B \cap A^{\complement}(Q,P)}_{=B \text{ since } B \cap A(Q,P) = \emptyset} \\
+    &= B. \qedhere
+\end{align*}\end{proof}
 
 Now, we shall prove Theorem \ref{thm.balgamma}.
 
