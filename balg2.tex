@@ -723,12 +723,11 @@ _{P,Q}\left(  \Phi_{P,Q}\left(  B\right)  \right)  \\
 \end{align*}
 so that $\left(  g\circ f\right)  \left(  B\right)  =\Psi_{P^{\prime
 },Q^{\prime}}\left(  B^{\prime}\right)  =B$. This will complete the proof of
-Claim 3.
+Claim 3. Note that $s \in Q$, for else $B \in \Gamma_{k}(t)$.
 
-So, let us first suppose $v \in Q$. Then $v$ cannot $B$-reach $t$. Since $B \in \Gamma_{k}(s,t)$, this means that $v$ can $B$-reach $s$. Suppose towards contradiction that $v \notin Q'$. Then on the  path in $B$ from $v$ to $s$, there must exist some vertex $w \in P$, for otherwise the entire path is contained in $Q$ and thus remains a path in $\Phi_{P,Q}(B)$. But if $w \in P$, then $v$ can $B$-reach $t$, a contradiction. Hence, $v \in Q'$, so $Q \subseteq Q'$.
+Let us first suppose $v \in Q$. Then $v$ cannot $B$-reach $t$. Since $B \in \Gamma_{k}(s,t)$, this means that $v$ can $B$-reach $s$. Suppose towards contradiction that $v \notin Q'$. Then on the  path in $B$ from $v$ to $s$, there must exist some vertex $w \in P$, for otherwise the entire path is contained in $Q$ and thus remains a path in $\Phi_{P,Q}(B)$. But if $w \in P$, then $v$ can $B$-reach $t$, a contradiction. Hence, $v \in Q'$, so $Q \subseteq Q'$.
 
-On the other hand, suppose $v \in P$. Then $v$ can $B$-reach $t$. Suppose towards contradiction that $v \in Q'$, i.e. that $v$ can $B'$-reach $s$. Firstly, if $v$ could $B$-reach $s$, then on the path from $v$ to $s$, there would be an arc in $A(P,Q)$. But said arc would not be in $\Phi_{P,Q}(B)$, meaning $v$ would not $B'$-reach $s$, a contradiction. On the other hand, if $v$ could not $B$-reach $s$, then there would be some arc in $A(Q,P)$ on the $B'$-path from $v$ to $s$. But since $v \in P$ and $s \in Q$, this would yield that there exists an arc in $B' \cap A(P,Q)$, a contradiction since $B' \cap A(P,Q) = \emptyset$. Hence, we see that $v \notin Q' \implies v \in P'$.
-Thus, $P \subseteq P' \implies V \setminus P' =Q' \subseteq Q = V \setminus P$. \textcolor{red}{[I don't think the $P \subseteq P'$ argument above actually works, but maybe it'll give us an idea on how to prove it...]}
+On the other hand, suppose $v \in P$. We want to show that $v \in P'$, i.e. $v$ cannot $B'$-reach $s$. Since $s \in Q$, if $v$ could $B$-reach $s$, then there would be an arc in $A(P,Q)$ along this path from $v$ to $s$. But since $B' \cap A(P,Q) = \emptyset$, such a path would no longer exist in $B'$, yielding $v \in P'$. On the other hand, if $v$ could not $B$-reach $s$, then $v$ could not $B'$-reach $s$ either. To see this, in order for $v$ to $B'$-reach $s$, there would have to be an arc in $B' \cap A(Q,P)$ along this path, since $v$ could not $B$-reach $s$ beforehand. But since $v \in P$, this path would need additional arcs in $B' \cap A(P,Q)$, which is impossible. Hence, $v \in P'$. So, $P \subseteq P' \implies V \setminus P' = Q' \subseteq Q = V \setminus P$.
 
 All together, we see that $Q = Q' \implies P = P'$. And so, $(g \circ f)(B) = B$, proving Lemma \ref{claim3}. 
 \end{proof}
