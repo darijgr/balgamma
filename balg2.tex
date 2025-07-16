@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 16, 2025 10:13:30}
+%TCIDATA{LastRevised=Wednesday, July 16, 2025 17:22:11}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -546,41 +546,41 @@ A(Q,P)$.
 
 We have
 \begin{align*}
-\Psi_{P,Q}(\Phi_{P,Q}(B))  & = (\Phi_{P,Q}(B) \setminus A(Q,P)) \cup\phi
-_{P,Q}^{-1}(\Phi_{P,Q}(B) \cap A(Q,P))\\
-& = \Big([(B \setminus A(P,Q) ) \cup\phi_{P,Q}( B \cap A(P,Q))] \setminus
+\Psi_{P,Q}(\Phi_{P,Q}(B))  &  = (\Phi_{P,Q}(B) \setminus A(Q,P)) \cup
+\phi_{P,Q}^{-1}(\Phi_{P,Q}(B) \cap A(Q,P))\\
+&  = \Big([(B \setminus A(P,Q) ) \cup\phi_{P,Q}( B \cap A(P,Q))] \setminus
 A(Q,P)\Big)\\
 &  \ \ \ \ \ \ \cup\phi^{-1}_{P,Q}\Big([(B \setminus A(P,Q)) \cup\phi_{P,Q}(B
 \cap A(P,Q))] \cap A(Q,P)\Big)\\
-& = [(B \setminus A(P,Q)) \setminus A(Q,P))] \cup[\phi_{P,Q}(B \cap A(P,Q))
+&  = [(B \setminus A(P,Q)) \setminus A(Q,P))] \cup[\phi_{P,Q}(B \cap A(P,Q))
 \setminus A(Q,P)]\\
 &  \ \ \ \ \ \ \cup\phi^{-1}_{P,Q}\Big([(B \setminus A(P,Q)) \cap A(Q,P)]\\
 &  \ \ \ \ \ \ \cup[\phi_{P,Q}(B \cap A(P,Q)) \cap A(Q,P)]\Big)\\
-& = [\underbrace{B \setminus(A(P,Q) \cup A(Q,P))}_{=B \cap A^{\complement
+&  = [\underbrace{B \setminus(A(P,Q) \cup A(Q,P))}_{=B \cap A^{\complement
 }(P,Q) \cap A^{\complement}(Q,P)}]\\
 &  \ \ \ \ \ \ \cup[\phi_{P,Q}(B) \cap\underbrace{\phi_{P,Q}(A(P,Q))}%
 _{=A(Q,P)} \cap A^{\complement}(Q,P)]\\
 &  \ \ \ \ \ \ \cup[\phi^{-1}_{P,Q}(\underbrace{(B \setminus A(P,Q)) \cap
 A(Q,P)}_{=\emptyset\text{ since } B \cap A(Q,P) = \emptyset}]\\
 &  \ \ \ \ \ \ \cup[\phi^{-1}_{P,Q}(\phi_{P,Q}(B \cap A(P,Q)) \cap A(Q,P))]\\
-& = [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup[\phi_{P,Q}(B)
-\cap\underbrace{A(Q,P) \cap A^{\complement}(Q,P)}_{=\emptyset}]\\
+&  = [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup[\phi
+_{P,Q}(B) \cap\underbrace{A(Q,P) \cap A^{\complement}(Q,P)}_{=\emptyset}]\\
 &  \ \ \ \ \ \ \cup[\underbrace{\phi^{-1}_{P,Q}(\emptyset)}_{=\emptyset}]
 \cup[\underbrace{\phi^{-1}_{P,Q}(\phi_{P,Q}(B \cap A(P,Q)))}_{=B \cap A(P,Q)}
 \cap\underbrace{\phi^{-1}_{P,Q}(A(Q,P))}_{=A(P,Q)}]\\
-& = [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup
+&  = [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup
 [\underbrace{\phi_{P,Q}(B) \cap\emptyset}_{=\emptyset}]\\
 &  \ \ \ \ \ \ \cup[B \cap A(P,Q) \cap A(P,Q)]\\
-& = [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup[B \cap
+&  = [B \cap A^{\complement}(P,Q) \cap A^{\complement}(Q,P)] \cup[B \cap
 A(P,Q)]\\
-& = B \cap[(A^{\complement}(P,Q) \cap A^{\complement}(Q,P)) \cup A(P,Q)]\\
-& = B \cap[\underbrace{(A^{\complement}(P,Q) \cup A(P,Q))}_{=A} \cap
-(A^{\complement}(Q,P) \cup A(P,Q))]\\
-& = B \cap\underbrace{(A^{\complement}(Q,P) \cup A(P,Q))}_{=A^{\complement
+&  = B \cap[(A^{\complement}(P,Q) \cap A^{\complement}(Q,P)) \cup A(P,Q)]\\
+&  = B \cap[\underbrace{(A^{\complement}(P,Q) \cup A(P,Q))}_{=A}
+\cap(A^{\complement}(Q,P) \cup A(P,Q))]\\
+&  = B \cap\underbrace{(A^{\complement}(Q,P) \cup A(P,Q))}_{=A^{\complement
 }(Q,P) \text{ since } A(Q,P) \cap A(P,Q) = \emptyset}\\
-& = \underbrace{B \cap A^{\complement}(Q,P)}_{=B \text{ since } B \cap A(Q,P)
+&  = \underbrace{B \cap A^{\complement}(Q,P)}_{=B \text{ since } B \cap A(Q,P)
 = \emptyset}\\
-& = B.
+&  = B.
 \end{align*}
 
 
@@ -651,23 +651,23 @@ Q  &  =V\setminus P.
 Then, let $f(B) := \Phi_{P,Q}(B)$.
 
 \begin{lemma}
-\label{claim1}  $\Phi_{P,Q}(B) \in\Gamma_{k}(s,t) \setminus\Gamma_{k}(s)$. So,
+\label{claim1} $\Phi_{P,Q}(B) \in\Gamma_{k}(s,t) \setminus\Gamma_{k}(s)$. So,
 the map $f$ is well-defined.
 \end{lemma}
 
 \begin{proof}
-First of all, if there was some arc $a\in B\cap A\left(   Q,P\right)  $, say
-with source $v$ and target $w$, then the vertex $w$ could  $B$-reach $t$ but
-$v$ could not; but this is absurd, since $v$ could $B$-reach  $t$ via this arc
-$a$ and the vertex $w$. Hence, there exists no such arc $a$.  In other words,
+First of all, if there was some arc $a\in B\cap A\left(  Q,P\right)  $, say
+with source $v$ and target $w$, then the vertex $w$ could $B$-reach $t$ but
+$v$ could not; but this is absurd, since $v$ could $B$-reach $t$ via this arc
+$a$ and the vertex $w$. Hence, there exists no such arc $a$. In other words,
 $B\cap A\left(  Q,P\right)  =\varnothing$. Hence, Lemma
 \ref{lem.realignment-acyc} \textbf{(a)} yields $\left\vert \Phi_{P,Q}\left(
 B\right)  \right\vert =\left\vert B\right\vert =k$ (since $B\in\Gamma
 _{k}\left(  s,t\right)  \setminus\Gamma_{k}\left(  t\right)  \subseteq
-\Gamma_{k}\left(  s,t\right)  \subseteq\mathcal{P}_{k}\left(  A\right)  $).
-In  other words, $\Phi_{P,Q}\left(  B\right)  \in\mathcal{P}_{k}\left(
-A\right)   $. Moreover, Lemma \ref{lem.realignment-acyc} \textbf{(b)} yields
-that  $\Phi_{P,Q}\left(  B\right)  $ is acyclic (since $B\in\Gamma_{k}\left(
+\Gamma_{k}\left(  s,t\right)  \subseteq\mathcal{P}_{k}\left(  A\right)  $). In
+other words, $\Phi_{P,Q}\left(  B\right)  \in\mathcal{P}_{k}\left(  A\right)
+$. Moreover, Lemma \ref{lem.realignment-acyc} \textbf{(b)} yields that
+$\Phi_{P,Q}\left(  B\right)  $ is acyclic (since $B\in\Gamma_{k}\left(
 s,t\right)  $ shows that $B$ is acyclic).
 
 Next, we shall show that $\Phi_{P,Q}\left(  B\right)  \in\Gamma_{k}\left(
@@ -708,7 +708,7 @@ Then, let $g\left(  B\right)  :=\Psi_{P^{\prime},Q^{\prime}}\left(  B\right)
 $.
 
 \begin{lemma}
-\label{claim2}  $\Psi_{P^{\prime},Q^{\prime}}(B) \in\Gamma_{k}(s,t)
+\label{claim2} $\Psi_{P^{\prime},Q^{\prime}}(B) \in\Gamma_{k}(s,t)
 \setminus\Gamma_{k}(t)$. So, the map $g$ is well-defined.
 \end{lemma}
 
@@ -726,7 +726,7 @@ P^{\prime},Q^{\prime}\right)  $, so that the situations really are comparable.)
 We shall now prove the following:
 
 \begin{lemma}
-\label{claim3}  We have $g\circ f=\operatorname*{id}$.
+\label{claim3} We have $g\circ f=\operatorname*{id}$.
 \end{lemma}
 
 \begin{proof}
@@ -802,8 +802,8 @@ We have $f\circ g=\operatorname*{id}$.
 \end{lemma}
 
 \begin{proof}
-\label{claim4}  Let $B \in\Gamma_{k}(s,t) \setminus\Gamma_{k}(s)$. The proof
-of Lemma \ref{claim4} is the same as Lemma \ref{claim3}, but with
+\label{claim4} Let $B \in\Gamma_{k}(s,t) \setminus\Gamma_{k}(s)$. The proof of
+Lemma \ref{claim4} is the same as Lemma \ref{claim3}, but with
 $s,t,f,g,P,Q,P^{\prime},Q^{\prime},\Phi_{P,Q}$ and $\Psi_{P^{\prime}%
 ,Q^{\prime}}$ renamed as $t,s,g,f,Q^{\prime},P^{\prime},Q,P,\Psi_{Q,P}$, and
 $\Phi_{Q^{\prime},P^{\prime}}$, and by envoking Lemma \ref{claim3}
@@ -968,6 +968,7 @@ As we explained above, this leads to $\gamma_{k}\left(  s\right)  =\gamma
 _{k}\left(  t\right)  $, and thus Theorem \ref{thm.balgamma} is proved.
 \end{comment}
 
+
 \section{The proof, reorganized}
 
 Here is an outline of a better(?) way to organize the above proof.
@@ -983,9 +984,9 @@ $s=t$, so we WLOG assume that $s\neq t$.
 
 For any subset $B$ of $A$, we define the subsets%
 \begin{align*}
-S\left(  B\right)    & :=\left\{  v\in V\ \mid\ v\text{ can }B\text{-reach
+S\left(  B\right)   &  :=\left\{  v\in V\ \mid\ v\text{ can }B\text{-reach
 }s\right\}  \ \ \ \ \ \ \ \ \ \ \text{and}\\
-T\left(  B\right)    & :=\left\{  v\in V\ \mid\ v\text{ can }B\text{-reach
+T\left(  B\right)   &  :=\left\{  v\in V\ \mid\ v\text{ can }B\text{-reach
 }t\right\}  .
 \end{align*}
 We call them the \emph{basins} of $s$ and $t$ with respect to $B$. Note that
@@ -995,26 +996,26 @@ Let $\mathcal{P}_{k}\left(  A\right)  $ denote the set of all $k$-element
 subsets of a set $A$ (for $k\in\mathbb{N}$). For each $k\in\mathbb{N}$, define
 the subsets
 \begin{align*}
-\Gamma_{k}\left(  s\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  s\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}s\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
-}s\text{-convergence}\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=S\left(
+}s\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
+}s\text{-convergence}\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=S\left(
 B\right)  \right\}  ;\\
-\Gamma_{k}\left(  t\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  t\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}t\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
+}t\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
 }t\text{-convergence}\right\}  ;\\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=T\left(
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=T\left(
 B\right)  \right\}  ;\\
-U_{k}:= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
+U_{k}:=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
 acyclic}\ \mid\ \text{each vertex can }B\text{-reach }s\text{ or }t\right\}
 ;\\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=S\left(
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=S\left(
 B\right)  \cup T\left(  B\right)  \right\}  ;\\
-X_{k}:= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=S\left(
+X_{k}:=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ V=S\left(
 B\right)  \sqcup T\left(  B\right)  \right\}
 \end{align*}
 (note the $\sqcup$ symbol in the definition of $X_{k}$). (The letters $U$ and
@@ -1048,26 +1049,26 @@ Each $B\in U_{k}$ satisfies $S\left(  B\right)  =P$ for some nonempty subset
 $P$ of $V$ (indeed, the set $S\left(  B\right)  $ is nonempty since it
 contains $s$). Hence, by the sum rule,%
 \begin{align*}
-\left\vert U_{k}\right\vert  & =\sum_{\substack{P,Q\subseteq V;\\P\text{ is
+\left\vert U_{k}\right\vert  &  =\sum_{\substack{P,Q\subseteq V;\\P\text{ is
 nonempty;}\\V=P\sqcup Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(
 B\right)  =P\right\}  \right\vert \\
-& =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
+&  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\left\vert \underbrace{\left\{  B\in U_{k}\ \mid\ S\left(
 B\right)  =V\right\}  }_{=\Gamma_{k}\left(  s\right)  }\right\vert \\
-& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{here, we have split off the addend}\\
 \text{for }\left(  P,Q\right)  =\left(  V,\varnothing\right)  \text{ from the
 sum}%
 \end{array}
-\right)  \\
-& =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
+\right) \\
+&  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\underbrace{\left\vert \Gamma_{k}\left(  s\right)  \right\vert
 }_{=\gamma_{k}\left(  s\right)  }\\
-& =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
+&  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\gamma_{k}\left(  s\right)  .
 \end{align*}
@@ -1127,25 +1128,23 @@ ensures that no vertex in $S\left(  B\right)  =P$ can reach $t$ any more).
 
 Perhaps best to organize this as follows: By the sum rule,%
 \begin{align*}
-& \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
+&  \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert \\
-& =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in U_{k}%
-\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
+&  =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in
+U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
 =C\right\}  \right\vert ,
 \end{align*}
 since the intersection $B\cap A\left(  P,Q\right)  $ is always a subset of
 $A\left(  P,Q\right)  $. Now, we need to show that%
-\begin{align*}
-& \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap
-A\left(  P,Q\right)  =C\right\}  \right\vert \\
-& =\left\vert X_{k-\left\vert C\right\vert }\right\vert
-\end{align*}
+\[
+\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap
+A\left(  P,Q\right)  =C\right\}  \right\vert =\left\vert X_{k-\left\vert
+C\right\vert }\right\vert
+\]
 for each $C\subseteq A\left(  P,Q\right)  $. This is done via bijection
-$B\mapsto B\setminus A\left(  P,Q\right)  $ and inverse bijection $D\mapsto
-D\cup A\left(  P,Q\right)  $. 
+$B\mapsto B\setminus A\left(  P,Q\right)  =B\setminus C$ and inverse bijection
+$D\mapsto D\cup C$.
 \end{proof}
-
-
 
 \begin{lemma}
 \label{lem.new5}Let $P$ and $Q$ be two nonempty subsets of $V$ such that
@@ -1163,22 +1162,22 @@ Analogous to Lemma \ref{lem.new4}.
 \end{proof}
 
 \begin{proof}
-[Proof of Proposition \ref{prop.new3}.] Lemma \ref{lem.new4} yields%
+[Proof of Proposition \ref{prop.new3}.]Lemma \ref{lem.new4} yields%
 \begin{align*}
 \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
-\right\vert  & =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)
+\right\vert  &  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)
 \right\vert }{m}\cdot\left\vert X_{k-m}\right\vert \\
-& =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  Q,P\right)  \right\vert }{m}%
-\cdot\left\vert X_{k-m}\right\vert \\
-& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
+&  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  Q,P\right)  \right\vert }%
+{m}\cdot\left\vert X_{k-m}\right\vert \\
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since Proposition \ref{prop.A-symmetry}}\\
 \text{yields }\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
 Q,P\right)  \right\vert
 \end{array}
-\right)  \\
-& =\left\vert \left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
+\right) \\
+&  =\left\vert \left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
 \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.new5}}\right)
 .
 \end{align*}
