@@ -1144,7 +1144,21 @@ C\right\vert }\right\vert
 for each $C\subseteq A\left(  P,Q\right)  $. This is done via bijection
 $B\mapsto B\setminus A\left(  P,Q\right)  =B\setminus C$ and inverse bijection
 $D\mapsto D\cup C$.
+
+\medskip
+\textit{Claim 1.} Let $B \in U_{k}$ such that $S(B) = P$, and take $B \cap A(P,Q) = C$. Then $B \setminus C \in X_{k-|C|}$.
+
+\medskip
+\textit{Proof.} Since $B \in U_{k}$, $V = S(B) \cup T(B)$, meaning each vertex can $B$-reach $s$ or $B$-reach $t$. Since $S(B) = P$, all vertices of $P$ can $B$-reach $s$ and no vertices of $V \setminus P = Q$ can $B$-reach $s$. Since all vertices can $B$-reach $s$ or $t$, we must have $T(B) = Q$. But then, since $V = P \sqcup Q$, we have that $V = S(B) \sqcup T(B)$. Hence, $B \in X_{k}$. Therefore, $B \setminus C \in X_{k-|C|}$.
+
+\medskip
+\textit{Claim 2.} Let $C \subseteq A(P,Q)$ and take $D \in X_{k-|C|}$. Then $D \cup C \in U_{k}$ such that $S(D \cup C) = P$ and $(D \cup C) \cap A(P,Q) = C$.
+
+\textit{Claim 3.} These maps are mutually inverse.
+
+
 \end{proof}
+
 
 \begin{lemma}
 \label{lem.new5}Let $P$ and $Q$ be two nonempty subsets of $V$ such that
