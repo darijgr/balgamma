@@ -1159,12 +1159,12 @@ Now, $\Phi$ and $\Psi$ are clearly mutually inverse, for if we let $B \in \mathc
 \begin{lemma}
 \label{lem.new5}Let $P$ and $Q$ be two nonempty subsets of $V$ such that
 $V=P\sqcup Q$. Let \begin{align*}
-    X_{k}^{Q,P} := \{B \in \mathcal{P}_{k} \text{ is acyclic} \mid S(B) = Q \text{ and } T(B) = P\}.
+    X_{k}^{P,Q} := \{B \in \mathcal{P}_{k} \text{ is acyclic} \mid S(B) = P \text{ and } T(B) = Q\}.
 \end{align*} Then,%
 \[
 \left\vert \left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
 \right\vert =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  Q,P\right)  \right\vert
-}{m}\cdot\left\vert X_{k-m}^{Q,P}\right\vert .
+}{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert .
 \]
 
 \end{lemma}
@@ -1178,9 +1178,9 @@ Analogous to Lemma \ref{lem.new4}.
 \begin{align*}
 \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert  &  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)
-\right\vert }{m}\cdot\left\vert X_{k-m}\right\vert \\
+\right\vert }{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert \\
 &  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  Q,P\right)  \right\vert }%
-{m}\cdot\left\vert X_{k-m}\right\vert \\
+{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert \\
 &  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
