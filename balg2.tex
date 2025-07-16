@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 16, 2025 10:09:38}
+%TCIDATA{LastRevised=Wednesday, July 16, 2025 10:13:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1124,6 +1124,25 @@ A\left(  P,Q\right)  $. The former is just a subset of $A\left(  P,Q\right)
 $, let's say a $k$-element one, whereas the latter belongs to $X_{k-m}$ (this
 should be explained; essentially, the loss of the $A\left(  P,Q\right)  $-arcs
 ensures that no vertex in $S\left(  B\right)  =P$ can reach $t$ any more).
+
+Perhaps best to organize this as follows: By the sum rule,%
+\begin{align*}
+& \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
+\right\vert \\
+& =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in U_{k}%
+\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
+=C\right\}  \right\vert ,
+\end{align*}
+since the intersection $B\cap A\left(  P,Q\right)  $ is always a subset of
+$A\left(  P,Q\right)  $. Now, we need to show that%
+\begin{align*}
+& \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap
+A\left(  P,Q\right)  =C\right\}  \right\vert \\
+& =\left\vert X_{k-\left\vert C\right\vert }\right\vert
+\end{align*}
+for each $C\subseteq A\left(  P,Q\right)  $. This is done via bijection
+$B\mapsto B\setminus A\left(  P,Q\right)  $ and inverse bijection $D\mapsto
+D\cup A\left(  P,Q\right)  $. 
 \end{proof}
 
 
