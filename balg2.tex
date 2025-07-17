@@ -1134,21 +1134,24 @@ U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
 =C\right\}  \right\vert ,
 \end{align*}
 since the intersection $B\cap A\left(  P,Q\right)  $ is always a subset of
-$A\left(  P,Q\right)  $. Fix $C \subseteq A(P,Q)$ and let \begin{equation*}
+$A\left(  P,Q\right)  $. Fix $C \subseteq A(P,Q)$ with $|C| \leq k$ and let \begin{equation*}
     \mathcal{U}_k = \{B \in U_{k} \mid  S(B) = P \text{ and } B \cap A(P,Q) = C\}.
 \end{equation*} We want to show that $|\mathcal{U}_k| = |X_{k-|C|}^{P,Q}|$. Define \begin{align*}
-    \Phi : \mathcal{U}_k \to X_{k-|C|}^{P,Q}, \ \ \ \Phi(B) = B \setminus C
-\end{align*} and \begin{align*}
-    \Psi : X_{k-|C|}^{P,Q} \to \mathcal{U}_{k}, \ \ \ \Psi(D) = D \cup C.
+    &\Phi : \mathcal{U}_k \to X_{k-|C|}^{P,Q}, \ \ \ \Phi(B) = B \setminus C \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{and} \\
+    &\Psi : X_{k-|C|}^{P,Q} \to \mathcal{U}_{k}, \ \ \ \Psi(D) = D \cup C.
 \end{align*}
 
-\textit{Claim 1.} $\Phi$ is well-defined.
+\textit{Claim 1.} $\Phi$ is well-defined. That is, $\Phi(B) = B \setminus C \in X_{k-|C|}^{P,Q}$ for all $B \in \mathcal{U}_{k}$.
 
-\textit{Proof.} Let $B \in \mathcal{U}_{k}$. Then $B \in U_{k}$ such that $S(B) = P$ and $B \cap A(P,Q) = C$. First, if $t \in S(B)$, then all vertices could $B$-reach $s$. So, $V = S(B) = P$, yielding $Q = \emptyset$, a contradiction. Hence, $t \in Q = V \setminus P = V \setminus S(B)$. Next, since $B \in U_{k}$, each vertex can $B$-reach $s$ or $B$-reach $t$. Since $S(B) = P$, no vertices of $Q$ can $B$-reach $s$. Hence, all vertices of $Q$ must $B$-reach $t$. This also yields $B \cap A(Q,S(B)) = B \cap A(Q,P) = \emptyset$. So, $B \setminus C \subseteq A(P,P) \cup A(Q,Q)$. Hence, all vertices of $P$ can $(B \setminus C)$-reach $s$ and cannot $(B \setminus C)$-reach $t$; and all vertices of $Q$ can $(B \setminus C)$-reach $t$ and not $(B \setminus C)$-reach $s$. So, $S(B \setminus C) = P$ and $T(B \setminus C) = Q$. Moreover, since $B$ is acyclic, so is $B \setminus C$, since removing arcs does not create cycles. Finally, since $C \subseteq B$, $|B \setminus C| = |B|-|C| = k-|C|$. All together, we have $\Phi(B) = B\setminus C \in X_{k-|C|}^{P,Q}$.
+\medskip
+\textit{Proof of Claim 1.} Let $B \in \mathcal{U}_{k}$. Then all vertices can $B$-reach $s$ or $B$-reach $t$ with $S(B) = P$ and $B \cap A(P,Q) = C$. First, suppose towards contradiction that $t \in S(B)$. Then all vertices that can $B$-reach $t$ can also $B$-reach $s$. Hence, $V = S(B) = P$. But since $P \cap Q = \emptyset$, this yields $Q = \emptyset$, a contradiction to the assumption that $Q$ is nonempty. Hence, $t \in V \setminus S(B) = V \setminus P = Q$. 
+
+Next, since $S(B) = P$, no vertices of $Q$ can $B$-reach $s$. Hence, all vertices of $Q$ must $B$-reach $t$. This also yields $B \cap A(Q,S(B)) = B \cap A(Q,P) = \emptyset$. Thus, $B \setminus C \subseteq A(P,P) \cup A(Q,Q)$. So, since $s \in S(B) = P$ and $t \in Q$, we have that all vertices of $P$ can $(B \setminus C)$-reach $s$ and cannot $(B \setminus C)$-reach $t$; and all vertices of $Q$ can $(B \setminus C)$-reach $t$ and cannot $(B \setminus C)$-reach $s$ (since no arcs in $A(P,P)$ nor $A(Q,Q)$ are being removed). So, $S(B \setminus C) = P$ and $T(B \setminus C) = Q$. Moreover, since $B$ is acyclic, so is $B \setminus C$, since removing arcs does not create cycles. Finally, since $C \subseteq B$, $|B \setminus C| = |B|-|C| = k-|C|$. All together, we have $\Phi(B) = B \setminus C \in X_{k-|C|}^{P,Q}$.
 
 \bigskip
-\textit{Claim 2.} $\Psi$ is well-defined.
+\textit{Claim 2.} $\Psi$ is well-defined. That is, $\Psi(D) = D \cup C \in \mathcal{U}_{k}$ for all $D \in X_{k-|C|}^{P,Q}$.
 
+\medskip
 \textit{Proof.} First, let us note that
 if $V_{1},V_{2},V_{3},V_{4} \in \{P,Q\}$, then $a_{i} \in A(V_{1},V_{2})$ and $a_{j} \in A(V_{3},V_{4})$ are adjacent (in the sense that they share a common vertex) only if either $V_{2} = V_{3}$ (for then the target of $a_{i}$ can be the source of $a_{j}$) or $V_{1} = V_{4}$ (for then the target of $a_{j}$ can be the source of $a_{i}$). Now, let $D \in X_{k-|C|}^{P,Q}$. Then $D$ is acyclic and $S(D) = P$, $T(D) = Q$. First, $D \cap A(P,Q) = \emptyset$, for else at least vertex in $P = S(B)$ could $D$-reach $t$, contradicting the disjointness of $P = S(D)$ and $Q = T(D)$. Similarly, $D \cap A(Q,P) = \emptyset$. Hence, $|D \cup C| = |D| + |C| = k-|C|+|C| = k$. Next, since all vertices can $D$-reach $s$ or $D$-reach $t$, adding arcs in $C$ does not change this reachability, i.e. all vertices can $(D \cup C)$-reach $s$ or $(D \cup C)$-reach $t$. So, $V = S(D \cup C) \cup T(D \cup C)$. Finally, $D \cup C$ is acyclic. To see this, since $D \cap A(Q,P) = \emptyset$, $D \cup C \subseteq A(P,P) \cup A(P,Q) \cup A(Q,Q)$. Hence, any cycle of $D \cup C$ must have all of its arcs contained in either $A(P,P)$ or $A(Q,Q)$. But since $C \cap (A(P,P) \cup A(Q,Q)) = \emptyset$, this implies that such a cycle must have all of its arcs in $D$, which is acyclic. Hence, we see that $D \cup C$ is acyclic. And so, $D \cup C \in U_{k}$. Next, $(D \cup C) \cap A(P,Q) = \underbrace{(D \cap A(P,Q))}_{=\emptyset} \cup \underbrace{(C \cap A(P,Q))}_{=C} = C$. Finally, since $(D \cup C) \cap A(Q,P) = \emptyset$, so vertex in $Q$ can $(D \cup C)$-reach $s$. Also, any vertex in $P$ can $(D \cup C)$-reach $s$, since all vertices in $P$ can $D$-reach $s$. So, $S(D \cup C) = P$. All together, we have $\Psi(D) = D \cup C \in \mathcal{U}_{k}$.
 
