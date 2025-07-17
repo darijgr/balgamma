@@ -423,6 +423,14 @@ we obtain $\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
 Q,P\right)  \right\vert $. Thus, Proposition \ref{prop.A-symmetry} is proved.
 \end{proof}
 
+\begin{remark}
+\label{adjarcs}
+    If $V_{1},V_{2},V_{3},V_{4} \in \{P,Q\}$, then two arcs $a_{i} \in A(V_{1},V_{2})$ and $a_{j} \in A(V_{3},V_{4})$ can only be adjacent (in the sense that they share a common vertex) if either \begin{enumerate}
+        \item $V_{2} = V_{3}$, for then the target of $a_{i}$ can be the source of $a_{j}$, \ \ \ \ or
+        \item $V_{1} = V_{4}$, for then the source of $a_{i}$ can be the target of $a_{j}$.
+    \end{enumerate}
+\end{remark}
+
 Whenever $P$ and $Q$ are two subsets of $V$ satisfying $P\sqcup Q=V$, we
 \textbf{fix a bijection} $\phi_{P,Q}:A\left(  P,Q\right)  \rightarrow A\left(
 Q,P\right)  $. (Such a bijection exists because Proposition
@@ -1143,21 +1151,32 @@ $A\left(  P,Q\right)  $. Fix $C \subseteq A(P,Q)$ with $|C| \leq k$ and let \beg
 
 \textit{Claim 1.} $\Phi$ is well-defined. That is, $\Phi(B) = B \setminus C \in X_{k-|C|}^{P,Q}$ for all $B \in \mathcal{U}_{k}$.
 
-\medskip
-\textit{Proof of Claim 1.} Let $B \in \mathcal{U}_{k}$. Then all vertices can $B$-reach $s$ or $B$-reach $t$ with $S(B) = P$ and $B \cap A(P,Q) = C$. First, suppose towards contradiction that $t \in S(B)$. Then all vertices that can $B$-reach $t$ can also $B$-reach $s$. Hence, $V = S(B) = P$. But since $P \cap Q = \emptyset$, this yields $Q = \emptyset$, a contradiction to the assumption that $Q$ is nonempty. Hence, $t \in V \setminus S(B) = V \setminus P = Q$. 
+\smallskip
+\textit{Proof of Claim 1.} Let $B \in \mathcal{U}_{k}$. Then $B$ is acyclic and all vertices can $B$-reach $s$ or $B$-reach $t$ with $S(B) = P$ and $B \cap A(P,Q) = C$. First, suppose towards contradiction that $t \in S(B)$. Then all vertices that can $B$-reach $t$ can also $B$-reach $s$. Hence, $V = S(B) = P$. But since $P \cap Q = \emptyset$, this yields $Q = \emptyset$, a contradiction to the assumption that $Q$ is nonempty. Hence, $t \in V \setminus S(B) = V \setminus P = Q$. 
 
 Next, since $S(B) = P$, no vertices of $Q$ can $B$-reach $s$. Hence, all vertices of $Q$ must $B$-reach $t$. This also yields $B \cap A(Q,S(B)) = B \cap A(Q,P) = \emptyset$. Thus, $B \setminus C \subseteq A(P,P) \cup A(Q,Q)$. So, since $s \in S(B) = P$ and $t \in Q$, we have that all vertices of $P$ can $(B \setminus C)$-reach $s$ and cannot $(B \setminus C)$-reach $t$; and all vertices of $Q$ can $(B \setminus C)$-reach $t$ and cannot $(B \setminus C)$-reach $s$ (since no arcs in $A(P,P)$ nor $A(Q,Q)$ are being removed). So, $S(B \setminus C) = P$ and $T(B \setminus C) = Q$. Moreover, since $B$ is acyclic, so is $B \setminus C$, since removing arcs does not create cycles. Finally, since $C \subseteq B$, $|B \setminus C| = |B|-|C| = k-|C|$. All together, we have $\Phi(B) = B \setminus C \in X_{k-|C|}^{P,Q}$.
 
 \bigskip
 \textit{Claim 2.} $\Psi$ is well-defined. That is, $\Psi(D) = D \cup C \in \mathcal{U}_{k}$ for all $D \in X_{k-|C|}^{P,Q}$.
 
-\medskip
-\textit{Proof.} First, let us note that
-if $V_{1},V_{2},V_{3},V_{4} \in \{P,Q\}$, then $a_{i} \in A(V_{1},V_{2})$ and $a_{j} \in A(V_{3},V_{4})$ are adjacent (in the sense that they share a common vertex) only if either $V_{2} = V_{3}$ (for then the target of $a_{i}$ can be the source of $a_{j}$) or $V_{1} = V_{4}$ (for then the target of $a_{j}$ can be the source of $a_{i}$). Now, let $D \in X_{k-|C|}^{P,Q}$. Then $D$ is acyclic and $S(D) = P$, $T(D) = Q$. First, $D \cap A(P,Q) = \emptyset$, for else at least vertex in $P = S(B)$ could $D$-reach $t$, contradicting the disjointness of $P = S(D)$ and $Q = T(D)$. Similarly, $D \cap A(Q,P) = \emptyset$. Hence, $|D \cup C| = |D| + |C| = k-|C|+|C| = k$. Next, since all vertices can $D$-reach $s$ or $D$-reach $t$, adding arcs in $C$ does not change this reachability, i.e. all vertices can $(D \cup C)$-reach $s$ or $(D \cup C)$-reach $t$. So, $V = S(D \cup C) \cup T(D \cup C)$. Finally, $D \cup C$ is acyclic. To see this, since $D \cap A(Q,P) = \emptyset$, $D \cup C \subseteq A(P,P) \cup A(P,Q) \cup A(Q,Q)$. Hence, any cycle of $D \cup C$ must have all of its arcs contained in either $A(P,P)$ or $A(Q,Q)$. But since $C \cap (A(P,P) \cup A(Q,Q)) = \emptyset$, this implies that such a cycle must have all of its arcs in $D$, which is acyclic. Hence, we see that $D \cup C$ is acyclic. And so, $D \cup C \in U_{k}$. Next, $(D \cup C) \cap A(P,Q) = \underbrace{(D \cap A(P,Q))}_{=\emptyset} \cup \underbrace{(C \cap A(P,Q))}_{=C} = C$. Finally, since $(D \cup C) \cap A(Q,P) = \emptyset$, so vertex in $Q$ can $(D \cup C)$-reach $s$. Also, any vertex in $P$ can $(D \cup C)$-reach $s$, since all vertices in $P$ can $D$-reach $s$. So, $S(D \cup C) = P$. All together, we have $\Psi(D) = D \cup C \in \mathcal{U}_{k}$.
+\smallskip
+\textit{Proof of Claim 2.} Let $D \in X_{k-|C|}^{P,Q}$. Then $D$ is acyclic with $S(D) = P$ and $T(D) = Q$.  First, $D \cap A(P,Q) = \emptyset$, or else at least one vertex in $P = S(D)$ could $D$-reach $t$, contradicting the disjointness of $P = S(D)$ and $Q = T(D)$. Similarly, $D \cap A(Q,P) = \emptyset$. Hence, $|D \cup C| = |D| + |C| = k-|C|+|C| = k$. Next, since all vertices can $D$-reach $s$ or $D$-reach $t$, adding arcs in $C$ does not change this reachability. Hence, all vertices can $(D \cup C)$-reach $s$ or $(D \cup C)$-reach $t$. So, $V = S(D \cup C) \cup T(D \cup C)$. Finally, let us show that $D \cup C$ is acyclic. Since $D \cap A(Q,P) = \emptyset$, we have $D \cup C \subseteq A(P,P) \cup A(P,Q) \cup A(Q,Q)$. Hence, by Remark \ref{adjarcs}, if a cycle in $D \cup C$ had an arc in $A(P,Q)$, then there would be no arc in $(D \cup C) \cap A(Q,P)$ to ``close" the cycle. So, any such cycle must have its arcs either all contained in $A(P,P)$ or all contained in $A(Q,Q)$. But since $C \cap (A(P,P) \cup A(Q,Q)) = \emptyset$, such a cycle must have all of its arcs in $D$, which is acyclic. Hence, we see that $D \cup C$ is acyclic. And so, $D \cup C \in U_{k}$.
+
+Next, we have \begin{equation*}
+    (D \cup C) \cap A(P,Q) = \underbrace{(D \cap A(P,Q))}_{=\emptyset} \cup \underbrace{(C \cap A(P,Q))}_{=C} = C.
+\end{equation*} Finally, since $(D \cup C) \cap A(Q,P) = \emptyset$, no vertex in $Q$ can $(D \cup C)$-reach $s$. Also, any vertex in $P$ can $(D \cup C)$-reach $s$, since all vertices in $P$ can $D$-reach $s$ and we are only adding arcs with $C$. Hence, $S(D\cup C)= P$. All together, this yields $\Psi(D) = D \cup C \in \mathcal{U}_{k}$.
 
 \bigskip
-Now, $\Phi$ and $\Psi$ are clearly mutually inverse, for if we let $B \in \mathcal{U}_{k}$ and $D \in X_{k-|C|}$, then $\Psi(\Phi(B)) = \Psi(B \setminus C) = (B \setminus C) \cup C = B$ and $\Phi(\Psi(D)) = \Phi(D \cup C) = (D \cup C) \setminus C = D$. Hence, there exists a bijection between $\mathcal{U}_{k}$ and $X_{k-|C|}^{P,Q}$, yielding $|\mathcal{U}_{k}| = |X_{k-|C|}^{P,Q}|$ for all $C \subseteq A(P,Q)$. \end{proof}
+\textit{Claim 3.} $\Phi$ and $\Psi$ are mutually inverse.
 
+\smallskip
+\textit{Proof of Claim 3.} We have \begin{align*}
+    \Psi(\Phi(B)) &= \Psi(B \setminus C) = (B \setminus C) \cup C = B \ \ \ \ \ \  \forall B \in \mathcal{U}_{k} \ \ \ \ \ \ \ \ \ \ \ \text{and} \\
+    \Phi(\Psi(D)) &= \Phi(D \cup C) = (D \cup C) \setminus C = D \ \ \ \ \forall D \in X_{k-|C|}^{P,Q}.
+\end{align*}
+
+\bigskip
+Together, Claims 1, 2, and 3 yield a bijection between $\mathcal{U}_{k}$ and $X_{k-|C|}^{P,Q}$. And so, $|\mathcal{U}_{k}| = |X_{k-|C|}^{P,Q}|$. Since $C \subseteq A(P,Q)$, $|C| \leq k$, was arbitrary, Lemma \ref{lem.new4} is proven.
 
 \begin{lemma}
 \label{lem.new5}Let $P$ and $Q$ be two nonempty subsets of $V$ such that
