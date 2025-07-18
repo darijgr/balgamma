@@ -1316,6 +1316,14 @@ no outgoing arcs) of the subdigraph $D\left\langle B\right\rangle $.
 \end{proposition}
 
 \begin{proof}
+$\Longrightarrow$: Assume that $B$ is an $s$-convergence. Thus, $s$ is a to-root of $D \left\langle B \right\rangle$. Suppose towards contradiction that there exists an arc $a$ of $D \left\langle B \right\rangle$ with source $s$. If the target of $a$ is $s$, then we have a loop, and hence a (directed) cycle, in $D \left\langle B \right\rangle$ from $s$ to $s$, a contradiction. On the other hand, suppose the target of $a$ is some vertex $v \neq s$. Since $s$ is a to-root of $D \left\langle B \right\rangle$, there exists a path from $v$ to $s$. Hence, such a path, together with $a$, creates a directed cycle in $D \left\langle B \right\rangle$, a contradiction. So, we see that $s$ is a sink of $D \left\langle B \right\rangle$. Furthermore, no vertex $v \neq s$ can also be a sink of $D \left\langle B \right\rangle$, for $D \left\langle B \right\rangle $ must have a path from $v$ to $s$ (because $s$ is a to-root of $D \left\langle B \right\rangle$). So, we conclude that $s$ is the only sink of $D \left\langle B \right\rangle$.
+
+\medskip
+$\Longleftarrow$: Assume that $s$ is the only sink of $D \left\langle B \right\rangle$. Starting at any vertex $v$ and traversing along arcs in $B$, we will get stuck at a sink, since the acyclicity of $B$ prevents us from revisiting vertices. Moreover, since $s$ is the only sink of $D \left\langle B \right\rangle$, we will get stuck at $s$. Hence, there exists a $B$-path from $v$ to $s$ (indeed, it is a path, since we do not revisit vertices). Since $v$ was arbitrary, we have that $s$ is a to-root of $D \left\langle B \right\rangle$. So, $B$ is an $s$-convergence.
+\end{proof}
+
+\begin{comment}
+\begin{proof}
 $\Longrightarrow$: Assume that $B$ is an $s$-convergence. Thus, $s$ is a to-root of $D\left\langle B\right\rangle $.
 
 If there was an arc of $D\left\langle B\right\rangle $ with source $s$, then we could extend this arc to a cycle... and so $B$ would not be acyclic... So $s$ is a sink of $D\left\langle B\right\rangle $.
@@ -1327,6 +1335,7 @@ $\Longleftarrow$: Assume that $s$ is the only sink of $D\left\langle B\right\ran
 
 Then, we can start at any vertex $v$ and keep wandering along arcs in $B$, we eventually get stuck at a sink (since the acyclicity of $B$ prevents us from revisiting a vertex), and this sink must be $s$ (since $s$ is the only sink of $D\left\langle B\right\rangle $). Thus, there is a path from $v$ to $s$ (it is a path, since we could not revisit any vertices). So ...
 \end{proof}
+\end{comment}
 
 \begin{noncompile}
 In proving Conjecture \ref{conj.karla}, we can WLOG assume that $D$ is weakly
