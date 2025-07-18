@@ -1098,7 +1098,7 @@ B\right)  \cup T\left(  B\right)  \right\} .
 % (note the $\sqcup$ symbol in the definition of $X_{k}$). (The letters $U$ and
 % $X$ signify \textquotedblleft Union\textquotedblright\ and \textquotedblleft
 % eXclusive union\textquotedblright.)
-(The letter $U$ signifies \textquotedblleft Union\textquotedblright\.)
+(The letter $U$ signifies \textquotedblleft Union\textquotedblright.)
 
 % (Note: $U_{k}$ is what I previously called $\Gamma_{k}\left(  s,t\right)  $.
 % But $s$ and $t$ are fixed, so we don't need to keep them in the notation.)
@@ -1185,7 +1185,7 @@ sides, Namely:
 \begin{lemma}
 \label{lem.new4}Let $P$ and $Q$ be two nonempty subsets of $V$ such that
 $V=P\sqcup Q$.
-For each $i \in \mathbb{N}$, set
+For each $i \in \mathbb{Z}$, set
 \begin{align*}
     X_i^{P,Q} := \left\{B \in \mathcal{P}_i(A) \text{ is acyclic} \mid S(B) = P \text{ and } T(B) = Q\right\}.
 \end{align*}
@@ -1214,10 +1214,18 @@ $A\left(  P,Q\right)  $ of size $\leq \left|B\right| = k$.
 
 Fix $C \subseteq A(P,Q)$ with $|C| \leq k$ and let \begin{equation*}
     Y_k = \{B \in U_{k} \mid  S(B) = P \text{ and } B \cap A(P,Q) = C\}.
-\end{equation*} We want to show that $|Y_k| = |X_{k-|C|}^{P,Q}|$. Define \begin{align*}
-    &\Phi : Y_k \to X_{k-|C|}^{P,Q}, \ \ \ \Phi(B) = B \setminus C \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{and} \\
-    &\Psi : X_{k-|C|}^{P,Q} \to Y_{k}, \ \ \ \Psi(D) = D \cup C.
-\end{align*}
+\end{equation*}
+We want to show that $|Y_k| = |X_{k-|C|}^{P,Q}|$. Define the maps
+ \begin{align*}
+    \Phi : Y_k &\to X_{k-|C|}^{P,Q}, \\
+	\Phi(B) &= B \setminus C
+ \end{align*}
+ and
+ \begin{align*}
+    \Psi : X_{k-|C|}^{P,Q} &\to Y_{k}, \\
+	\Psi(D) &= D \cup C.
+ \end{align*}
+Let us first show that these maps are well-defined:
 
 \textit{Claim 1.} $\Phi$ is well-defined. That is, $B \setminus C \in X_{k-|C|}^{P,Q}$ for all $B \in Y_{k}$.
 
@@ -1258,7 +1266,7 @@ Together, Claims 1, 2, and 3 yield a bijection between $Y_{k}$ and $X_{k-|C|}^{P
 \label{lem.new5}
 Let $P$ and $Q$ be two nonempty subsets of $V$ such that
 $V=P\sqcup Q$.
-For each $i \in \mathbb{N}$, set
+For each $i \in \mathbb{Z}$, set
 \begin{align*}
     X_i^{P,Q} := \left\{B \in \mathcal{P}_i(A) \text{ is acyclic} \mid S(B) = P \text{ and } T(B) = Q\right\}.
 \end{align*}
