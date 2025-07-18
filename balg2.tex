@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 18, 2025 20:00:36}
+%TCIDATA{LastRevised=Friday, July 18, 2025 20:22:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -352,8 +352,15 @@ namely, for the maximum possible that makes $\gamma_{k}\left(  s\right)  $ nonze
 
 We note that when $D$ is weakly connected, then this maximum $k$ is also the
 maximum size of an acyclic subset of $A$ (not just of an $s$-convergence).
-This is a consequence of \cite[Theorem 3.4]{PerPha15}, and connects the
-problem to the \emph{maximum acyclic subdigraph problem}, which is known to be NP-complete.
+This is a consequence of \cite[Theorem 3.4]{PerPha15}, and shows that finding
+this maximum $k$ is equivalent to the \emph{maximum acyclic subdigraph
+problem} for Eulerian (= weakly connected balanced) digraphs, which is known
+to be NP-hard by \cite[Theorem 3.10]{PerPha15}. In the terminology of
+algorithmic combinatorics, this problem is often stated in terms of the
+complement of the acyclic subset; this complement is known as a \emph{feedback
+arc set}. In these terms, our $\gamma_{k}\left(  s\right)  $ counts the
+feedback arc sets of size $\left\vert A\right\vert -k$; this counting problem
+is \#P-complete \cite[Theorem 5]{Perrot19}.
 
 TODO: see if something from
 https://en.wikipedia.org/wiki/Feedback\_arc\_set\#Equivalences is relevant to us.
@@ -978,9 +985,46 @@ sides are equal as well. In other words, $\gamma_{k}\left(  s\right)
 =\gamma_{k}\left(  t\right)  $. This completes the proof of Theorem
 \ref{thm.balgamma}.
 
-\section{Further remarks on $s$-convergences}
+\section{Further remarks}
 
-We note the following alternative characterization of $s$-convergences:
+\hspace{\parindent}
+\textbf{1.} One might wonder whether our proof of Theorem \ref{thm.balgamma}
+is, or can be made, bijective. In the given form, it is not, as it uses
+subtraction twice: once in proving Proposition \ref{prop.A-symmetry} and once
+again in the \textquotedblleft subtractive flip\textquotedblright\ that is
+involved in Lemma \ref{lem.new1} (and Lemma \ref{lem.new2}). Both of these
+instances of subtraction can be made bijective using the Garsia--Milne
+involution principle \cite[\S 4.6]{StaWhi86}.
+
+In the case of Lemma \ref{lem.new1}, only the simplest case of the involution
+principle is needed: Our above proof gives a bijection $\phi:U_{k}%
+\setminus\Gamma_{k}\left(  s\right)  \rightarrow U_{k}\setminus\Gamma
+_{k}\left(  t\right)  $, and we need to construct a bijection $\psi:\Gamma
+_{k}\left(  s\right)  \rightarrow\Gamma_{k}\left(  t\right)  $ from it. The
+involution principle tells us that this $\psi$ acts on a given element
+$B\in\Gamma_{k}\left(  s\right)  $ by repeatedly applying $\phi^{-1}$ to it
+until it no longer belongs to $U_{k}\setminus\Gamma_{k}\left(  t\right)  $
+(which means that it belongs to $\Gamma_{k}\left(  t\right)  $). It is not
+hard to see that this does not require more than $\left\vert V\right\vert $
+many iterations, since $\left\vert T\left(  B\right)  \right\vert $ increases
+with each application of $\phi^{-1}$. (TODO: check this?)
+
+In the case of Proposition \ref{prop.A-symmetry}, however, we can also give a
+direct bijective proof: By the directed Euler--Hierholzer theorem, each weak
+component of the balanced digraph $D$ has a Eulerian circuit. Pick such a
+circuit for each weak component of $D$. Note that on each of these circuits,
+arcs from $A\left(  P,Q\right)  $ and arcs from $A\left(  Q,P\right)  $
+alternate (if we remove the arcs from $A\left(  P,P\right)  $ and $A\left(
+Q,Q\right)  $). Thus, we can define a bijection $A\left(  P,Q\right)
+\rightarrow A\left(  Q,P\right)  $ that sends each arc $a\in A\left(
+P,Q\right)  $ to the next arc $b\in A\left(  Q,P\right)  $ following it on the
+chosen Eulerian circuit. At a second thought, this does not even require
+Eulerian circuits; it suffices to pick any decomposition of $A$ into
+(arc-disjoint) circuits.
+
+\bigskip
+
+\textbf{2.} We note the following alternative characterization of $s$-convergences:
 
 \begin{proposition}
 Let $B$ be an acyclic subset of $A$. Let $s \in V$. Then, $B$ is an
@@ -1046,6 +1090,15 @@ arXiv:2402.09914v3.}
 Arc Set Problem and NP-Hardness of Minimum Recurrent Configuration Problem of
 Chip-Firing Game on Directed Graphs}, Annals of Combinatorics \textbf{19}
 (2015), pages 373--396.
+
+\bibitem[Perrot19]{Perrot19}%
+\href{https://arxiv.org/abs/1909.03339v2}{K\'{e}vin Perrot, \textit{On the
+complexity of counting feedback arc sets}, Chicago Journal of Theoretical
+Computer Science 2022, Article 01, pages 1--8, arXiv:1909.03339v2.}
+
+\bibitem[StaWhi86]{StaWhi86}%
+\href{https://doi.org/10.1007/978-1-4612-4968-9}{Dennis Stanton, Dennis White,
+\textit{Constructive Combinatorics}, Springer 1986.}
 \end{thebibliography}
 
 
