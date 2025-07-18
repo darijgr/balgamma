@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 18, 2025 19:25:35}
+%TCIDATA{LastRevised=Friday, July 18, 2025 19:59:36}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -180,9 +180,9 @@ walk from $v$ to $s$).
 
 From now on, we \textbf{fix a balanced digraph} $D = (V,A,\psi)$. If $B$ is
 any subset of $A$, then $D \left\langle B \right\rangle $ will denote the
-induced subdigraph $\left( V,B,\psi\mid_{B}\right) $. A subset $B$ of $A$ will
-be called \emph{acyclic} if the subdigraph $D \left\langle B \right\rangle $
-has no (directed) cycles.
+induced subdigraph $\left(  V,B,\psi\mid_{B}\right)  $. A subset $B$ of $A$
+will be called \emph{acyclic} if the subdigraph $D \left\langle B
+\right\rangle $ has no (directed) cycles.
 
 Given a vertex $s$ of $D$, we define an \emph{$s$-convergence} to be an
 acyclic subset $B$ of $A$ such that $s$ is a to-root of the subdigraph $D
@@ -347,19 +347,15 @@ Foissy \cite[Proposition 4.6]{Foissy22}.
 
 \item Up to reversing the directions of the arcs, \cite[Proposition
 3.7]{PerPha15} is Theorem \ref{thm.balgamma} for a specific value of $k$ --
-namely, for the maximum possible that makes $\gamma_{k}\left(  s\right)  $
-nonzero. This is related(?) to the maximum acyclic subdigraph problem, which
-is known to be NP-complete.
+namely, for the maximum possible that makes $\gamma_{k}\left(  s\right)  $ nonzero.
 
-TODO: I want to say that the maximum $k$ for which $\gamma_{k}\left(
-s\right)  \neq0$ is also the maximum $k$ for which $A$ has an acyclic
-$k$-element subset, at least when $D$ is strongly/weakly connected. In other
-words, I claim that in a strongly/weakly connected balanced digraph $D$, an
-acyclic subset of $A$ does not \textquotedblleft gain any
-size\textquotedblright\ from having no to-root. Is this so? Probably proved in
-\cite{PerPha15}. If so, worth mentioning, since this connects us to an
-NP-complete problem with a long history
-https://en.wikipedia.org/wiki/Feedback\_arc\_set\#Equivalences .
+We note that when $D$ is weakly connected, then this maximum $k$ is also the
+maximum size of an acyclic subset of $A$ (not just of an $s$-convergence).
+This is a consequence of \cite[Theorem 3.4]{PerPha15}, and connects the
+problem to the \emph{maximum acyclic subdigraph problem}, which is known to be NP-complete.
+
+TODO: see if something from
+https://en.wikipedia.org/wiki/Feedback\_arc\_set\#Equivalences is relevant to us.
 \end{enumerate}
 
 \section{The proof}
@@ -468,24 +464,24 @@ Let $\mathcal{P}_{k}\left(  A\right)  $ denote the set of all $k$-element
 subsets of a set $A$ (for $k\in\mathbb{Z}$). For each $k\in\mathbb{N}$, define
 the subsets
 \begin{align*}
-\Gamma_{k}\left(  s\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  s\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}s\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
-}s\text{-convergence}\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
+}s\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is an
+}s\text{-convergence}\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
 \ \mid\ V=S\left(  B\right)  \right\}  ;\\
-\Gamma_{k}\left(  t\right)  := &  \ \left\{  B\in\mathcal{P}_{k}\left(
+\Gamma_{k}\left(  t\right)  :=  &  \ \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic}\ \mid\ \text{each vertex can }B\text{-reach
-}t\right\}  \\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
+}t\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \ \mid\ B\text{ is a
 }t\text{-convergence}\right\}  ;\\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
 \ \mid\ V=T\left(  B\right)  \right\}  ;\\
-U_{k}:= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
+U_{k}:=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
 acyclic}\ \mid\ \text{each vertex can }B\text{-reach }s\text{ or }t\right\}
 ;\\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
 \ \mid\ V=S\left(  B\right)  \cup T\left(  B\right)  \right\}
 \end{align*}
 of $\mathcal{P}_{k}\left(  A\right)  $. (The letter $U$ signifies
@@ -612,7 +608,7 @@ By the sum rule,
 \right\vert \nonumber\\
 &  =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in
 U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
-=C\right\}  \right\vert ,\label{pf.lem.new4.sum}%
+=C\right\}  \right\vert , \label{pf.lem.new4.sum}%
 \end{align}
 since the intersection $B\cap A\left(  P,Q\right)  $ is always a subset of
 $A\left(  P,Q\right)  $.
@@ -625,13 +621,13 @@ A\left(  P,Q\right)  =C\right\}  .
 We want to show that $\left\vert Y_{k}\right\vert =\left\vert X_{k-|C|}%
 ^{P,Q}\right\vert $. Define the maps
 \begin{align*}
-\Phi:Y_{k} &  \rightarrow X_{k-|C|}^{P,Q},\\
-\Phi(B) &  =B\setminus C
+\Phi:Y_{k}  &  \rightarrow X_{k-|C|}^{P,Q},\\
+\Phi(B)  &  =B\setminus C
 \end{align*}
 and
 \begin{align*}
-\Psi:X_{k-|C|}^{P,Q} &  \rightarrow Y_{k},\\
-\Psi(E) &  =E\cup C.
+\Psi:X_{k-|C|}^{P,Q}  &  \rightarrow Y_{k},\\
+\Psi(E)  &  =E\cup C.
 \end{align*}
 Let us first show that these maps are well-defined:
 
@@ -641,8 +637,8 @@ X_{k-|C|}^{P,Q}$ for all $B\in Y_{k}$.
 \end{statement}
 
 \begin{proof}
-[Proof of Claim 1.] Let $B\in Y_{k}$. Then $B$ is an acyclic $k$-element
-subset of $A$, and each vertex can $B$-reach $s$ or $B$-reach $t$, and we have
+[Proof of Claim 1.]Let $B\in Y_{k}$. Then $B$ is an acyclic $k$-element subset
+of $A$, and each vertex can $B$-reach $s$ or $B$-reach $t$, and we have
 $S(B)=P$ and $B\cap A(P,Q)=C$.
 
 We must show that $B\setminus C\in X_{k-|C|}^{P,Q}$. In other words, we must
@@ -759,9 +755,9 @@ $E\in X_{k-|C|}^{P,Q}$.
 \end{statement}
 
 \begin{proof}
-[Proof of Claim 2.] Let $E\in X_{k-|C|}^{P,Q}$. Then $E$ is an acyclic
-$\left(  k-\left\vert C\right\vert \right)  $-element subset of $A$
-satisfying  $S\left(  E\right)  =P$ and $T\left(  E\right)  =Q$.
+[Proof of Claim 2.]Let $E\in X_{k-|C|}^{P,Q}$. Then $E$ is an acyclic $\left(
+k-\left\vert C\right\vert \right)  $-element subset of $A$ satisfying
+$S\left(  E\right)  =P$ and $T\left(  E\right)  =Q$.
 
 We must show that $E\cup C\in Y_{k}$. In other words, we must show that $E\cup
 C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and $\left(  E\cup C\right)
@@ -786,7 +782,7 @@ Note that $C$ is a subset of $A\left(  P,Q\right)  $, and thus we have
 $E\cap\underbrace{C}_{\subseteq A\left(  P,Q\right)  }\subseteq E\cap A\left(
 P,Q\right)  =\varnothing$. Hence,
 \begin{equation}
-E\cap C=\varnothing,\label{pf.lem.new4.c2.pf.empty}%
+E\cap C=\varnothing, \label{pf.lem.new4.c2.pf.empty}%
 \end{equation}
 so that%
 \[
@@ -850,8 +846,8 @@ $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $ is acycl
 It remains to show that $\left(  E\cup C\right)  \cap A\left(  P,Q\right)
 =C$. But this follows from%
 \begin{align*}
-& \left(  E\cup C\right)  \cap A\left(  P,Q\right)  \\
-& =\underbrace{\left(  E\cap A\left(  P,Q\right)  \right)  }_{=\varnothing
+&  \left(  E\cup C\right)  \cap A\left(  P,Q\right) \\
+&  =\underbrace{\left(  E\cap A\left(  P,Q\right)  \right)  }_{=\varnothing
 }\cup\underbrace{\left(  C\cap A\left(  P,Q\right)  \right)  }%
 _{\substack{=C\\\text{(since }C\subseteq A\left(  P,Q\right)  \text{)}%
 }}=\varnothing\cup C=C.
@@ -868,7 +864,7 @@ yields $E\cup C\in Y_{k}$.
 \end{statement}
 
 \begin{proof}
-[Proof of Claim 3.] For each $B\in Y_{k}$, we have $B\cap A\left(  P,Q\right)
+[Proof of Claim 3.]For each $B\in Y_{k}$, we have $B\cap A\left(  P,Q\right)
 =C$ and therefore $C=B\cap A\left(  P,Q\right)  \subseteq B$. Thus, for each
 $B\in Y_{k}$, we have%
 \[
@@ -906,31 +902,31 @@ We have proved this equality for each subset $C$ of $A\left(  P,Q\right)  $.
 Summing it over all such subsets, we obtain%
 \begin{align*}
 \sum_{C\subseteq A\left(  P,Q\right)  }\left\vert X_{k-|C|}^{P,Q}\right\vert
-& =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in U_{k}%
-\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
+&  =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in
+U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
 =C\right\}  \right\vert \\
-& =\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
+&  =\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.new4.sum}%
 )}\right)  .
 \end{align*}
 Thus,%
 \begin{align*}
-& \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
+&  \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert \\
-& =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert X_{k-|C|}^{P,Q}%
+&  =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert X_{k-|C|}^{P,Q}%
 \right\vert =\sum_{m\in\mathbb{N}}\ \ \sum_{\substack{C\subseteq A\left(
 P,Q\right)  ;\\\left\vert C\right\vert =m}}\underbrace{\left\vert
 X_{k-|C|}^{P,Q}\right\vert }_{\substack{=\left\vert X_{k-m}^{P,Q}\right\vert
 \\\text{(since }\left\vert C\right\vert =m\text{)}}}\\
-& =\sum_{m\in\mathbb{N}}\ \ \underbrace{\sum_{\substack{C\subseteq A\left(
+&  =\sum_{m\in\mathbb{N}}\ \ \underbrace{\sum_{\substack{C\subseteq A\left(
 P,Q\right)  ;\\\left\vert C\right\vert =m}}\left\vert X_{k-m}^{P,Q}\right\vert
 }_{\substack{=\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }{m}%
 \cdot\left\vert X_{k-m}^{P,Q}\right\vert \\\text{(since this sum has }%
 \dbinom{\left\vert A\left(  P,Q\right)  \right\vert }{m}\\\text{many equal
 addends)}}}=\sum_{m\in\mathbb{N}}\dbinom{\left\vert A\left(  P,Q\right)
 \right\vert }{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert \\
-& =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }{m}%
-\cdot\left\vert X_{k-m}^{P,Q}\right\vert
+&  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }%
+{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert
 \end{align*}
 (here, we have restricted the sum to $m\leq k$, because each $m>k$ satisfies
 $\left\vert X_{k-m}^{P,Q}\right\vert =0$). This proves Lemma \ref{lem.new4}.
@@ -967,7 +963,7 @@ and $t$ and also the roles of $P$ and $Q$.)
 \text{yields }\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
 Q,P\right)  \right\vert
 \end{array}
-\right)  \\
+\right) \\
 &  =\left\vert \left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
 \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.new5}}\right)
 .
