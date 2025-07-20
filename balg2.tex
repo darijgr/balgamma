@@ -634,7 +634,7 @@ We want to show that $\left\vert Y_{k}\right\vert =\left\vert X_{k-|C|}%
 \end{align*}
 and
 \begin{align*}
-\Psi:X_{k-|C|}^{P,Q}  &  \rightarrow Y_{k},\\
+\Psi:X_{k-|C|}^{P,Q}  &\rightarrow Y_{k},\\
 \Psi(E)  &  =E\cup C.
 \end{align*}
 Let us first show that these maps are well-defined:
@@ -762,8 +762,8 @@ U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
 \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{pf.lem.new4.sum}%
 )}\right)  .
 \end{align*}
-Thus,%
-\begin{align*}
+
+Thus, \begin{align*}
 &  \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert \\
 &  =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert X_{k-|C|}^{P,Q}%
@@ -771,14 +771,18 @@ Thus,%
 P,Q\right)  ;\\\left\vert C\right\vert =m}}\underbrace{\left\vert
 X_{k-|C|}^{P,Q}\right\vert }_{\substack{=\left\vert X_{k-m}^{P,Q}\right\vert
 \\\text{(since }\left\vert C\right\vert =m\text{)}}}\\
-&  =\sum_{m\in\mathbb{N}}\ \ \underbrace{\sum_{\substack{C\subseteq A\left(
-P,Q\right)  ;\\\left\vert C\right\vert =m}}\left\vert X_{k-m}^{P,Q}\right\vert
-}_{\substack{=\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }{m}%
-\cdot\left\vert X_{k-m}^{P,Q}\right\vert \\\text{(since this sum has }%
-\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }{m}\\\text{many equal
-addends)}}}=\sum_{m\in\mathbb{N}}\dbinom{\left\vert A\left(  P,Q\right)
-\right\vert }{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert \\
-&  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }%
+&= \sum_{m\in\mathbb{N}}\ \ 
+\underbrace{
+  \sum_{\substack{C\subseteq A(P,Q) \\ |C| = m}} |X_{k-m}^{P,Q}|
+}_{
+  \substack{
+    ={\scriptstyle \binom{|A(P,Q)|}{m}} \cdot |X_{k-m}^{P,Q}| \\
+    \text{(since this sum has } \\
+    {\scriptstyle \binom{|A(P,Q)|}{m}} \text{ many equal addends)}
+  }
+} \\
+&= \sum_{m\in\mathbb{N}}\dbinom{\left\vert A\left(  P,Q\right)
+\right\vert }{m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert  =\sum_{m=0}^{k}\dbinom{\left\vert A\left(  P,Q\right)  \right\vert }%
 {m}\cdot\left\vert X_{k-m}^{P,Q}\right\vert
 \end{align*}
 (here, we have restricted the sum to $m\leq k$, because each $m>k$ satisfies
