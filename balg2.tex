@@ -688,9 +688,10 @@ $E\in X_{k-|C|}^{P,Q}$.
 
     An analogous argument shows that $E \cap A(Q,P) = \emptyset$. Note that the sets $A(P,Q)$ and $A(Q,P)$ are disjoint, since the source of an arc cannot belong to both $P$ and $Q$ at the same time (since $P \sqcup Q = V$).
 
-    Note also that $C$ is a subset of $A(P,Q)$, and thus we have \begin{equation*}
+    Note also that $C$ is a subset of $A(P,Q)$, and thus we have \begin{equation}
+    \label{pf.lem.new4.c2.pf.empty}
         E \cap \underbrace{C}_{\subseteq A(P,Q)} \subseteq A \cap A(P,Q) = \emptyset.
-    \end{equation*} Hence, $E \cap C = \emptyset$, so that $|E \cup C| = |E|+|C| = k$ (since $|E| = k-|C|$). Therefore, $E \cup C \in \mathcal{P}_{k}(A)$.
+    \end{equation} Hence, $E \cap C = \emptyset$, so that $|E \cup C| = |E|+|C| = k$ (since $|E| = k-|C|$). Therefore, $E \cup C \in \mathcal{P}_{k}(A)$.
 
     Next, let us show that $E \cup C$ is acyclic. Indeed, assume the contrary. Then, the digraph $D \left\langle E \cup C \right\rangle$ has a cycle $\textbf{c}$. Since $E$ itself is acyclic, this cycle $\textbf{c}$ must use at least one arc from $C$. Since $C \subseteq A(P,Q)$, this arc must have source in $P$ and target in $Q$. Thus, the cycle $\textbf{c}$ contains both a vertex in $P$ and a vertex in $Q$. Consequently, it must cross from $Q$ to $P$ at some point; in other words, the cycle $\textbf{c}$ must contain an arc $a \in A(Q,P)$. But such an arc cannot belong to $E$ (since $E \cap A(P,Q) = \emptyset$), nor can such an arc belong to $C$ either (since $C$ is a subset of $A(P,Q)$, which is disjoint from $A(Q,P)$). Hence, such an arc cannot belong to $E \cup C$, a contradiction since it is an arc of $\textbf{c}$, which is a cycle of $D \left\langle E \cup C \right\rangle$. This contradiction shows that our assumption was wrong, so $E \cup C$ is indeed acyclic.
 
