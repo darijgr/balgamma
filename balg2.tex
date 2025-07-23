@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 23, 2025 19:20:23}
+%TCIDATA{LastRevised=Wednesday, July 23, 2025 20:32:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -308,8 +308,8 @@ $v\in\left\{  3,4\right\}  $.
 
 Theorem \ref{thm.balgamma} was inspired by a talk of Karla Leipold (NORCOM
 2025), which made the first author aware of \cite[Lemma 4.1]{LeiVal24}. While
-no enumerative questions were discussed in said talk, a scent of bijection was
-noticeable. The present note is the result of following this scent.
+no enumerative questions were discussed in said talk, a scent of identities
+was noticeable. The present note is the result of following this scent.
 
 Some particular cases of Theorem \ref{thm.balgamma} are known:
 
@@ -357,12 +357,13 @@ maximum size of an acyclic subset of $A$ (not just of an $s$-convergence).
 This is a consequence of \cite[Theorem 3.4]{PerPha15}. It thus follows that
 finding this maximum $k$ is equivalent to the \emph{maximum acyclic subdigraph
 problem} for Eulerian (= weakly connected balanced) digraphs, which is known
-to be NP-hard by \cite[Theorem 3.10]{PerPha15}. In the terminology of
-algorithmic combinatorics, this problem is often stated in terms of the
-complement of the acyclic subset; this complement is known as a \emph{feedback
-arc set}. In these terms, our $\gamma_{k}\left(  s\right)  $ counts the
-feedback arc sets of size $\left\vert A\right\vert -k$; this counting problem
-is \#P-complete \cite[Theorem 5]{Perrot19}.
+to be NP-hard by \cite[Theorem 3.10]{PerPha15} (see also \cite[\S 3.7.1 and
+Lemma 4.4.3]{BanGut18}). In the terminology of algorithmic combinatorics, this
+problem is often stated in terms of the complement of the acyclic subset; this
+complement is known as a \emph{feedback arc set}. In these terms, our
+$\gamma_{k}\left(  s\right)  $ counts the feedback arc sets of size
+$\left\vert A\right\vert -k$; this counting problem is \#P-complete
+\cite[Theorem 5]{Perrot19}.
 \end{enumerate}
 
 \begin{noncompile}
@@ -533,9 +534,9 @@ $E$. Therefore, the arcs of $\mathbf{p}$ that come after $c$ form a path of
 the digraph $D\left\langle E\right\rangle $. This path starts at $q$ (the
 target of $c$) and ends at $s$. Hence, we have shown that $D\left\langle
 E\right\rangle $ has a path from $q$ to $s$. In other words, $q$ can $E$-reach
-$s$, meaning $q\in S\left(  E\right)  $. Thus, $q\in S\left(
-E\right)  =P$, so that $q\notin Q$ (since $P$ is disjoint from $Q$). This
-contradicts $q\in Q$.
+$s$, meaning that $q\in S\left(  E\right)  $. Thus, $q\in S\left(  E\right)
+=P$, so that $q\notin Q$ (since $P$ is disjoint from $Q$). This contradicts
+$q\in Q$.
 
 This contradiction shows that our assumption was false. Hence, all arcs of
 $\mathbf{p}$ belong to $E$. Therefore, $\mathbf{p}$ is a path of
@@ -576,10 +577,10 @@ $\Longleftarrow$\textquotedblright\ direction of Lemma \ref{lem.new0}.
 For any $i\in\mathbb{Z}$, we let $\mathcal{P}_{i}\left(  A\right)  $ denote
 the set of all $i$-element subsets of $A$. Define the subset%
 \begin{align*}
-U_{k}:= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
+U_{k}:=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
 acyclic}\ \mid\ \text{each vertex can }B\text{-reach }s\text{ or }t\right\}
 ;\\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
 \ \mid\ S\left(  B\right)  \cup T\left(  B\right)  =V\right\}
 \end{align*}
 of $\mathcal{P}_{k}\left(  A\right)  $. (\textquotedblleft
@@ -620,7 +621,7 @@ of size $k$ that satisfy $S\left(  B\right)  =V$. In other words,%
 \begin{equation}
 \gamma_{k}\left(  s\right)  =\left\vert \left\{  B\in\mathcal{P}_{k}\left(
 A\right)  \text{ is acyclic }\mid\ S\left(  B\right)  =V\right\}  \right\vert
-.\label{pf.lem.new-1.2}%
+. \label{pf.lem.new-1.2}%
 \end{equation}
 But any acyclic $B\in\mathcal{P}_{k}\left(  A\right)  $ satisfying $S\left(
 B\right)  =V$ must also satisfy $B\in U_{k}$ (since $\underbrace{S\left(
@@ -672,7 +673,7 @@ B\right)  =V\right\}  \right\vert }_{\substack{=\gamma_{k}\left(  s\right)
 \text{for }\left(  P,Q\right)  =\left(  V,\varnothing\right)  \text{ from the
 sum}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\gamma_{k}\left(  s\right)  .
@@ -780,10 +781,10 @@ X_{k-|C|}^{P,Q}$ for all $B\in Y_{k}$.
 \end{statement}
 
 \begin{proof}
-[Proof of Claim 1.]Let $B\in Y_{k}$. Then $B\in U_{k}$, $S\left(  B\right)
-=P$, and $B\cap A\left(  P,Q\right)  =C$. From $B\in U_{k}$, we see that $B$ is
-an acyclic $k$-element subset of $A$, and that each vertex can $B$-reach $s$
-or $B$-reach $t$. In particular, $\left\vert B\right\vert =k$.
+[Proof of Claim 1.]Let $B\in Y_{k}$. Then $B\in U_{k}$ as well as $S\left(
+B\right)  =P$ and $B\cap A\left(  P,Q\right)  =C$. From $B\in U_{k}$, we see
+that $B$ is an acyclic $k$-element subset of $A$, and that each vertex can
+$B$-reach $s$ or $B$-reach $t$. In particular, $\left\vert B\right\vert =k$.
 
 We must show that $B\setminus C\in X_{k-|C|}^{P,Q}$. In other words, we must
 show that $B\setminus C$ is an acyclic set in $\mathcal{P}_{k-\left\vert
@@ -869,15 +870,16 @@ satisfy $w\notin P$ (since otherwise, $w$ would belong to $P=S\left(
 B\right)  $ and thus could $B$-reach $s$, so that the digraph $D\left\langle
 B\right\rangle $ would have a path $\mathbf{w}$ from $w$ to $s$; but then the
 vertex $q$ could also $B$-reach $s$ by first following the path $\mathbf{q}$
-from $q$ until $w$ and then following the path $\mathbf{w}$ from $w$ to $s$, contradicting the fact that $q$ cannot $B$-reach $s$). Therefore,
-no arc of the path $\mathbf{q}$ can belong to $A\left(  P,Q\right)  $ (since
-the source of such an arc would be a vertex of $\mathbf{q}$ and belong to
-$P$). Thus, all arcs of $\mathbf{q}$ belong to $B\setminus A\left(
-P,Q\right)  =B\setminus C$. Hence, $\mathbf{q}$ is a path of $D\left\langle
-B\setminus C\right\rangle $. This shows that $q$ can $B\setminus C$-reach $t$
-(via the path $\mathbf{q}$). In other words, $q\in T\left(  B\setminus
-C\right)  $. Since we have proved this for each $q\in Q$, we thus conclude
-that $Q\subseteq T\left(  B\setminus C\right)  $.
+from $q$ until $w$ and then following the path $\mathbf{w}$ from $w$ to $s$,
+contradicting the fact that $q$ cannot $B$-reach $s$). Therefore, no arc of
+the path $\mathbf{q}$ can belong to $A\left(  P,Q\right)  $ (since the source
+of such an arc would be a vertex of $\mathbf{q}$ and belong to $P$). Thus, all
+arcs of $\mathbf{q}$ belong to $B\setminus A\left(  P,Q\right)  =B\setminus
+C$. Hence, $\mathbf{q}$ is a path of $D\left\langle B\setminus C\right\rangle
+$. This shows that $q$ can $B\setminus C$-reach $t$ (via the path $\mathbf{q}%
+$). In other words, $q\in T\left(  B\setminus C\right)  $. Since we have
+proved this for each $q\in Q$, we thus conclude that $Q\subseteq T\left(
+B\setminus C\right)  $.
 
 Combining this with $T\left(  B\setminus C\right)  \subseteq Q$, we obtain
 $T\left(  B\setminus C\right)  =Q$.
@@ -900,8 +902,8 @@ k-\left\vert C\right\vert \right)  $-element subset of $A$ satisfying
 $S\left(  E\right)  =P$ and $T\left(  E\right)  =Q$.
 
 We must show that $E\cup C\in Y_{k}$. In other words, we must show that $E\cup
-C\in U_{k}$, $S\left(  E\cup C\right)  =P$, and $\left(  E\cup C\right)
-\cap A\left(  P,Q\right)  =C$.
+C\in U_{k}$, $S\left(  E\cup C\right)  =P$, and $\left(  E\cup C\right)  \cap
+A\left(  P,Q\right)  =C$.
 
 From $S\left(  E\right)  =P$, we immediately obtain $S\left(  E\cup C\right)
 =P$ by Lemma \ref{lem.new0}.
@@ -979,8 +981,8 @@ belongs to $P$) or can $E\cup C$-reach $t$ (if it belongs to $Q$). This shows
 that $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $
 is acyclic).
 
-So, we have shown that $E\cup C\in U_{k}$, and $S\left(  E\cup C\right)  =P$, and
-$\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
+So, we have shown that $E\cup C\in U_{k}$, and $S\left(  E\cup C\right)  =P$,
+and $\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
 yields $E\cup C\in Y_{k}$. Claim 2 is thus proved.
 \end{proof}
 
@@ -1086,7 +1088,7 @@ and $t$ and also the roles of $P$ and $Q$.)
 \text{yields }\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
 Q,P\right)  \right\vert
 \end{array}
-\right)  \\
+\right) \\
 &  =\left\vert \left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
 \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.new5}}\right)
 .
@@ -1096,13 +1098,13 @@ This proves Proposition \ref{prop.new3}.
 
 Now, Lemma \ref{lem.new1} yields%
 \begin{align*}
-\gamma_{k}\left(  s\right)    & =\left\vert U_{k}\right\vert -\sum
+\gamma_{k}\left(  s\right)   &  =\left\vert U_{k}\right\vert -\sum
 _{\substack{P,Q\subseteq V\text{ nonempty;}\\V=P\sqcup Q}%
 }\underbrace{\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)
 =P\right\}  \right\vert }_{\substack{=\left\vert \left\{  B\in U_{k}%
 \ \mid\ T\left(  B\right)  =Q\right\}  \right\vert \\\text{(by Proposition
 \ref{prop.new3})}}}\\
-& =\left\vert U_{k}\right\vert -\sum_{\substack{P,Q\subseteq V\text{
+&  =\left\vert U_{k}\right\vert -\sum_{\substack{P,Q\subseteq V\text{
 nonempty;}\\V=P\sqcup Q}}\left\vert \left\{  B\in U_{k}\ \mid\ T\left(
 B\right)  =Q\right\}  \right\vert =\gamma_{k}\left(  t\right)
 \end{align*}
@@ -1204,6 +1206,10 @@ there is no need for the digraph $D$ to be balanced.
 
 \bibitem[22s]{22s}\href{https://arxiv.org/abs/2308.04512v3}{Darij Grinberg,
 \textit{An introduction to graph theory}, arXiv:2308.04512v3.}
+
+\bibitem[BanGut18]{BanGut18}%
+\href{https://doi.org/10.1007/978-3-319-71840-8}{J\o rgen Bang-Jensen, Gregory
+Gutin (eds.), \textit{Classes of Directed Graphs}, Springer 2018.}
 
 \bibitem[Foissy22]{Foissy22}%
 \href{https://arxiv.org/abs/2201.11974v5}{Lo\"{\i}c Foissy, \textit{Bialgebras
