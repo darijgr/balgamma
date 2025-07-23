@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 23, 2025 10:38:42}
+%TCIDATA{LastRevised=Wednesday, July 23, 2025 17:48:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -127,12 +127,12 @@
 {5pt plus 1pt minus 1pt}
 {}
 \theoremstyle{plainsl}
-\ihead{An equality for balanced digraphs DG, version \today}
+\ihead{An equality for balanced digraphs, version \today}
 \ohead{page \thepage}
 \cfoot{}
 \begin{document}
 
-\title{An equality for balanced digraphs (DG version)}
+\title{An equality for balanced digraphs}
 \author{Darij Grinberg\thanks{Drexel University, Philadelphia, PA.
 \href{mailto:darijgrinberg@gmail.com}{\texttt{darijgrinberg@gmail.com}}},
 Benjamin Liber\thanks{Drexel University, Philadelphia, PA.
@@ -639,13 +639,13 @@ P,Q\right)  \right\vert }{m}=0$ whenever $m>\left\vert A\left(  P,Q\right)
 \right\vert $.}
 
 \begin{proof}
-[Proof of Lemma \ref{lem.new4}.] By the sum rule,
+[Proof of Lemma \ref{lem.new4}.]By the sum rule,
 \begin{align}
 &  \left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert \nonumber\\
 &  =\sum_{C\subseteq A\left(  P,Q\right)  }\left\vert \left\{  B\in
 U_{k}\ \mid\ S\left(  B\right)  =P\text{ and }B\cap A\left(  P,Q\right)
-=C\right\}  \right\vert ,\label{pf.lem.new4.sum}%
+=C\right\}  \right\vert , \label{pf.lem.new4.sum}%
 \end{align}
 since the intersection $B\cap A\left(  P,Q\right)  $ is always a subset of
 $A\left(  P,Q\right)  $.
@@ -658,13 +658,13 @@ A\left(  P,Q\right)  =C\right\}  .
 We want to show that $\left\vert Y_{k}\right\vert =\left\vert X_{k-|C|}%
 ^{P,Q}\right\vert $. Define
 \begin{align*}
-\text{the map }\Phi:Y_{k} &  \rightarrow X_{k-|C|}^{P,Q}\\
-\text{by }\Phi(B) &  =B\setminus C
+\text{the map }\Phi:Y_{k}  &  \rightarrow X_{k-|C|}^{P,Q}\\
+\text{by }\Phi(B)  &  =B\setminus C
 \end{align*}
 and
 \begin{align*}
-\text{the map }\Psi:X_{k-|C|}^{P,Q} &  \rightarrow Y_{k}\\
-\text{by }\Psi(E) &  =E\cup C.
+\text{the map }\Psi:X_{k-|C|}^{P,Q}  &  \rightarrow Y_{k}\\
+\text{by }\Psi(E)  &  =E\cup C.
 \end{align*}
 Let us first show that these maps are well-defined:
 
@@ -768,23 +768,23 @@ $q\notin P=S\left(  B\right)  $. In other words, $q$ cannot $B$-reach $s$.
 Hence, $q$ can $B$-reach $t$ (since each vertex can $B$-reach $s$ or $B$-reach
 $t$). That is, the digraph $D\left\langle B\right\rangle $ has a path
 $\mathbf{q}$ from $q$ to $t$. Any vertex $w$ of this path $\mathbf{q}$ must
-itself belong to $Q$ (since otherwise, $w$ would belong to $P=S\left(
+satisfy $w\notin P$ (since otherwise, $w$ would belong to $P=S\left(
 B\right)  $ and thus could $B$-reach $s$, so that the digraph $D\left\langle
 B\right\rangle $ would have a path $\mathbf{w}$ from $w$ to $s$; but then the
 vertex $q$ could also $B$-reach $s$ by first following the path $\mathbf{q}$
 from $q$ until $w$ and then following the path $\mathbf{w}$ from $w$ to $s$;
 and this would contradict the fact that $q$ cannot $B$-reach $s$). Therefore,
 no arc of the path $\mathbf{q}$ can belong to $A\left(  P,Q\right)  $ (since
-the source of such an arc would lie in $P$ rather than $Q$). Thus, all arcs of
-$\mathbf{q}$ belong to $B\setminus A\left(  P,Q\right)  =B\setminus C$. Hence,
-$\mathbf{q}$ is a path of $D\left\langle B\setminus C\right\rangle $. This
-shows that $q$ can $B\setminus C$-reach $t$ (via the path $\mathbf{q}$). In
-other words, $q\in T\left(  B\setminus C\right)  $. Since we have proved this
-for each $q\in Q$, we thus conclude that $Q\subseteq T\left(  B\setminus
-C\right)  $.
+the source of such an arc would be a vertex of $\mathbf{q}$ and belong to
+$P$). Thus, all arcs of $\mathbf{q}$ belong to $B\setminus A\left(
+P,Q\right)  =B\setminus C$. Hence, $\mathbf{q}$ is a path of $D\left\langle
+B\setminus C\right\rangle $. This shows that $q$ can $B\setminus C$-reach $t$
+(via the path $\mathbf{q}$). In other words, $q\in T\left(  B\setminus
+C\right)  $. Since we have proved this for each $q\in Q$, we thus conclude
+that $Q\subseteq T\left(  B\setminus C\right)  $.
 
 Combining this with $T\left(  B\setminus C\right)  \subseteq Q$, we obtain
-$Q=T\left(  B\setminus C\right)  $.
+$T\left(  B\setminus C\right)  =Q$.
 
 Altogether, we now have shown that $B\setminus C$ is an acyclic set in
 $\mathcal{P}_{k-\left\vert C\right\vert }\left(  A\right)  $ and satisfies
@@ -818,9 +818,12 @@ contradiction shows that our assumption was false. Hence, $E\cap A\left(
 P,Q\right)  =\varnothing$ is proved.
 
 An analogous argument shows that $E\cap A\left(  Q,P\right)  =\varnothing$.
-Note that the sets $A\left(  P,Q\right)  $ and $A\left(  Q,P\right)  $ are
-disjoint, since the source of an arc cannot belong to $P$ and $Q$ at the same
-time (because of $P\sqcup Q=V$).
+
+Note that the set $A\left(  P,Q\right)  $ is disjoint from $A\left(
+Q,P\right)  $, since the source of an arc cannot belong to $P$ and $Q$ at the
+same time (because of $P\sqcup Q=V$). Hence, the set $C$ (being a subset of
+$A\left(  P,Q\right)  $) must be disjoint from $A\left(  Q,P\right)  $ as
+well. In other words, $C\cap A\left(  Q,P\right)  =\varnothing$.
 
 Note that $C$ is a subset of $A\left(  P,Q\right)  $, and thus we have
 \[
@@ -839,6 +842,22 @@ E\right\vert =k-\left\vert C\right\vert \right)  .
 \]
 Therefore, $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $.
 
+Furthermore,%
+\[
+\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =\underbrace{\left(  E\cap
+A\left(  P,Q\right)  \right)  }_{=\varnothing}\cup\underbrace{\left(  C\cap
+A\left(  P,Q\right)  \right)  }_{\substack{=C\\\text{(since }C\subseteq
+A\left(  P,Q\right)  \text{)}}}=\varnothing\cup C=C
+\]
+and%
+\[
+\left(  E\cup C\right)  \cap A\left(  Q,P\right)  =\underbrace{\left(  E\cap
+A\left(  Q,P\right)  \right)  }_{=\varnothing}\cup\underbrace{\left(  C\cap
+A\left(  Q,P\right)  \right)  }_{=\varnothing}=\varnothing\cup\varnothing
+=\varnothing.
+\]
+
+
 Next, we show that $E\cup C$ is acyclic. Indeed, assume the contrary. Then,
 the digraph $D\left\langle E\cup C\right\rangle $ has a cycle $\mathbf{c}$.
 Since $E$ itself is acyclic, this cycle $\mathbf{c}$ must use at least one arc
@@ -846,13 +865,11 @@ from $C$. This arc must have source in $P$ and target in $Q$ (because it
 belongs to $C\subseteq A\left(  P,Q\right)  $). Thus, the cycle $\mathbf{c}$
 contains both a vertex in $P$ and a vertex in $Q$. Consequently, it must cross
 from $Q$ to $P$ at some point. In other words, it contains an arc $a\in
-A\left(  Q,P\right)  $. But such an arc $a$ cannot belong to $E$ (since $E\cap
-A\left(  Q,P\right)  =\varnothing$), and cannot belong to $C$ either (since
-$C$ is a subset of $A\left(  P,Q\right)  $, which is disjoint from $A\left(
-Q,P\right)  $). Hence, it cannot belong to $E\cup C$. This is a contradiction,
-since it is an arc of $\mathbf{c}$, which is a cycle of $D\left\langle E\cup
-C\right\rangle $. This contradiction shows that our assumption was wrong, so
-$E\cup C$ is indeed acyclic.
+A\left(  Q,P\right)  $. But such an arc $a$ cannot belong to $E\cup C$ (since
+$\left(  E\cup C\right)  \cap A\left(  Q,P\right)  =\varnothing$). This is a
+contradiction, since it is an arc of $\mathbf{c}$, which is a cycle of
+$D\left\langle E\cup C\right\rangle $. This contradiction shows that our
+assumption was wrong, so $E\cup C$ is indeed acyclic.
 
 Next, from $E\subseteq E\cup C$, we obtain $S\left(  E\right)  \subseteq
 S\left(  E\cup C\right)  $, whence $P=S\left(  E\right)  \subseteq S\left(
@@ -889,16 +906,6 @@ thus can $E\cup C$-reach $t$ as well (since $E\subseteq E\cup C$). Since each
 vertex in $V$ belongs to either $P$ or $Q$, we thus conclude that each vertex
 in $V$ can $E\cup C$-reach $s$ or can $E\cup C$-reach $t$. This shows that
 $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $ is acyclic).
-
-It remains to show that $\left(  E\cup C\right)  \cap A\left(  P,Q\right)
-=C$. But this follows from%
-\[
-\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =\underbrace{\left(  E\cap
-A\left(  P,Q\right)  \right)  }_{=\varnothing}\cup\underbrace{\left(  C\cap
-A\left(  P,Q\right)  \right)  }_{\substack{=C\\\text{(since }C\subseteq
-A\left(  P,Q\right)  \text{)}}}=\varnothing\cup C=C.
-\]
-
 
 So we have shown that $E\cup C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and
 $\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
@@ -1006,7 +1013,7 @@ and $t$ and also the roles of $P$ and $Q$.)
 \text{yields }\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
 Q,P\right)  \right\vert
 \end{array}
-\right)  \\
+\right) \\
 &  =\left\vert \left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
 \right\vert \ \ \ \ \ \ \ \ \ \ \left(  \text{by Lemma \ref{lem.new5}}\right)
 .
