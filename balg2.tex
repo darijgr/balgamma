@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 23, 2025 17:48:21}
+%TCIDATA{LastRevised=Wednesday, July 23, 2025 18:23:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -471,8 +471,7 @@ digraph $D\left\langle B\right\rangle $ has a path from $v$ to $w$ (or,
 equivalently, a walk from $v$ to $w$).
 
 Fix two vertices $s,t\in V$ and an integer $k\in\mathbb{N}$. We want to show
-that $\gamma_{k}\left(  s\right)  =\gamma_{k}\left(  t\right)  $. This is
-clear if $s=t$, so we may assume without loss of generality that $s\neq t$.
+that $\gamma_{k}\left(  s\right)  =\gamma_{k}\left(  t\right)  $.
 
 For any subset $B$ of $A$, we define the subsets%
 \begin{align*}
@@ -484,6 +483,95 @@ T\left(  B\right)   &  :=\left\{  v\in V\ \mid\ v\text{ can }B\text{-reach
 We call them the \emph{attraction basins} of $s$ and $t$ with respect to $B$.
 Note that $s\in S\left(  B\right)  $ and $t\in T\left(  B\right)  $ always hold.
 
+The following property of attraction basins will be useful to our later arguments:
+
+\begin{lemma}
+\label{lem.new0}Let $P$ and $Q$ be two subsets of $V$ such that $V=P\sqcup Q$.
+Let $E$ be a subset of $A$. Let $C$ be a subset of $A\left(  P,Q\right)  $.
+Then, $S\left(  E\right)  =P$ if and only if $S\left(  E\cup C\right)  =P$.
+\end{lemma}
+
+\begin{proof}
+First, we observe that if $B_{1}$ and $B_{2}$ are two subsets of $A$
+satisfying $B_{1}\subseteq B_{2}$, then any path of $D\left\langle
+B_{1}\right\rangle $ is a path of $D\left\langle B_{2}\right\rangle $, and
+thus we have $S\left(  B_{1}\right)  \subseteq S\left(  B_{2}\right)  $.
+Hence, $S\left(  E\right)  \subseteq S\left(  E\cup C\right)  $ (since
+$E\subseteq E\cup C$).
+
+Note furthermore that $P$ is disjoint from $Q$ (since $V=P\sqcup Q$).
+
+We must prove the equivalence $\left(  S\left(  E\right)  =P\right)
+\ \Longleftrightarrow\ \left(  S\left(  E\cup C\right)  =P\right)  $. We shall
+verify the $\Longrightarrow$ and $\Longleftarrow$ directions separately: \medskip
+
+$\Longrightarrow:$ Assume that $S\left(  E\right)  =P$. We must show that
+$S\left(  E\cup C\right)  =P$.
+
+By assumption, we have $P=S\left(  E\right)  \subseteq S\left(  E\cup
+C\right)  $. It remains to prove the converse inclusion.
+
+Let $v\in S\left(  E\cup C\right)  $. Thus, $v$ can $E\cup C$-reach $s$. In
+other words, the digraph $D\left\langle E\cup C\right\rangle $ has a path
+$\mathbf{p}$ from $v$ to $s$. Consider this path $\mathbf{p}$.
+
+We claim that all arcs of $\mathbf{p}$ belong to $E$. Indeed, let us assume
+the contrary. Then, at least one of the arcs of $\mathbf{p}$ does not belong
+to $E$. Let $c$ be the \textbf{last} arc of $\mathbf{p}$ that does not belong
+to $E$, and let $q$ be the target of this arc $c$.
+
+The arc $c$ belongs to $E\cup C$ (since it is part of the path $\mathbf{p}$,
+which is a path of $D\left\langle E\cup C\right\rangle $). Since it does not
+belong to $E$, it must thus belong to $C$. Thus, $c\in C\subseteq A\left(
+P,Q\right)  $, so that the target of $c$ belongs to $Q$. In other words, $q\in
+Q$ (since $q$ is the target of $c$).
+
+However, $c$ is the \textbf{last} arc of $\mathbf{p}$ that does not belong to
+$E$. Thus, all the arcs of $\mathbf{p}$ that come after $c$ must belong to
+$E$. Therefore, the arcs of $\mathbf{p}$ that come after $c$ form a path of
+the digraph $D\left\langle E\right\rangle $. This path starts at $q$ (the
+target of $c$) and ends at $s$. Hence, we have shown that $D\left\langle
+E\right\rangle $ has a path from $q$ to $s$. In other words, $q$ can $E$-reach
+$s$. In other words, $q\in S\left(  E\right)  $. Thus, $q\in S\left(
+E\right)  =P$, so that $q\notin Q$ (since $P$ is disjoint from $Q$). This
+contradicts $q\in Q$.
+
+This contradiction shows that our assumption was false. Hence, all arcs of
+$\mathbf{p}$ belong to $E$. Therefore, $\mathbf{p}$ is a path of
+$D\left\langle E\right\rangle $. Hence, $v$ can $E$-reach $s$ (by the path
+$\mathbf{p}$). That is, $v\in S\left(  E\right)  =P$.
+
+Since we have proved this for each $v\in S\left(  E\cup C\right)  $, we thus
+conclude that $S\left(  E\cup C\right)  \subseteq P$. Combining this with
+$P\subseteq S\left(  E\cup C\right)  $, we obtain $S\left(  E\cup C\right)
+=P$. This proves the \textquotedblleft$\Longrightarrow$\textquotedblright%
+\ direction of Lemma \ref{lem.new0}. \medskip
+
+$\Longleftarrow:$ Assume that $S\left(  E\cup C\right)  =P$. We must show that
+$S\left(  E\right)  =P$.
+
+We have $S\left(  E\right)  \subseteq S\left(  E\cup C\right)  =P$ (by
+assumption). It remains to prove the converse inclusion.
+
+Let $p\in P$. Then, $p\in P=S\left(  E\cup C\right)  $ (by assumption). Hence,
+$p$ can $E\cup C$-reach $s$. That is, the digraph $D\left\langle E\cup
+C\right\rangle $ has a path $\mathbf{p}$ from $p$ to $s$. Any vertex $v$ of
+this path $\mathbf{p}$ must itself belong to $S\left(  E\cup C\right)  $
+(since it can $E\cup C$-reach $s$ by walking along $\mathbf{p}$ from $v$ to
+$s$), so it cannot belong to $Q$ (since $S\left(  E\cup C\right)  =P$ is
+disjoint from $Q$). Therefore, no arc of this path $\mathbf{p}$ can belong to
+$A\left(  P,Q\right)  $ (since this would require its target to belong to
+$Q$). Thus, all arcs of this path $\mathbf{p}$ belong to $\left(  E\cup
+C\right)  \setminus\underbrace{A\left(  P,Q\right)  }_{\supseteq C}%
+\subseteq\left(  E\cup C\right)  \setminus C\subseteq E$. Hence, $\mathbf{p}$
+is a path of $D\left\langle E\right\rangle $. Consequently, the vertex $p$ can
+$E$-reach $s$ (via the path $\mathbf{p}$). In other words, $p\in S\left(
+E\right)  $. Since we have proved this for each $p\in P$, we conclude that
+$P\subseteq S\left(  E\right)  $. Therefore, $S\left(  E\right)  =P$ (since
+$S\left(  E\right)  \subseteq P$). This proves the \textquotedblleft%
+$\Longleftarrow$\textquotedblright\ direction of Lemma \ref{lem.new0}.
+\end{proof}
+
 We observe that an acyclic subset $B$ of $A$ is an $s$-convergence
 
 \qquad\qquad if and only if $s$ is a to-root of $D\left\langle B\right\rangle
@@ -494,7 +582,10 @@ $D\left\langle B\right\rangle $,
 
 \qquad i.e.,\quad if and only if each vertex $v\in V$ can $B$-reach $s$,
 
-\qquad i.e.,\quad if and only if $V=S\left(  B\right)  $.
+\qquad i.e.,\quad if and only if $V=S\left(  B\right)  $
+
+\noindent(since $S\left(  B\right)  $ is defined as the set of all vertices
+$v\in V$ that can $B$-reach $s$).
 
 Similar characterizations can be given for $t$-convergences.
 
@@ -694,7 +785,8 @@ C\right\vert =k-\left\vert C\right\vert \ \ \ \ \ \ \ \ \ \ \left(
 \text{since }\left\vert B\right\vert =k\right)  .
 \]
 Thus, $B\setminus C\in\mathcal{P}_{k-\left\vert C\right\vert }\left(
-A\right)  $.
+A\right)  $. Also, from $C\subseteq B$, we obtain $\left(  B\setminus
+C\right)  \cup C=B$.
 
 Note also that%
 \[
@@ -718,23 +810,13 @@ $B\setminus C\subseteq B$). Furthermore, no arc in $B\setminus C$ belongs to
 $A\left(  P,Q\right)  $ (since the set $B\setminus C$ is disjoint from
 $A\left(  P,Q\right)  $).
 
-Let us now prove that $S\left(  B\setminus C\right)  =P$. From $B\setminus
-C\subseteq B$, we clearly obtain $S\left(  B\setminus C\right)  \subseteq
-S\left(  B\right)  =P$, so we must show the converse. Let $p\in P$. Then, $p$
-can $B$-reach $s$ (since $p\in P=S\left(  B\right)  $). That is, the digraph
-$D\left\langle B\right\rangle $ contains a path $\mathbf{p}$ from $p$ to $s$.
-Any vertex $v$ of this path $\mathbf{p}$ must itself belong to $S\left(
-B\right)  $ (since it can $B$-reach $s$ by walking along $\mathbf{p}$ from $v$
-to $s$), so it cannot belong to $Q$ (since $S\left(  B\right)  =P$ is disjoint
-from $Q$). Therefore, no arc of this path $\mathbf{p}$ can belong to $A\left(
-P,Q\right)  $ (since this would require its target to belong to $Q$). Thus,
-all arcs of this path $\mathbf{p}$ belong to $B\setminus A\left(  P,Q\right)
-=B\setminus C$. Hence, $\mathbf{p}$ is a path of $D\left\langle B\setminus
-C\right\rangle $. Consequently, the vertex $p$ can $B\setminus C$-reach $s$
-(via the path $\mathbf{p}$). In other words, $p\in S\left(  B\setminus
-C\right)  $. Since we have proved this for each $p\in P$, we conclude that
-$P\subseteq S\left(  B\setminus C\right)  $. Therefore, $S\left(  B\setminus
-C\right)  =P$ (since $S\left(  B\setminus C\right)  \subseteq P$).
+Let us now prove that $S\left(  B\setminus C\right)  =P$. Indeed, Lemma
+\ref{lem.new0} (applied to $E=B\setminus C$) yields that $S\left(  B\setminus
+C\right)  =P$ if and only if $S\left(  \left(  B\setminus C\right)  \cup
+C\right)  =P$. Since $S\left(  \left(  B\setminus C\right)  \cup C\right)  =P$
+does hold (because $S\left(  \underbrace{\left(  B\setminus C\right)  \cup
+C}_{=B}\right)  =S\left(  B\right)  =P$), we thus conclude that $S\left(
+B\setminus C\right)  =P$.
 
 It remains to show that $T\left(  B\setminus C\right)  =Q$.
 
@@ -807,7 +889,10 @@ We must show that $E\cup C\in Y_{k}$. In other words, we must show that $E\cup
 C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and $\left(  E\cup C\right)
 \cap A\left(  P,Q\right)  =C$.
 
-First, we show that $E\cap A\left(  P,Q\right)  =\varnothing$. Indeed, assume
+From $S\left(  E\right)  =P$, we immediately obtain $S\left(  E\cup C\right)
+=P$ by Lemma \ref{lem.new0}.
+
+Next, we show that $E\cap A\left(  P,Q\right)  =\varnothing$. Indeed, assume
 the contrary. Then, there exists some arc $e\in E\cap A\left(  P,Q\right)  $.
 Thus, $e\in E$ and $e\in A\left(  P,Q\right)  $. The latter shows that $e$ has
 a source $p\in P$ and a target $q\in Q$. From $q\in Q=T\left(  E\right)  $, we
@@ -871,41 +956,13 @@ contradiction, since it is an arc of $\mathbf{c}$, which is a cycle of
 $D\left\langle E\cup C\right\rangle $. This contradiction shows that our
 assumption was wrong, so $E\cup C$ is indeed acyclic.
 
-Next, from $E\subseteq E\cup C$, we obtain $S\left(  E\right)  \subseteq
-S\left(  E\cup C\right)  $, whence $P=S\left(  E\right)  \subseteq S\left(
-E\cup C\right)  $.
-
-Now we shall show that $S\left(  E\cup C\right)  =P$. Indeed, assume the
-contrary. Thus, $P$ is a \textbf{proper} subset of $S\left(  E\cup C\right)  $
-(since $P\subseteq S\left(  E\cup C\right)  $). Hence, there exists a vertex
-$v\in S\left(  E\cup C\right)  $ that does not belong to $P$. Consider this
-$v$. From $v\in S\left(  E\cup C\right)  $, we know that $v$ can $E\cup
-C$-reach $s$. In other words, the digraph $D\left\langle E\cup C\right\rangle
-$ has a path $\mathbf{p}$ from $v$ to $s$. But $v$ cannot $E$-reach $s$ (since
-$v\notin P=S\left(  E\right)  $). Hence, the path $\mathbf{p}$ from $v$ to $s$
-cannot be a path of $D\left\langle E\right\rangle $. Thus, $\mathbf{p}$ must
-contain some arc $c\notin E$. Pick the \textbf{last} such arc $c$ on
-$\mathbf{p}$. This arc $c$ must then belong to $C$ (since $c\in E\cup C$ but
-$c\notin E$). Hence, $c\in C\subseteq A\left(  P,Q\right)  $, so that the
-source of $c$ belongs to $P$ and the target of $c$ belongs to $Q$. Let $p$ be
-the source of $c$, and let $q$ be the target of $c$; thus, $p\in P$ and $q\in
-Q$.
-
-Note that $c$ is the \textbf{last} arc of $\mathbf{p}$ that does not belong to
-$E$. Hence, all arcs of $\mathbf{p}$ after $c$ do belong to $E$, thus are arcs
-of $D\left\langle E\right\rangle $. Therefore, $q$ can $E$-reach $s$ (by
-walking along the path $\mathbf{p}$ from $q$ onwards). In other words, $q\in
-S\left(  E\right)  =P$. But this contradicts $q\in Q$, since $P\sqcup Q=V$. So
-our assumption was wrong, and we have proved that $S\left(  E\cup C\right)
-=P$.
-
-Each vertex in $P$ can $E$-reach $s$ (since it lies in $P=S\left(  E\right)
-$) and thus can $E\cup C$-reach $s$ as well (since $E\subseteq E\cup C$). Each
-vertex in $Q$ can $E$-reach $t$ (since it lies in $Q=T\left(  E\right)  $) and
-thus can $E\cup C$-reach $t$ as well (since $E\subseteq E\cup C$). Since each
-vertex in $V$ belongs to either $P$ or $Q$, we thus conclude that each vertex
-in $V$ can $E\cup C$-reach $s$ or can $E\cup C$-reach $t$. This shows that
-$E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $ is acyclic).
+Each vertex in $P$ can $E\cup C$-reach $s$ (since it lies in $P=S\left(  E\cup
+C\right)  $). Each vertex in $Q$ can $E$-reach $t$ (since it lies in
+$Q=T\left(  E\right)  $) and thus can $E\cup C$-reach $t$ as well (since
+$E\subseteq E\cup C$). Since each vertex in $V$ belongs to either $P$ or $Q$,
+we thus conclude that each vertex in $V$ can $E\cup C$-reach $s$ or can $E\cup
+C$-reach $t$. This shows that $E\cup C\in U_{k}$ (since $E\cup C\in
+\mathcal{P}_{k}\left(  A\right)  $ is acyclic).
 
 So we have shown that $E\cup C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and
 $\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
