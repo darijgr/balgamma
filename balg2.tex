@@ -533,7 +533,7 @@ $E$. Therefore, the arcs of $\mathbf{p}$ that come after $c$ form a path of
 the digraph $D\left\langle E\right\rangle $. This path starts at $q$ (the
 target of $c$) and ends at $s$. Hence, we have shown that $D\left\langle
 E\right\rangle $ has a path from $q$ to $s$. In other words, $q$ can $E$-reach
-$s$. In other words, $q\in S\left(  E\right)  $. Thus, $q\in S\left(
+$s$, meaning $q\in S\left(  E\right)  $. Thus, $q\in S\left(
 E\right)  =P$, so that $q\notin Q$ (since $P$ is disjoint from $Q$). This
 contradicts $q\in Q$.
 
@@ -780,8 +780,8 @@ X_{k-|C|}^{P,Q}$ for all $B\in Y_{k}$.
 \end{statement}
 
 \begin{proof}
-[Proof of Claim 1.]Let $B\in Y_{k}$. Then $B\in U_{k}$ and $S\left(  B\right)
-=P$ and $B\cap A\left(  P,Q\right)  =C$. From $B\in U_{k}$, we see that $B$ is
+[Proof of Claim 1.]Let $B\in Y_{k}$. Then $B\in U_{k}$, $S\left(  B\right)
+=P$, and $B\cap A\left(  P,Q\right)  =C$. From $B\in U_{k}$, we see that $B$ is
 an acyclic $k$-element subset of $A$, and that each vertex can $B$-reach $s$
 or $B$-reach $t$. In particular, $\left\vert B\right\vert =k$.
 
@@ -869,8 +869,7 @@ satisfy $w\notin P$ (since otherwise, $w$ would belong to $P=S\left(
 B\right)  $ and thus could $B$-reach $s$, so that the digraph $D\left\langle
 B\right\rangle $ would have a path $\mathbf{w}$ from $w$ to $s$; but then the
 vertex $q$ could also $B$-reach $s$ by first following the path $\mathbf{q}$
-from $q$ until $w$ and then following the path $\mathbf{w}$ from $w$ to $s$;
-and this would contradict the fact that $q$ cannot $B$-reach $s$). Therefore,
+from $q$ until $w$ and then following the path $\mathbf{w}$ from $w$ to $s$, contradicting the fact that $q$ cannot $B$-reach $s$). Therefore,
 no arc of the path $\mathbf{q}$ can belong to $A\left(  P,Q\right)  $ (since
 the source of such an arc would be a vertex of $\mathbf{q}$ and belong to
 $P$). Thus, all arcs of $\mathbf{q}$ belong to $B\setminus A\left(
@@ -901,7 +900,7 @@ k-\left\vert C\right\vert \right)  $-element subset of $A$ satisfying
 $S\left(  E\right)  =P$ and $T\left(  E\right)  =Q$.
 
 We must show that $E\cup C\in Y_{k}$. In other words, we must show that $E\cup
-C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and $\left(  E\cup C\right)
+C\in U_{k}$, $S\left(  E\cup C\right)  =P$, and $\left(  E\cup C\right)
 \cap A\left(  P,Q\right)  =C$.
 
 From $S\left(  E\right)  =P$, we immediately obtain $S\left(  E\cup C\right)
@@ -925,7 +924,7 @@ same time (because of $P\sqcup Q=V$). Hence, the set $C$ (being a subset of
 $A\left(  P,Q\right)  $) must be disjoint from $A\left(  Q,P\right)  $ as
 well. In other words, $C\cap A\left(  Q,P\right)  =\varnothing$.
 
-Note that $C$ is a subset of $A\left(  P,Q\right)  $, and thus we have
+Also, note that $C$ is a subset of $A\left(  P,Q\right)  $, and thus we have
 \[
 E\cap\underbrace{C}_{\subseteq A\left(  P,Q\right)  }\subseteq E\cap A\left(
 P,Q\right)  =\varnothing.
@@ -980,7 +979,7 @@ belongs to $P$) or can $E\cup C$-reach $t$ (if it belongs to $Q$). This shows
 that $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $
 is acyclic).
 
-So we have shown that $E\cup C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and
+So, we have shown that $E\cup C\in U_{k}$, and $S\left(  E\cup C\right)  =P$, and
 $\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
 yields $E\cup C\in Y_{k}$. Claim 2 is thus proved.
 \end{proof}
