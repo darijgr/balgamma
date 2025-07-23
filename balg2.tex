@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 23, 2025 18:23:31}
+%TCIDATA{LastRevised=Wednesday, July 23, 2025 18:52:37}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -503,7 +503,8 @@ Note furthermore that $P$ is disjoint from $Q$ (since $V=P\sqcup Q$).
 
 We must prove the equivalence $\left(  S\left(  E\right)  =P\right)
 \ \Longleftrightarrow\ \left(  S\left(  E\cup C\right)  =P\right)  $. We shall
-verify the $\Longrightarrow$ and $\Longleftarrow$ directions separately: \medskip
+verify the $\Longrightarrow$ and $\Longleftarrow$ directions separately:
+\medskip
 
 $\Longrightarrow:$ Assume that $S\left(  E\right)  =P$. We must show that
 $S\left(  E\cup C\right)  =P$.
@@ -917,7 +918,7 @@ P,Q\right)  =\varnothing.
 \]
 Hence,
 \begin{equation}
-E\cap C=\varnothing,\label{pf.lem.new4.c2.pf.empty}%
+E\cap C=\varnothing, \label{pf.lem.new4.c2.pf.empty}%
 \end{equation}
 so that%
 \[
@@ -960,9 +961,10 @@ Each vertex in $P$ can $E\cup C$-reach $s$ (since it lies in $P=S\left(  E\cup
 C\right)  $). Each vertex in $Q$ can $E$-reach $t$ (since it lies in
 $Q=T\left(  E\right)  $) and thus can $E\cup C$-reach $t$ as well (since
 $E\subseteq E\cup C$). Since each vertex in $V$ belongs to either $P$ or $Q$,
-we thus conclude that each vertex in $V$ can $E\cup C$-reach $s$ or can $E\cup
-C$-reach $t$. This shows that $E\cup C\in U_{k}$ (since $E\cup C\in
-\mathcal{P}_{k}\left(  A\right)  $ is acyclic).
+we thus conclude that each vertex in $V$ can $E\cup C$-reach $s$ (if it
+belongs to $P$) or can $E\cup C$-reach $t$ (if it belongs to $Q$). This shows
+that $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $
+is acyclic).
 
 So we have shown that $E\cup C\in U_{k}$ and $S\left(  E\cup C\right)  =P$ and
 $\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
