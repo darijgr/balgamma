@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, July 23, 2025 22:16:24}
+%TCIDATA{LastRevised=Monday, July 28, 2025 10:46:23}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -153,24 +153,24 @@ acyclic orientations and maximal acyclic subdigraphs.
 
 \section{The theorem}
 
-In this note, we shall discussed \emph{balanced multidigraphs} -- i.e.,
-directed multigraphs (allowing loops and multiple arcs) in which each vertex
-satisfies \textquotedblleft outdegree = indegree\textquotedblright. We recall
-the relevant definitions in more detail:
+In this note, we shall discuss \emph{balanced multidigraphs} -- i.e., directed
+multigraphs (allowing loops and multiple arcs) in which each vertex satisfies
+\textquotedblleft outdegree = indegree\textquotedblright. We recall the
+relevant definitions in more detail:
 
 A \emph{multidigraph} (henceforth just \emph{digraph}) means a triple
-$(V,A,\psi)$, where $V$ and $A$ are two finite sets and $\psi: A \to V \times
-V$ is a map. The elements of $V$ are called the \emph{vertices} of this
-digraph, and the elements of $A$ are called the \emph{arcs} of this digraph.
-The \emph{source} and \emph{target} of an arc $a \in A$ are, respectively, the
-first and second entries of the pair $\psi(a)$. The \emph{indegree} $\deg
-^{-}v$ of a vertex $v \in V$ means the number of arcs $a \in A$ whose target
-is $v$. The \emph{outdegree} $\deg^{+}v$ of a vertex $v \in V$ means the
-number of arcs $a \in A$ whose source is $v$. We say that a digraph
-$(V,A,\psi)$ is \emph{balanced} if and only if each vertex $v \in V$ satisfies
-$\deg^{+}v = \deg^{-}v$. For further terminology on digraphs, we refer to
-\cite{22s}.\footnote{The famous directed Euler--Hierholzer theorem (which will
-not be used in this note) says that a weakly connected digraph contains an
+$(V,A,\psi)$, where $V$ and $A$ are two finite sets and $\psi:A\rightarrow
+V\times V$ is a map. The elements of $V$ are called the \emph{vertices} of
+this digraph, and the elements of $A$ are called the \emph{arcs} of this
+digraph. The \emph{source} and \emph{target} of an arc $a\in A$ are,
+respectively, the first and second entries of the pair $\psi(a)$. The
+\emph{indegree} $\deg^{-}v$ of a vertex $v\in V$ means the number of arcs
+$a\in A$ whose target is $v$. The \emph{outdegree} $\deg^{+}v$ of a vertex
+$v\in V$ means the number of arcs $a\in A$ whose source is $v$. We say that a
+digraph $(V,A,\psi)$ is \emph{balanced} if and only if each vertex $v\in V$
+satisfies $\deg^{+}v=\deg^{-}v$. For further terminology on digraphs, we refer
+to \cite{22s}.\footnote{The famous directed Euler--Hierholzer theorem (which
+will not be used in this note) says that a weakly connected digraph has an
 Eulerian circuit if and only if it is balanced. Thus, weakly connected
 balanced digraphs are also known as \emph{Eulerian digraphs}.}
 
