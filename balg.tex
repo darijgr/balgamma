@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, July 28, 2025 10:46:23}
+%TCIDATA{LastRevised=Monday, July 28, 2025 11:11:14}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -178,20 +178,22 @@ A \emph{to-root} of a digraph $D$ means a vertex $s$ of $D$ such that for each
 vertex $v$ of $D$, the digraph $D$ has a path from $v$ to $s$ (equivalently, a
 walk from $v$ to $s$).
 
-From now on, we \textbf{fix a balanced digraph} $D = (V,A,\psi)$. If $B$ is
-any subset of $A$, then $D \left\langle B \right\rangle $ will denote the
-induced subdigraph $\left(  V,B,\psi\mid_{B}\right)  $. A subset $B$ of $A$
-will be called \emph{acyclic} if the subdigraph $D \left\langle B
-\right\rangle $ has no (directed) cycles.
+From now on, we \textbf{fix a balanced digraph} $D=(V,A,\psi)$. If $B$ is any
+subset of $A$, then $D\left\langle B\right\rangle $ will denote the induced
+subdigraph $\left(  V,B,\psi\mid_{B}\right)  $. A subset $B$ of $A$ will be
+called \emph{acyclic} if the subdigraph $D\left\langle B\right\rangle $ has no
+cycles. (\textquotedblleft Cycle\textquotedblright\ always means
+\textquotedblleft directed cycle\textquotedblright, as in \cite[Definition
+4.5.1]{22s}.)
 
 Given a vertex $s$ of $D$, we define an \emph{$s$-convergence} to be an
 acyclic subset $B$ of $A$ such that $s$ is a to-root of the subdigraph $D
 \left\langle B \right\rangle $.
 
 We can think of an $s$-convergence as a set $B$ of arcs of $D$ such that by
-following the $B$-arcs (i.e. the arcs in $B$) from any vertex $v \in V$, we
+following the $B$-arcs (i.e. the arcs in $B$) from any vertex $v\in V$, we
 will always arrive at $s$ (no matter which $B$-arcs we take), and we will be
-stuck at $s$.
+stuck at $s$. (This intuition is formalized in Proposition \ref{prop.s-conv.2}.)
 
 For any $k\in\mathbb{N}$ and $s\in V$, we let $\gamma_{k}\left(  s\right)  $
 denote the number of $s$-convergences of size $k$ (that is, with $k$
@@ -201,7 +203,7 @@ arcs).\footnote{The symbol $\mathbb{N}$ denotes the set $\left\{
 In this note, we shall prove the following result:
 
 \begin{theorem}
-\label{thm.balgamma}Let $k\in\mathbb{N}$. The number $\gamma_{k}\left(
+\label{thm.balgamma}Let $k\in\mathbb{N}$. Then, the number $\gamma_{k}\left(
 s\right)  $ does not depend on $s$. That is, $\gamma_{k}\left(  s\right)
 =\gamma_{k}\left(  t\right)  $ for any $s,t\in V$.
 \end{theorem}
@@ -306,9 +308,10 @@ $v\in\left\{  3,4\right\}  $.
 \section{Particular cases}
 
 Theorem \ref{thm.balgamma} was inspired by a talk of Karla Leipold (NORCOM
-2025), which made the first author aware of \cite[Lemma 4.1]{LeiVal24}. While
-no enumerative questions were discussed in said talk, a scent of identities
-was noticeable. The present note is the result of following this scent.
+2025), which made the first author aware of \cite[Lemma 4.1]{LeiVal24} and
+\cite[\S 3.1]{PerPha15}. The talk discussed no enumerative questions, yet was
+haunted by a perceptible aura of identities. The present note follows this
+aura to its source.
 
 Some particular cases of Theorem \ref{thm.balgamma} are known:
 
