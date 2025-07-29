@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, July 29, 2025 07:11:36}
+%TCIDATA{LastRevised=Tuesday, July 29, 2025 19:54:32}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -147,7 +147,8 @@ $k$. Let $s$ be a vertex of $D$. We show that the number of $k$-element
 subsets $B$ of $A$ that contain no cycles but contain a path from each vertex
 to $s$ (we call them \textquotedblleft$s$-convergences\textquotedblright) is
 independent on $s$. This generalizes known facts about spanning arborescences,
-acyclic orientations and maximal acyclic subdigraphs.
+acyclic orientations and maximal acyclic subdigraphs (or, equivalently,
+minimum feedback arc sets).
 
 \end{abstract}
 
@@ -494,7 +495,8 @@ T\left(  B\right)   &  :=\left\{  v\in V\ \mid\ v\text{ can }B\text{-reach
 }t\right\}  \ \ \ \ \ \ \ \ \ \ \text{of }V.
 \end{align*}
 We call them the \emph{attraction basins} of $s$ and $t$ with respect to $B$.
-Note that $s\in S\left(  B\right)  $ and $t\in T\left(  B\right)  $ always hold.
+Note that $s\in S\left(  B\right)  $ and $t\in T\left(  B\right)  $ always
+hold, since each vertex can $B$-reach itself (by a path of length $0$).
 
 The following property of attraction basins will be useful to our later arguments:
 
@@ -589,14 +591,15 @@ $\Longleftarrow$\textquotedblright\ direction of Lemma \ref{lem.new0}.
 For any $i\in\mathbb{Z}$, we let $\mathcal{P}_{i}\left(  A\right)  $ denote
 the set of all $i$-element subsets of $A$. Define the subset%
 \begin{align*}
-U_{k}:=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
+U_{k}:= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
 acyclic}\ \mid\ \text{each vertex can }B\text{-reach }s\text{ or }t\right\}
-;\\
-=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
+\\
+= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
 \ \mid\ S\left(  B\right)  \cup T\left(  B\right)  =V\right\}
 \end{align*}
 of $\mathcal{P}_{k}\left(  A\right)  $. (\textquotedblleft
 Vertex\textquotedblright\ means \textquotedblleft vertex of $D$%
+\textquotedblright, that is, \textquotedblleft element of $V$%
 \textquotedblright.)
 
 We observe the following:
@@ -659,8 +662,8 @@ Now we claim the following:
 \label{lem.new1} We have%
 \[
 \gamma_{k}\left(  s\right)  =\left\vert U_{k}\right\vert -\sum
-_{\substack{P,Q\subseteq V\text{ nonempty;}\\V=P\sqcup Q}}\left\vert \left\{
-B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}  \right\vert .
+_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup Q}}\left\vert
+\left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}  \right\vert .
 \]
 
 \end{lemma}
@@ -670,9 +673,21 @@ Each $B\in U_{k}$ satisfies $S\left(  B\right)  =P$ for some nonempty subset
 $P$ of $V$ (indeed, the set $S\left(  B\right)  $ is nonempty since it
 contains $s$). Hence, by the sum rule,%
 \begin{align*}
-\left\vert U_{k}\right\vert  &  =\sum_{\substack{P,Q\subseteq V;\\P\text{ is
-nonempty;}\\V=P\sqcup Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(
-B\right)  =P\right\}  \right\vert \\
+\left\vert U_{k}\right\vert  &  =\sum_{P\subseteq V\text{ nonempty}}\left\vert
+\left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}  \right\vert \\
+&  =\sum_{\substack{P,Q\subseteq V;\\P\text{ is nonempty;}\\V=P\sqcup
+Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
+\right\vert \\
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{here, we have introduced an extra index }Q\\
+\text{into the sum (to make it more symmetric);}\\
+\text{the condition \textquotedblleft}V=P\sqcup Q\text{\textquotedblright%
+\ ensures that it}\\
+\text{is uniquely determined by }P
+\end{array}
+\right)  \\
 &  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\underbrace{\left\vert \left\{  B\in U_{k}\ \mid\ S\left(
@@ -685,7 +700,7 @@ B\right)  =V\right\}  \right\vert }_{\substack{=\gamma_{k}\left(  s\right)
 \text{for }\left(  P,Q\right)  =\left(  V,\varnothing\right)  \text{ from the
 sum}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\gamma_{k}\left(  s\right)  .
@@ -699,8 +714,8 @@ Similarly, we find:
 \label{lem.new2}We have%
 \[
 \gamma_{k}\left(  t\right)  =\left\vert U_{k}\right\vert -\sum
-_{\substack{P,Q\subseteq V\text{ nonempty;}\\V=P\sqcup Q}}\left\vert \left\{
-B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}  \right\vert .
+_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup Q}}\left\vert
+\left\{  B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}  \right\vert .
 \]
 
 \end{lemma}
@@ -725,7 +740,8 @@ $V=P\sqcup Q$. Then,%
 
 \end{proposition}
 
-We will prove this by finding a symmetric expression for both sides, namely:
+We will prove this by finding analogous expressions for both sides. First, we
+need some notation:
 
 \begin{definition}
 If $P$ and $Q$ are two subsets of $V$ satisfying $V=P\sqcup Q$, and if
@@ -825,12 +841,14 @@ Thus, the set $B\setminus C$ is disjoint from $A\left(  P,Q\right)  $ (since
 $B\setminus A\left(  P,Q\right)  $ clearly is).
 
 Next we show that $B\cap A\left(  Q,P\right)  =\varnothing$. Indeed, assume
-the contrary. Then, there is an arc $b\in B$ with source $q\in Q$ and target
-$p\in P$. The vertex $p$ can $B$-reach $s$ (since $p\in P=S\left(  B\right)
-$);\ hence, the vertex $q$ can $B$-reach as well (by first stepping to $p$ via
-the arc $b$). This means that $q\in S\left(  B\right)  =P$, which contradicts
-$q\in Q$ since $V=P\sqcup Q$. This contradiction shows that our assumption was
-false, so we know that $B\cap A\left(  Q,P\right)  =\varnothing$.
+the contrary. Then, there is an arc $b\in B\cap A\left(  Q,P\right)  $.
+Consider this $b$. Thus, $b\in B$ and $b\in A\left(  Q,P\right)  $. The latter
+shows that the arc $b$ has a source $q\in Q$ and a target $p\in P$. The vertex
+$p$ can $B$-reach $s$ (since $p\in P=S\left(  B\right)  $);\ hence, the vertex
+$q$ can $B$-reach $s$ as well (by first stepping to $p$ via the arc $b$). This
+means that $q\in S\left(  B\right)  =P$, which contradicts $q\in Q$ since
+$V=P\sqcup Q$. This contradiction shows that our assumption was false, so we
+know that $B\cap A\left(  Q,P\right)  =\varnothing$.
 
 In other words, no arc in $B$ belongs to $A\left(  Q,P\right)  $. Hence, no
 arc in $B\setminus C$ belongs to $A\left(  Q,P\right)  $ either (since
@@ -864,13 +882,14 @@ Q$. Assume the contrary. Then, $x\in P$ (since $V=P\sqcup Q$). But $x\in
 T\left(  B\setminus C\right)  $ shows that $x$ can $B\setminus C$-reach $t$.
 So the digraph $D\left\langle B\setminus C\right\rangle $ has a path
 $\mathbf{x}$ from $x$ to $t$. This path $\mathbf{x}$ starts at a vertex in $P$
-(namely, $x\in P$) and ends at a vertex in $Q$ (namely, $t\in Q$). So this
-path $\mathbf{x}$ must cross from $P$ to $Q$ at some point. In other words, it
-must contain an arc that belongs to $A\left(  P,Q\right)  $. But this is
-impossible, since all arcs of $\mathbf{x}$ come from the set $B\setminus C$,
-which is disjoint from $A\left(  P,Q\right)  $. This contradiction shows that
-$x\in Q$. Since we have proved this for each $x\in T\left(  B\setminus
-C\right)  $, we thus conclude that $T\left(  B\setminus C\right)  \subseteq Q$.
+(namely, at $x\in P$) and ends at a vertex in $Q$ (namely, at $t\in Q$). So
+this path $\mathbf{x}$ must cross from $P$ to $Q$ at some point (since
+$V=P\sqcup Q$). In other words, it must contain an arc that belongs to
+$A\left(  P,Q\right)  $. But this is impossible, since all arcs of
+$\mathbf{x}$ come from the set $B\setminus C$, which is disjoint from
+$A\left(  P,Q\right)  $. This contradiction shows that $x\in Q$. Since we have
+proved this for each $x\in T\left(  B\setminus C\right)  $, we thus conclude
+that $T\left(  B\setminus C\right)  \subseteq Q$.
 
 Now, we claim that $Q\subseteq T\left(  B\setminus C\right)  $. Indeed, let
 $q\in Q$ be any vertex. Then, $q\notin P$ (since $V=P\sqcup Q$), so that
@@ -977,21 +996,21 @@ Since $E$ itself is acyclic, this cycle $\mathbf{c}$ must use at least one arc
 from $C$. This arc must have source in $P$ and target in $Q$ (because it
 belongs to $C\subseteq A\left(  P,Q\right)  $). Thus, the cycle $\mathbf{c}$
 contains both a vertex in $P$ and a vertex in $Q$. Consequently, it must cross
-from $Q$ to $P$ at some point. In other words, it contains an arc $a\in
-A\left(  Q,P\right)  $. But such an arc $a$ cannot belong to $E\cup C$ (since
-$\left(  E\cup C\right)  \cap A\left(  Q,P\right)  =\varnothing$). This is a
-contradiction, since it is an arc of $\mathbf{c}$, which is a cycle of
-$D\left\langle E\cup C\right\rangle $. This contradiction shows that our
-assumption was wrong, so $E\cup C$ is indeed acyclic.
+from $Q$ to $P$ at some point (since $V=P\sqcup Q$). In other words, it
+contains an arc $a\in A\left(  Q,P\right)  $. But such an arc $a$ cannot
+belong to $E\cup C$ (since $\left(  E\cup C\right)  \cap A\left(  Q,P\right)
+=\varnothing$). This is a contradiction, since it is an arc of $\mathbf{c}$,
+which is a cycle of $D\left\langle E\cup C\right\rangle $. This contradiction
+shows that our assumption was wrong, so $E\cup C$ is indeed acyclic.
 
 Each vertex in $P$ can $E\cup C$-reach $s$ (since it lies in $P=S\left(  E\cup
 C\right)  $). Each vertex in $Q$ can $E$-reach $t$ (since it lies in
 $Q=T\left(  E\right)  $) and thus can $E\cup C$-reach $t$ as well (since
-$E\subseteq E\cup C$). Since each vertex in $V$ belongs to either $P$ or $Q$,
-we thus conclude that each vertex in $V$ can $E\cup C$-reach $s$ (if it
-belongs to $P$) or can $E\cup C$-reach $t$ (if it belongs to $Q$). This shows
-that $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}_{k}\left(  A\right)  $
-is acyclic).
+$E\subseteq E\cup C$). Since each vertex in $V$ belongs to either $P$ or $Q$
+(because $V=P\sqcup Q$), we thus conclude that each vertex in $V$ can $E\cup
+C$-reach $s$ (if it belongs to $P$) or can $E\cup C$-reach $t$ (if it belongs
+to $Q$). This shows that $E\cup C\in U_{k}$ (since $E\cup C\in\mathcal{P}%
+_{k}\left(  A\right)  $ is acyclic).
 
 So, we have shown that $E\cup C\in U_{k}$, and $S\left(  E\cup C\right)  =P$,
 and $\left(  E\cup C\right)  \cap A\left(  P,Q\right)  =C$. All together, this
@@ -1111,12 +1130,12 @@ This proves Proposition \ref{prop.new3}.
 Now, Lemma \ref{lem.new1} yields%
 \begin{align*}
 \gamma_{k}\left(  s\right)   &  =\left\vert U_{k}\right\vert -\sum
-_{\substack{P,Q\subseteq V\text{ nonempty;}\\V=P\sqcup Q}%
+_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup Q}%
 }\underbrace{\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)
 =P\right\}  \right\vert }_{\substack{=\left\vert \left\{  B\in U_{k}%
 \ \mid\ T\left(  B\right)  =Q\right\}  \right\vert \\\text{(by Proposition
 \ref{prop.new3})}}}\\
-&  =\left\vert U_{k}\right\vert -\sum_{\substack{P,Q\subseteq V\text{
+&  =\left\vert U_{k}\right\vert -\sum_{\substack{P,Q\subseteq V\text{ are
 nonempty;}\\V=P\sqcup Q}}\left\vert \left\{  B\in U_{k}\ \mid\ T\left(
 B\right)  =Q\right\}  \right\vert =\gamma_{k}\left(  t\right)
 \end{align*}
@@ -1136,18 +1155,24 @@ using the Garsia--Milne involution principle \cite[\S 4.6]{StaWhi86}.
 In the case of Lemma \ref{lem.new1}, only the simplest case of the involution
 principle is needed: Let $\Gamma_{k}\left(  s\right)  $ be the set of all
 $s$-convergences of size $k$, and let $\Gamma_{k}\left(  t\right)  $ be the
-set of all $t$-convergences of size $k$. Our above proof of Lemma
-\ref{lem.new1} gives a bijection $\phi:U_{k}\setminus\Gamma_{k}\left(
-s\right)  \rightarrow U_{k}\setminus\Gamma_{k}\left(  t\right)  $, and we need
-to construct a bijection $\psi:\Gamma_{k}\left(  s\right)  \rightarrow
-\Gamma_{k}\left(  t\right)  $ from it. The involution principle tells us that
-this $\psi$ acts on a given element $B\in\Gamma_{k}\left(  s\right)  $ by
-repeatedly applying $\phi^{-1}$ to it until it no longer belongs to
-$U_{k}\setminus\Gamma_{k}\left(  t\right)  $ (which means that it belongs to
-$\Gamma_{k}\left(  t\right)  $). It is not hard to see that this does not
-require more than $\left\vert V\right\vert $ many iterations, since
-$\left\vert T\left(  B\right)  \right\vert $ increases with each application
-of $\phi^{-1}$.
+set of all $t$-convergences of size $k$. Our above proof of Proposition
+\ref{prop.new3} gives a bijection%
+\[
+\left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}  \rightarrow\left\{
+B\in U_{k}\ \mid\ T\left(  B\right)  =Q\right\}
+\]
+for every pair of nonempty subsets $P,Q\subseteq V$ satisfying $V=P\sqcup Q$.
+Combining these bijections for all such pairs $\left(  P,Q\right)  $, we
+obtain a bijection $\phi:U_{k}\setminus\Gamma_{k}\left(  s\right)  \rightarrow
+U_{k}\setminus\Gamma_{k}\left(  t\right)  $. Now we need to construct a
+bijection $\psi:\Gamma_{k}\left(  s\right)  \rightarrow\Gamma_{k}\left(
+t\right)  $ from it. The involution principle tells us that this $\psi$ acts
+on a given element $B\in\Gamma_{k}\left(  s\right)  $ by repeatedly applying
+$\phi^{-1}$ to it until it no longer belongs to $U_{k}\setminus\Gamma
+_{k}\left(  t\right)  $ (which means that it belongs to $\Gamma_{k}\left(
+t\right)  $). It is not hard to see that this does not require more than
+$\left\vert V\right\vert $ many iterations, since $\left\vert T\left(
+B\right)  \right\vert $ increases with each application of $\phi^{-1}$.
 
 In the case of Proposition \ref{prop.A-symmetry}, however, we can also give a
 direct bijective proof: By the directed Euler--Hierholzer theorem, each weak
@@ -1164,12 +1189,15 @@ Eulerian circuits; it suffices to pick any decomposition of $A$ into
 
 \bigskip
 
-\textbf{2.} We note the following alternative characterization of $s$-convergences:
+\textbf{2.} We can also characterize $s$-convergences in terms of sinks.
+Recall that a \emph{sink} of a digraph means a vertex with no outgoing arcs
+(i.e., a vertex with outdegree $0$). Now our alternative characterization of
+$s$-convergences is as follows:
 
 \begin{proposition}
 \label{prop.s-conv.2}Let $B$ be an acyclic subset of $A$. Let $s\in V$. Then,
-$B$ is an $s$-convergence if and only if $s$ is the only sink (= vertex with
-no outgoing arcs) of the subdigraph $D\left\langle B\right\rangle $.
+$B$ is an $s$-convergence if and only if $s$ is the only sink of the
+subdigraph $D\left\langle B\right\rangle $.
 \end{proposition}
 
 \begin{proof}
@@ -1181,9 +1209,9 @@ Indeed, assume the contrary; thus, there exists an arc $a$ of $D\left\langle
 B\right\rangle $ with source $s$. Let $v$ be the target of this arc $a$. Since
 $s$ is a to-root of $D\left\langle B\right\rangle $, there exists a path from
 $v$ to $s$ in $D\left\langle B\right\rangle $. This path, together with the
-arc $a$, creates a directed cycle\footnote{If $v=s$, then this cycle consists
-of just a single loop.} in $D\left\langle B\right\rangle $, which contradicts
-the acyclicity of $B$. So, we see that $s$ is a sink of $D\left\langle
+arc $a$, creates a cycle\footnote{If $v=s$, then this cycle consists of just a
+single loop.} in $D\left\langle B\right\rangle $, which contradicts the
+acyclicity of $B$. So, we see that $s$ is a sink of $D\left\langle
 B\right\rangle $.
 
 Furthermore, no vertex $v\neq s$ can also be a sink of $D\left\langle
@@ -1193,18 +1221,28 @@ this path must begin with an arc with source $v$. So we conclude that $s$ is
 the only sink of $D\left\langle B\right\rangle $. \medskip
 
 $\Longleftarrow$: Assume that $s$ is the only sink of $D\left\langle
-B\right\rangle $. Let $v\in V$ be any vertex. Let $\mathbf{p}$ be a longest
-path of $D\left\langle B\right\rangle $ that starts at $v$. Then, $\mathbf{p}$
-is also a longest \textbf{walk} of $D\left\langle B\right\rangle $ that starts
-at $v$ (since $D\left\langle B\right\rangle $ has no cycles, and thus any walk
-of $D\left\langle B\right\rangle $ is a path). Therefore, $\mathbf{p}$ must
-end at a sink of $D\left\langle B\right\rangle $ (since otherwise, we could
-extend $\mathbf{p}$ by an additional arc at the end). Since the only sink of
+B\right\rangle $. Let $v\in V$ be any vertex.
+
+The digraph $D\left\langle B\right\rangle $ has no cycles (since $B$ is
+acyclic). Thus, any walk of $D\left\langle B\right\rangle $ is a path (since a
+walk that is not a path would contain a cycle). Consequently, the walks of
+$D\left\langle B\right\rangle $ are precisely the paths of $D\left\langle
+B\right\rangle $. Hence, the digraph $D\left\langle B\right\rangle $ has only
+finitely many walks that start at $v$ (since it clearly has only finitely many
+\textbf{paths} that start at $v$). Moreover, there is at least one such walk
+(the length-$0$ walk $\left(  v\right)  $).
+
+Thus, there is a longest such walk. Let $\mathbf{p}$ be a such. Then,
+$\mathbf{p}$ must end at a sink of $D\left\langle B\right\rangle $ (since
+otherwise, we could extend $\mathbf{p}$ by an additional arc at the end,
+obtaining an even longer walk that starts at $v$). Since the only sink of
 $D\left\langle B\right\rangle $ is $s$, this means that $\mathbf{p}$ must end
-at $s$. Hence, $D\left\langle B\right\rangle $ has a path from $v$ to $s$
-(namely, $\mathbf{p}$). Since $v$ was arbitrary, this shows that $s$ is a
-to-root of $D\left\langle B\right\rangle $. Therefore, $B$ is an
-$s$-convergence (since $B$ is acyclic).
+at $s$. Thus, $\mathbf{p}$ is a walk from $v$ to $s$, hence a path from $v$ to
+$s$ (since any walk of $D\left\langle B\right\rangle $ is a path). Hence,
+$D\left\langle B\right\rangle $ has a path from $v$ to $s$ (namely,
+$\mathbf{p}$). Since $v$ was arbitrary, this shows that $s$ is a to-root of
+$D\left\langle B\right\rangle $. Therefore, $B$ is an $s$-convergence (since
+$B$ is acyclic).
 \end{proof}
 
 \bigskip
