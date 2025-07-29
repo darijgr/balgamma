@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, July 29, 2025 19:54:32}
+%TCIDATA{LastRevised=Tuesday, July 29, 2025 19:57:50}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -422,7 +422,57 @@ $V=P\sqcup Q$. Then,
 
 \begin{proof}
 This is a known fact (see, e.g., \cite[Exercise 9.1]{22s}). The easiest way to
-prove it is as follows: We have%
+prove it is as follows: By the definition of an outdegree, we
+have\footnote{The symbol \textquotedblleft\#\textquotedblright\ means
+\textquotedblleft number\textquotedblright.}%
+\begin{align}
+& \sum_{p\in P}\deg^{+}p\nonumber\\
+& =\sum_{p\in P}\left(  \text{\# of arcs }a\in A\text{ with source }p\right)
+\nonumber\\
+& =\left(  \text{\# of arcs }a\in A\text{ with source in }P\right)
+\nonumber\\
+& =\underbrace{\left(  \text{\# of arcs }a\in A\text{ with source in }P\text{
+and target in }P\right)  }_{=\left\vert A\left(  P,P\right)  \right\vert
+}\nonumber\\
+& \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  \text{\# of arcs }a\in A\text{ with
+source in }P\text{ and target in }Q\right)  }_{=\left\vert A\left(
+P,Q\right)  \right\vert }\nonumber\\
+& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the target of any arc }a\in A\text{ belongs to either }P\text{ or
+}Q\text{,}\\
+\text{but not to both (because }V=P\sqcup Q\text{)}%
+\end{array}
+\right)  \nonumber\\
+& =\left\vert A\left(  P,P\right)  \right\vert +\left\vert A\left(
+P,Q\right)  \right\vert .\label{pf.prop.A-symmetry.sum.1}%
+\end{align}
+An analogous argument (but with the roles of sources and targets switched)
+shows that%
+\begin{equation}
+\sum_{p\in P}\deg^{-}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
+A\left(  Q,P\right)  \right\vert .\label{pf.prop.A-symmetry.sum.2}%
+\end{equation}
+
+
+However, each $p\in P$ satisfies $\deg^{+}p=\deg^{-}p$ (since $D$ is
+balanced). Thus, the left hand sides of the equalities
+(\ref{pf.prop.A-symmetry.sum.1}) and (\ref{pf.prop.A-symmetry.sum.2}) are
+equal. Therefore, their right hand sides are equal as well. In other words, we
+have%
+\[
+\left\vert A\left(  P,P\right)  \right\vert +\left\vert A\left(  P,Q\right)
+\right\vert =\left\vert A\left(  P,P\right)  \right\vert +\left\vert A\left(
+Q,P\right)  \right\vert .
+\]
+Subtracting $\left\vert A\left(  P,P\right)  \right\vert $ from this equality,
+we obtain $\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
+Q,P\right)  \right\vert $. Thus, Proposition \ref{prop.A-symmetry} is proved.
+\end{proof}
+
+\begin{noncompile}
+OLD\ PROOF\ OF PROPOSITION \ref{prop.A-symmetry}: We have%
 \[
 A\left(  P,V\right)  =A\left(  P,P\right)  \sqcup A\left(  P,Q\right)
 \]
@@ -435,15 +485,15 @@ that%
 However, we can count the arcs in $A\left(  P,V\right)  $ according to their
 sources $p\in P$. This yields%
 \begin{equation}
-\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}p,
-\label{pf.prop.A-symmetry.3}%
+\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}%
+p,\label{pf.prop.A-symmetry.3}%
 \end{equation}
 since each arc in $A\left(  P,V\right)  $ is counted in the outdegree of
 exactly one $p\in P$ (namely, of its source). Comparing these two equalities,
 we obtain%
 \begin{equation}
 \sum_{p\in P}\deg^{+}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
-A\left(  P,Q\right)  \right\vert . \label{pf.prop.A-symmetry.4}%
+A\left(  P,Q\right)  \right\vert .\label{pf.prop.A-symmetry.4}%
 \end{equation}
 
 
@@ -461,7 +511,7 @@ Similarly to (\ref{pf.prop.A-symmetry.3}), we can show that%
 Comparing these two equalities, we obtain%
 \begin{equation}
 \sum_{p\in P}\deg^{-}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
-A\left(  Q,P\right)  \right\vert . \label{pf.prop.A-symmetry.5}%
+A\left(  Q,P\right)  \right\vert .\label{pf.prop.A-symmetry.5}%
 \end{equation}
 
 
@@ -477,7 +527,7 @@ Q,P\right)  \right\vert .
 Subtracting $\left\vert A\left(  P,P\right)  \right\vert $ from this equality,
 we obtain $\left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(
 Q,P\right)  \right\vert $. Thus, Proposition \ref{prop.A-symmetry} is proved.
-\end{proof}
+\end{noncompile}
 
 Now, given a subset $B$ of $A$ and two vertices $v,w\in V$, we say that
 \textquotedblleft$v$ \emph{can }$B$\emph{-reach} $w$\textquotedblright\ if the
