@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, July 28, 2025 22:28:43}
+%TCIDATA{LastRevised=Tuesday, July 29, 2025 07:11:36}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -343,12 +343,13 @@ acyclic orientations of $G$ with unique sink $s$ (because the acyclicity
 condition forbids $B$ from containing both $e^{\rightarrow}$ and
 $e^{\leftarrow}$ for any given edge $e\in E$, but the size condition
 $\left\vert B\right\vert =k=\left\vert E\right\vert $ forces $B$ to contain at
-least one of these two arcs). Thus, in this case, Theorem \ref{thm.balgamma}
-is saying that the number of acyclic orientations of a given multigraph $G$
-with unique sink $s$ does not depend on $s$. This is part of a result by
-Greene and Zaslavsky \cite[Theorem 7.3]{GreZas83}, proved using hyperplane
-arrangements, and has recently been reproved combinatorially by Foissy
-\cite[Proposition 4.6]{Foissy22}.
+least one of these two arcs; see Proposition \ref{prop.s-conv.2} for the
+uniqueness of the sink). Thus, in this case, Theorem \ref{thm.balgamma} is
+saying that the number of acyclic orientations of a given multigraph $G$ with
+unique sink $s$ does not depend on $s$. This is part of a result by Greene and
+Zaslavsky \cite[Theorem 7.3]{GreZas83}, proved using hyperplane arrangements,
+and has recently been reproved combinatorially by Foissy \cite[Proposition
+4.6]{Foissy22}.
 
 \item Up to reversing the directions of the arcs, \cite[Proposition
 3.7]{PerPha15} is Theorem \ref{thm.balgamma} for a specific value of $k$ --
@@ -389,19 +390,28 @@ See also https://doi.org/10.1016/S0166-218X(00)00339-5 .
 We will prove Theorem~\ref{thm.balgamma} through a sequence of lemmas, which
 are self-contained and might be of independent interest.
 
+If $P$, $Q$ and $S$ are three sets, then the notation \textquotedblleft%
+$S=P\sqcup Q$\textquotedblright\ shall mean that $S=P\cup Q$ and $P\cap
+Q=\varnothing$. In other words, it shall mean that $S$ is the union of the two
+disjoint sets $P$ and $Q$. Of course, if $S=P\sqcup Q$, then $P$ and $Q$ are
+subsets of $S$ and we have $\left\vert S\right\vert =\left\vert P\right\vert
++\left\vert Q\right\vert $.
+
+\begin{noncompile}
 For two sets $P$ and $Q$, we shall use the notation $P\sqcup Q$ to denote the
 \emph{disjoint union} of $P$ and $Q$, that is, the union $P\cup Q$ if the
 intersection $P\cap Q$ is empty. Otherwise, $P\sqcup Q$ does not exist. Of
 course, if $P\sqcup Q$ exists, then $\left\vert P\sqcup Q\right\vert
 =\left\vert P\right\vert +\left\vert Q\right\vert $.
+\end{noncompile}
 
-For any subsets $P$ and $Q$ of $V$, let $A(P,Q)$ denote the set of arcs in $A$
-whose source belongs to $P$ and whose target belongs to $Q$. The following
-fact is simple but crucial property of balanced digraphs:
+For any subsets $P$ and $Q$ of $V$, we let $A(P,Q)$ denote the set of arcs in
+$A$ whose source belongs to $P$ and whose target belongs to $Q$. The following
+fact is a simple but crucial property of balanced digraphs:
 
 \begin{proposition}
 \label{prop.A-symmetry}Let $P$ and $Q$ be two subsets of $V$ such that
-$P\sqcup Q=V$. Then,
+$V=P\sqcup Q$. Then,
 \[
 \left\vert A\left(  P,Q\right)  \right\vert =\left\vert A\left(  Q,P\right)
 \right\vert .
@@ -819,7 +829,7 @@ the contrary. Then, there is an arc $b\in B$ with source $q\in Q$ and target
 $p\in P$. The vertex $p$ can $B$-reach $s$ (since $p\in P=S\left(  B\right)
 $);\ hence, the vertex $q$ can $B$-reach as well (by first stepping to $p$ via
 the arc $b$). This means that $q\in S\left(  B\right)  =P$, which contradicts
-$q\in Q$ since $P\sqcup Q=V$. This contradiction shows that our assumption was
+$q\in Q$ since $V=P\sqcup Q$. This contradiction shows that our assumption was
 false, so we know that $B\cap A\left(  Q,P\right)  =\varnothing$.
 
 In other words, no arc in $B$ belongs to $A\left(  Q,P\right)  $. Hence, no
@@ -839,18 +849,18 @@ B\setminus C\right)  =P$.
 It remains to show that $T\left(  B\setminus C\right)  =Q$.
 
 First, we claim that $t\in Q$. Indeed, there exists some vertex $v\in Q$
-(since $Q$ is nonempty). Consider this $v$. From $v\in Q$ and $P\sqcup Q=V$,
+(since $Q$ is nonempty). Consider this $v$. From $v\in Q$ and $V=P\sqcup Q$,
 we obtain $v\notin P=S\left(  B\right)  $, and thus $v$ cannot $B$-reach $s$.
 Hence, $v$ can $B$-reach $t$ (since each vertex can $B$-reach $s$ or $B$-reach
 $t$). If $t$ could $B$-reach $s$, then this would entail that $v$ can also
 $B$-reach $s$ (by concatenating the path from $v$ to $t$ and the path from $t$
 to $s$), and this would contradict the fact that $v$ cannot $B$-reach $s$.
 Hence, $t$ cannot $B$-reach $s$. In other words, $t\notin S\left(  B\right)
-=P$, so that $t\in Q$ (since $P\sqcup Q=V$).
+=P$, so that $t\in Q$ (since $V=P\sqcup Q$).
 
 Let us now prove that $T\left(  B\setminus C\right)  \subseteq Q$. Indeed, let
 $x\in T\left(  B\setminus C\right)  $ be any vertex. We must show that $x\in
-Q$. Assume the contrary. Then, $x\in P$ (since $P\sqcup Q=V$). But $x\in
+Q$. Assume the contrary. Then, $x\in P$ (since $V=P\sqcup Q$). But $x\in
 T\left(  B\setminus C\right)  $ shows that $x$ can $B\setminus C$-reach $t$.
 So the digraph $D\left\langle B\setminus C\right\rangle $ has a path
 $\mathbf{x}$ from $x$ to $t$. This path $\mathbf{x}$ starts at a vertex in $P$
@@ -863,7 +873,7 @@ $x\in Q$. Since we have proved this for each $x\in T\left(  B\setminus
 C\right)  $, we thus conclude that $T\left(  B\setminus C\right)  \subseteq Q$.
 
 Now, we claim that $Q\subseteq T\left(  B\setminus C\right)  $. Indeed, let
-$q\in Q$ be any vertex. Then, $q\notin P$ (since $P\sqcup Q=V$), so that
+$q\in Q$ be any vertex. Then, $q\notin P$ (since $V=P\sqcup Q$), so that
 $q\notin P=S\left(  B\right)  $. In other words, $q$ cannot $B$-reach $s$.
 Hence, $q$ can $B$-reach $t$ (since each vertex can $B$-reach $s$ or $B$-reach
 $t$). That is, the digraph $D\left\langle B\right\rangle $ has a path
@@ -916,7 +926,7 @@ Thus, $e\in E$ and $e\in A\left(  P,Q\right)  $. The latter shows that $e$ has
 a source $p\in P$ and a target $q\in Q$. From $q\in Q=T\left(  E\right)  $, we
 see that $q$ can $E$-reach $t$. Thus, $p$ can also $E$-reach $t$ (via the arc
 $e\in E$ followed by the path from $q$ to $t$). Therefore, $p\in T\left(
-E\right)  =Q$, which contradicts $p\in P$ because $P\sqcup Q=V$. This
+E\right)  =Q$, which contradicts $p\in P$ because $V=P\sqcup Q$. This
 contradiction shows that our assumption was false. Hence, $E\cap A\left(
 P,Q\right)  =\varnothing$ is proved.
 
@@ -924,7 +934,7 @@ An analogous argument shows that $E\cap A\left(  Q,P\right)  =\varnothing$.
 
 Note that the set $A\left(  P,Q\right)  $ is disjoint from $A\left(
 Q,P\right)  $, since the source of an arc cannot belong to $P$ and $Q$ at the
-same time (because of $P\sqcup Q=V$). Hence, the set $C$ (being a subset of
+same time (because of $V=P\sqcup Q$). Hence, the set $C$ (being a subset of
 $A\left(  P,Q\right)  $) must be disjoint from $A\left(  Q,P\right)  $ as
 well. In other words, $C\cap A\left(  Q,P\right)  =\varnothing$.
 
