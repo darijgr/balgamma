@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, July 29, 2025 19:57:50}
+%TCIDATA{LastRevised=Sunday, August 03, 2025 21:23:39}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -354,7 +354,10 @@ and has recently been reproved combinatorially by Foissy \cite[Proposition
 
 \item Up to reversing the directions of the arcs, \cite[Proposition
 3.7]{PerPha15} is Theorem \ref{thm.balgamma} for a specific value of $k$ --
-namely, for the maximum possible that makes $\gamma_{k}\left(  s\right)  $ nonzero.
+namely, for the maximum possible that makes $\gamma_{k}\left(  s\right)  $
+nonzero.\footnote{This maximum $k$ has also been considered in \cite[Theorem
+1.11]{KalTot23}. Its independence on $s$ was observed in \cite[paragraph below
+Theorem 1.9]{KalTot23} as well.}
 
 We note that when $D$ is weakly connected, then this maximum $k$ is also the
 maximum size of an acyclic subset of $A$ (not just of an $s$-convergence).
@@ -426,33 +429,33 @@ prove it is as follows: By the definition of an outdegree, we
 have\footnote{The symbol \textquotedblleft\#\textquotedblright\ means
 \textquotedblleft number\textquotedblright.}%
 \begin{align}
-& \sum_{p\in P}\deg^{+}p\nonumber\\
-& =\sum_{p\in P}\left(  \text{\# of arcs }a\in A\text{ with source }p\right)
+&  \sum_{p\in P}\deg^{+}p\nonumber\\
+&  =\sum_{p\in P}\left(  \text{\# of arcs }a\in A\text{ with source }p\right)
 \nonumber\\
-& =\left(  \text{\# of arcs }a\in A\text{ with source in }P\right)
+&  =\left(  \text{\# of arcs }a\in A\text{ with source in }P\right)
 \nonumber\\
-& =\underbrace{\left(  \text{\# of arcs }a\in A\text{ with source in }P\text{
+&  =\underbrace{\left(  \text{\# of arcs }a\in A\text{ with source in }P\text{
 and target in }P\right)  }_{=\left\vert A\left(  P,P\right)  \right\vert
 }\nonumber\\
-& \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  \text{\# of arcs }a\in A\text{ with
-source in }P\text{ and target in }Q\right)  }_{=\left\vert A\left(
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\left(  \text{\# of arcs }a\in A\text{
+with source in }P\text{ and target in }Q\right)  }_{=\left\vert A\left(
 P,Q\right)  \right\vert }\nonumber\\
-& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since the target of any arc }a\in A\text{ belongs to either }P\text{ or
 }Q\text{,}\\
 \text{but not to both (because }V=P\sqcup Q\text{)}%
 \end{array}
-\right)  \nonumber\\
-& =\left\vert A\left(  P,P\right)  \right\vert +\left\vert A\left(
-P,Q\right)  \right\vert .\label{pf.prop.A-symmetry.sum.1}%
+\right) \nonumber\\
+&  =\left\vert A\left(  P,P\right)  \right\vert +\left\vert A\left(
+P,Q\right)  \right\vert . \label{pf.prop.A-symmetry.sum.1}%
 \end{align}
 An analogous argument (but with the roles of sources and targets switched)
 shows that%
 \begin{equation}
 \sum_{p\in P}\deg^{-}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
-A\left(  Q,P\right)  \right\vert .\label{pf.prop.A-symmetry.sum.2}%
+A\left(  Q,P\right)  \right\vert . \label{pf.prop.A-symmetry.sum.2}%
 \end{equation}
 
 
@@ -485,15 +488,15 @@ that%
 However, we can count the arcs in $A\left(  P,V\right)  $ according to their
 sources $p\in P$. This yields%
 \begin{equation}
-\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}%
-p,\label{pf.prop.A-symmetry.3}%
+\left\vert A\left(  P,V\right)  \right\vert =\sum_{p\in P}\deg^{+}p,
+\label{pf.prop.A-symmetry.3}%
 \end{equation}
 since each arc in $A\left(  P,V\right)  $ is counted in the outdegree of
 exactly one $p\in P$ (namely, of its source). Comparing these two equalities,
 we obtain%
 \begin{equation}
 \sum_{p\in P}\deg^{+}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
-A\left(  P,Q\right)  \right\vert .\label{pf.prop.A-symmetry.4}%
+A\left(  P,Q\right)  \right\vert . \label{pf.prop.A-symmetry.4}%
 \end{equation}
 
 
@@ -511,7 +514,7 @@ Similarly to (\ref{pf.prop.A-symmetry.3}), we can show that%
 Comparing these two equalities, we obtain%
 \begin{equation}
 \sum_{p\in P}\deg^{-}p=\left\vert A\left(  P,P\right)  \right\vert +\left\vert
-A\left(  Q,P\right)  \right\vert .\label{pf.prop.A-symmetry.5}%
+A\left(  Q,P\right)  \right\vert . \label{pf.prop.A-symmetry.5}%
 \end{equation}
 
 
@@ -641,10 +644,9 @@ $\Longleftarrow$\textquotedblright\ direction of Lemma \ref{lem.new0}.
 For any $i\in\mathbb{Z}$, we let $\mathcal{P}_{i}\left(  A\right)  $ denote
 the set of all $i$-element subsets of $A$. Define the subset%
 \begin{align*}
-U_{k}:= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
-acyclic}\ \mid\ \text{each vertex can }B\text{-reach }s\text{ or }t\right\}
-\\
-= &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
+U_{k}:=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is
+acyclic}\ \mid\ \text{each vertex can }B\text{-reach }s\text{ or }t\right\} \\
+=  &  \ \left\{  B\in\mathcal{P}_{k}\left(  A\right)  \text{ is acyclic}%
 \ \mid\ S\left(  B\right)  \cup T\left(  B\right)  =V\right\}
 \end{align*}
 of $\mathcal{P}_{k}\left(  A\right)  $. (\textquotedblleft
@@ -737,7 +739,7 @@ Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \ ensures that it}\\
 \text{is uniquely determined by }P
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\underbrace{\left\vert \left\{  B\in U_{k}\ \mid\ S\left(
@@ -750,7 +752,7 @@ B\right)  =V\right\}  \right\vert }_{\substack{=\gamma_{k}\left(  s\right)
 \text{for }\left(  P,Q\right)  =\left(  V,\varnothing\right)  \text{ from the
 sum}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{\substack{P,Q\subseteq V\text{ are nonempty;}\\V=P\sqcup
 Q}}\left\vert \left\{  B\in U_{k}\ \mid\ S\left(  B\right)  =P\right\}
 \right\vert +\gamma_{k}\left(  s\right)  .
@@ -1321,6 +1323,11 @@ arXiv:2201.11974v5.}
 Zaslavsky, \textit{On the interpretation of Whitney numbers through
 arrangement of hyperplanes, zonotopes, non-Radon partitions, and orientations
 of graphs}. Trans. Amer. Math. Soc. \textbf{280}(1) (1983), pp. 97--126.}
+
+\bibitem[KalTot23]{KalTot23}%
+\href{https://arxiv.org/abs/2304.03221v3}{Tam\'{a}s K\'{a}lm\'{a}n, Lilla
+T\'{o}thm\'{e}r\'{e}sz, \textit{Degrees of interior polynomials and parking
+function enumerators}, arXiv:2304.03221v3.}
 
 \bibitem[LeiVal24]{LeiVal24}\href{https://arxiv.org/abs/2402.09914v3}{Karla
 Leipold, Frank Vallentin, \textit{Computing the EHZ capacity is NP-hard},
