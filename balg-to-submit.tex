@@ -1,3 +1,5 @@
+% The version to be submitted to the journal.
+
 \documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
 \usepackage[headsepline,footsepline,manualmark]{scrlayer-scrpage}
 \usepackage{amssymb}
@@ -10,11 +12,10 @@
 \usepackage[sc]{mathpazo}
 \usepackage[T1]{fontenc}
 \usepackage{needspace}
-\usepackage{tabls}
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, November 10, 2025 18:47:29}
+%TCIDATA{LastRevised=Monday, November 10, 2025 18:47:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -84,9 +85,6 @@
 \renewcommand{\prod}{\prodnonlimits\limits}
 \renewcommand{\bigcup}{\cupnonlimits\limits}
 \renewcommand{\bigcap}{\capnonlimits\limits}
-\setlength\tablinesep{3pt}
-\setlength\arraylinesep{3pt}
-\setlength\extrarulesep{3pt}
 \setlength\textheight{22.5cm}
 \setlength\textwidth{14.8cm}
 \newenvironment{verlong}{}{}
@@ -127,17 +125,12 @@
 {5pt plus 1pt minus 1pt}
 {}
 \theoremstyle{plainsl}
-\ihead{An equality for balanced digraphs, version 2025-11-10}
+\ihead{An equality for balanced digraphs, version submit-1}
 \ohead{page \thepage}
 \cfoot{}
 \begin{document}
 
 \title{An equality for balanced digraphs}
-\author{Darij Grinberg\thanks{Drexel University, Philadelphia, PA.
-\href{mailto:darijgrinberg@gmail.com}{\texttt{darijgrinberg@gmail.com}}},
-Benjamin Liber\thanks{Drexel University, Philadelphia, PA.
-\href{mailto:bl839@drexel.edu}{\texttt{bl839@drexel.edu}}}}
-\date{November 10, 2025}
 \maketitle
 
 \begin{abstract}
@@ -151,6 +144,13 @@ acyclic orientations and maximal acyclic subdigraphs (or, equivalently,
 minimum feedback arc sets).
 
 \end{abstract}
+
+%\author{Darij Grinberg\thanks{Drexel University, Philadelphia, PA.
+%\href{mailto:darijgrinberg@gmail.com}{\texttt{darijgrinberg@gmail.com}}},
+%Benjamin Liber\thanks{Drexel University, Philadelphia, PA.
+%\href{mailto:bl839@drexel.edu}{\texttt{bl839@drexel.edu}}}}
+%\date{July 29, 2025}
+
 
 \section{The theorem}
 
@@ -350,7 +350,7 @@ saying that the number of acyclic orientations of a given multigraph $G$ with
 unique sink $s$ does not depend on $s$. This is part of a result by Greene and
 Zaslavsky \cite[Theorem 7.3]{GreZas83}, proved using hyperplane arrangements,
 and has recently been reproved combinatorially by Foissy \cite[Proposition
-4.6]{Foissy22}. It is also a consequence of \cite[Proposition 5.3]{NoPoSt02}.
+4.6]{Foissy22}.  It is also a consequence of \cite[Proposition 5.3]{NoPoSt02}.
 
 \item Up to reversing the directions of the arcs, \cite[Proposition
 3.7]{PerPha15} is Theorem \ref{thm.balgamma} for a specific value of $k$ --
