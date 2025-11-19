@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, November 19, 2025 01:22:07}
+%TCIDATA{LastRevised=Wednesday, November 19, 2025 10:43:31}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -137,7 +137,7 @@
 \href{mailto:darijgrinberg@gmail.com}{\texttt{darijgrinberg@gmail.com}}},
 Benjamin Liber\thanks{Drexel University, Philadelphia, PA.
 \href{mailto:bl839@drexel.edu}{\texttt{bl839@drexel.edu}}}}
-\date{November 10, 2025}
+\date{November 19, 2025}
 \maketitle
 
 \begin{abstract}
@@ -154,7 +154,7 @@ further, replacing \textquotedblleft contain no cycles\textquotedblright\ with
 
 \end{abstract}
 
-\section{The theorem}
+\section{The theorems}
 
 In this note, we shall discuss \emph{balanced multidigraphs} -- i.e., directed
 multigraphs (allowing loops and multiple arcs) in which each vertex satisfies
@@ -203,7 +203,7 @@ denote the number of $s$-convergences of size $k$ (that is, with $k$
 arcs).\footnote{The symbol $\mathbb{N}$ denotes the set $\left\{
 0,1,2,\ldots\right\}  $.}
 
-In this note, we shall prove the following result:
+Our first main result is the following:
 
 \begin{theorem}
 \label{thm.balgamma}Let $k\in\mathbb{N}$. Then, the number $\gamma_{k}\left(
@@ -308,22 +308,49 @@ $\gamma_{k}(2)=0=\gamma_{k}(1)$ for all $k\notin\{3,4\}$. The same holds for
 $v\in\left\{  3,4\right\}  $.
 \end{example}
 
-We will, in fact, prove a result more general than Theorem \ref{thm.balgamma},
-replacing the acyclicity requirement in the definition of an $s$-convergence
-by a precise set of cycles that we want our induced subdigraph $D\left\langle
-B\right\rangle $ to have.
+As we will see in Section \ref{sec.partic}, Theorem \ref{thm.balgamma}
+generalizes several results known from the literature. However, Theorem
+\ref{thm.balgamma} can be generalized even further. Before we state the most
+general version, let us tease a corollary of it that is even easier to state
+than Theorem \ref{thm.balgamma}: It says that we can essentially drop the
+acyclicity requirement in Theorem \ref{thm.balgamma}!
+
+Let us state this rigorously. Given a vertex $s$ of $D$, we define an
+\emph{$s$-preconvergence} to be a (not necessarily acyclic) subset $B$ of $A$
+such that $s$ is a to-root of the subdigraph $D\left\langle B\right\rangle $.
+(Thus, it is defined just like an $s$-convergence, but without requiring it to
+be acyclic.) For any $k\in\mathbb{N}$ and $s\in V$, we let $\delta_{k}\left(
+s\right)  $ denote the number of $s$-preconvergences of size $k$ (that is,
+with $k$ arcs). Then we claim:
+
+\begin{theorem}
+\label{thm.baldelta}Let $k\in\mathbb{N}$. Then, the number $\delta_{k}\left(
+s\right)  $ does not depend on $s$. That is, $\delta_{k}\left(  s\right)
+=\delta_{k}\left(  t\right)  $ for any $s,t\in V$.
+\end{theorem}
+
+\begin{example}
+\label{exa.1del}Let $D$ be as in Example \ref{exa.1}. Then, for each $s\in V$,
+the numbers $\delta_{k}\left(  s\right)  $ for $k=0,1,2,3,\ldots$ are
+$0,0,0,3,10,12,6,1,0,0,0,\ldots$. For instance, $\left\{  c,d,f,g\right\}  $
+is a $1$-preconvergence, one among the $10$ counted in $\delta_{4}\left(
+1\right)  =10$.
+\end{example}
+
+Finally, it is time to let the cat out of the bag and state the most general
+version of our result. Rather than removing the acyclicity requirement from
+Theorem \ref{thm.balgamma}, we shall replace it by a precise set of cycles
+that we want our induced subdigraph $D\left\langle B\right\rangle $ to have.
 
 To state this properly, we introduce some more notations. For any subset $B$
 of $A$, we let $\operatorname*{Cycs}B$ denote the set of all cycles of the
 subdigraph $D\left\langle B\right\rangle $. (Thus, $B$ is acyclic if and only
 if $\operatorname*{Cycs}B=\varnothing$. Note that $\operatorname*{Cycs}A$ is
-the set of all cycles of $D\left\langle A\right\rangle =D$.) Given a vertex
-$s$ of $D$, we define an \emph{$s$-preconvergence} to be a (not necessarily
-acyclic) subset $B$ of $A$ such that $s$ is a to-root of the subdigraph
-$D\left\langle B\right\rangle $. For any $k\in\mathbb{N}$ and $s\in V$ and any
-subset $Z$ of $\operatorname*{Cycs}A$, we let $\gamma_{k,Z}\left(  s\right)  $
-denote the number of $s$-preconvergences $B$ of size $k$ (that is, with $k$
-arcs) that satisfy $\operatorname*{Cycs}B=Z$. Then our general result is the following:
+the set of all cycles of $D\left\langle A\right\rangle =D$.) For any
+$k\in\mathbb{N}$ and $s\in V$ and any subset $Z$ of $\operatorname*{Cycs}A$,
+we let $\gamma_{k,Z}\left(  s\right)  $ denote the number of $s$%
+-preconvergences $B$ of size $k$ (that is, with $k$ arcs) that satisfy
+$\operatorname*{Cycs}B=Z$. Then our general result is the following:
 
 \begin{theorem}
 \label{thm.gen}Let $k\in\mathbb{N}$. Let $Z$ be a subset of
@@ -331,16 +358,6 @@ $\operatorname*{Cycs}A$. Then, the number $\gamma_{k,Z}\left(  s\right)  $
 does not depend on $s$. That is, $\gamma_{k,Z}\left(  s\right)  =\gamma
 _{k,Z}\left(  t\right)  $ for any $s,t\in V$.
 \end{theorem}
-
-Clearly, an $s$-convergence is the same as an acyclic $s$-preconvergence,
-i.e., an $s$-preconvergence $B$ that satisfies $\operatorname*{Cycs}%
-B=\varnothing$ (since the condition $\operatorname*{Cycs}B=\varnothing$ says
-precisely that $D\left\langle B\right\rangle $ has no cycles, i.e., that $B$
-is acyclic). Thus, for any $k\in\mathbb{N}$ and $s\in V$, we have $\gamma
-_{k}\left(  s\right)  =\gamma_{k,\varnothing}\left(  s\right)  $. Hence,
-Theorem \ref{thm.balgamma} is the particular case of Theorem \ref{thm.gen} for
-$Z=\varnothing$. Proving Theorem \ref{thm.gen} will therefore suffice in order
-to prove Theorem \ref{thm.balgamma}.
 
 \begin{example}
 \label{exa.1Z}Let $D$ be as in Example \ref{exa.1}, and let $Z=\left\{
@@ -365,7 +382,16 @@ $\gamma_{k,Z}\left(  v\right)  =0$ for all other $k$. The reader can easily
 check that this also holds for $v=4$.
 \end{example}
 
-\section{Particular cases}
+Clearly, an $s$-convergence is the same as an acyclic $s$-preconvergence,
+i.e., an $s$-preconvergence $B$ that satisfies $\operatorname*{Cycs}%
+B=\varnothing$ (since the condition $\operatorname*{Cycs}B=\varnothing$ says
+precisely that $D\left\langle B\right\rangle $ has no cycles, i.e., that $B$
+is acyclic). Thus, for any $k\in\mathbb{N}$ and $s\in V$, we have $\gamma
+_{k}\left(  s\right)  =\gamma_{k,\varnothing}\left(  s\right)  $. Hence,
+Theorem \ref{thm.balgamma} is the particular case of Theorem \ref{thm.gen} for
+$Z=\varnothing$.
+
+\section{\label{sec.partic}Particular cases}
 
 Theorem \ref{thm.balgamma} was inspired by a talk of Karla Leipold (NORCOM
 2025), which made the first author aware of \cite[Lemma 4.1]{LeiVal24} and
@@ -448,56 +474,53 @@ this bound is tight (Thm. 2 and Corollary 4).
 See also https://doi.org/10.1016/S0166-218X(00)00339-5 .
 \end{noncompile}
 
-Theorem \ref{thm.gen}, being a generalization of Theorem \ref{thm.balgamma},
-inherits all these particular cases, but also leads to the following simple corollary:
-
-\begin{corollary}
-\label{cor.pre}Let $k\in\mathbb{N}$. Then, the number of all $s$%
--preconvergences of size $k$ (for a given $s\in V$) does not depend on $s$.
-That is, for any $s,t\in V$, we have%
-\begin{align*}
-&  \left(  \text{number of all }s\text{-preconvergences of size }k\right) \\
-&  =\left(  \text{number of all }t\text{-preconvergences of size }k\right)  .
-\end{align*}
-
-\end{corollary}
+As we already noticed, Theorem \ref{thm.balgamma} is the particular case of
+Theorem \ref{thm.gen} for $Z=\varnothing$. We can easily derive Theorem
+\ref{thm.baldelta} from Theorem \ref{thm.gen} as well:
 
 \begin{proof}
-[Proof of Corollary \ref{cor.pre} using Theorem \ref{thm.gen}.]Let $s,t\in V$.
+[Proof of Theorem \ref{thm.baldelta} using Theorem \ref{thm.gen}.]Let $s,t\in
+V$. We must prove that $\delta_{k}\left(  s\right)  =\delta_{k}\left(
+t\right)  $.
+
 If $B$ is any $s$-preconvergence, then $\operatorname*{Cycs}B\subseteq
 \operatorname*{Cycs}A$ (since $D\left\langle B\right\rangle $ is a subdigraph
 of $D=D\left\langle A\right\rangle $, so that every cycle of $D\left\langle
 B\right\rangle $ is a cycle of $D\left\langle A\right\rangle $). Thus, by the
 sum rule,%
 \begin{align*}
-&  \left(  \text{number of all }s\text{-preconvergences of size }k\right) \\
+&  \left(  \text{number of all }s\text{-preconvergences of size }k\right)  \\
 &  =\sum_{Z\subseteq\operatorname*{Cycs}A}\underbrace{\left(  \text{number of
 all }s\text{-preconvergences }B\text{ of size }k\text{ that satisfy
 }\operatorname*{Cycs}B=Z\right)  }_{\substack{=\gamma_{k,Z}\left(  s\right)
 \\\text{(by the definition of }\gamma_{k,Z}\left(  s\right)  \text{)}}}\\
 &  =\sum_{Z\subseteq\operatorname*{Cycs}A}\gamma_{k,Z}\left(  s\right)  .
 \end{align*}
+But $\delta_{k}\left(  s\right)  $ was defined as the number of all
+$s$-preconvergences of size $k$. Thus,%
+\[
+\delta_{k}\left(  s\right)  =\left(  \text{number of all }%
+s\text{-preconvergences of size }k\right)  =\sum_{Z\subseteq
+\operatorname*{Cycs}A}\gamma_{k,Z}\left(  s\right)  .
+\]
 Similarly,%
 \[
-\left(  \text{number of all }t\text{-preconvergences of size }k\right)
-=\sum_{Z\subseteq\operatorname*{Cycs}A}\gamma_{k,Z}\left(  t\right)  .
+\delta_{k}\left(  t\right)  =\sum_{Z\subseteq\operatorname*{Cycs}A}%
+\gamma_{k,Z}\left(  t\right)  .
 \]
 But the sums on the right hand sides of these two equalities are equal, since
 their respective addends agree (by Theorem \ref{thm.gen}). Hence, the left
-hand sides must also be equal. In other words,%
-\begin{align*}
-&  \left(  \text{number of all }s\text{-preconvergences of size }k\right) \\
-&  =\left(  \text{number of all }t\text{-preconvergences of size }k\right)  .
-\end{align*}
-This proves Corollary \ref{cor.pre}.
+hand sides must also be equal. In other words, $\delta_{k}\left(  s\right)
+=\delta_{k}\left(  t\right)  $. This proves Theorem \ref{thm.baldelta}.
 \end{proof}
 
-In the particular case when $D=G^{\operatorname*{bidir}}$ for some undirected
-multigraph $G$, the claim of Corollary \ref{cor.pre} also follows from
-\cite[Theorem 3.4]{Gioan07}, which also shows that both sides equal an
-evaluation of the Tutte polynomial of $G$. We wonder if an appropriate
-analogue of the Tutte polynomial exists for balanced digraphs that don't
-necessarily have the form $G^{\operatorname*{bidir}}$.
+Theorem \ref{thm.baldelta}, too, can be specialized to a result about
+orientations of undirected graphs: If $G$ is an undirected multigraph and $s$
+is a vertex of $G$, then the number of orientations of $G$ that have $s$ as a
+to-root is independent on $s$. This follows by applying Theorem
+\ref{thm.baldelta} to $D=G^{\operatorname*{bidir}}$ and $k=\left\vert
+E\right\vert $ (the number of edges of $G$). Note that a similar (but not
+quite the same) fact is proved in \cite[Theorem 3.4]{Gioan07}.
 
 \section{The proof}
 
@@ -1483,6 +1506,9 @@ B\right)  =Q\right\}  \right\vert =\gamma_{k,Z}\left(  t\right)
 \end{align*}
 (by Lemma \ref{lem.new2}). This completes the proof of Theorem \ref{thm.gen}.
 
+As we already said, Theorem \ref{thm.balgamma} and Theorem \ref{thm.baldelta}
+follow from Theorem \ref{thm.gen}.
+
 \section{Further remarks}
 
 \textbf{\quad1.} One might wonder whether our proof of Theorem \ref{thm.gen}
@@ -1599,11 +1625,43 @@ $B$ is acyclic).
 \ref{lem.new4}, Lemma \ref{lem.new5} and Proposition \ref{prop.s-conv.2},
 there is no need for the digraph $D$ to be balanced.
 
+\bigskip
+
+\textbf{4.} The relationships between the above theorems and some results in
+the literature prompt some natural questions:
+
+\begin{enumerate}
+\item[\textbf{(a)}] Let $G=\left(  V,E,\varphi\right)  $ be an undirected
+multigraph, and let $D=G^{\operatorname*{bidir}}$. Then, in \cite[Proposition
+5.3]{NoPoSt02}, Novik, Postnikov and Sturmfels show that the number
+$\delta_{\left\vert E\right\vert }\left(  s\right)  $ for any $s\in V$ is the
+M\"{o}bius invariant of the intersection lattice of the graphic arrangement of
+$G$. Are there some similar interpretations for $\delta_{k}\left(  s\right)  $
+for other $k$, and perhaps for the general case when $D\neq
+G^{\operatorname*{bidir}}$ ?
+
+\item[\textbf{(b)}] Again, let $G=\left(  V,E,\varphi\right)  $ be an
+undirected multigraph. In \cite[Theorem 3.4]{Gioan07}, Gioan shows that the
+number of indegree functions of orientations of $G$ that have a given vertex
+$s$ as a to-root (or \textquotedblleft unique quasi-sink\textquotedblright\ in
+his lingo) is independent on $s$, and equals the evaluation $t\left(
+G;1,1\right)  $ of the Tutte polynomial of $G$. This is not quite our
+$\delta_{\left\vert E\right\vert }\left(  s\right)  $, since we are counting
+the orientations themselves rather than their indegree functions; but it
+suggests that the Tutte polynomial is not far away. The Tutte polynomial be
+generalized to digraphs \cite{AwaBer18}; does the relationship generalize?
+\end{enumerate}
+
 \begin{thebibliography}{99999999}                                                                                         %
 
 
 \bibitem[22s]{22s}\href{https://arxiv.org/abs/2308.04512v3}{Darij Grinberg,
 \textit{An introduction to graph theory}, arXiv:2308.04512v3.}
+
+\bibitem[AwaBer18]{AwaBer18}%
+\href{https://doi.org/10.1016/j.jctb.2019.05.006}{Jordan Awan, Olivier
+Bernardi, \textit{Tutte Polynomials for Directed Graphs}, Journal of
+Combinatorial Theory, Series B \textbf{140} (2020), pp. 192--247.}
 
 \bibitem[BanGut18]{BanGut18}%
 \href{https://doi.org/10.1007/978-3-319-71840-8}{J\o rgen Bang-Jensen, Gregory
