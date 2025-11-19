@@ -14,7 +14,7 @@
 \usepackage{tikz}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, November 19, 2025 01:08:58}
+%TCIDATA{LastRevised=Wednesday, November 19, 2025 01:22:07}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -663,8 +663,9 @@ Note that $s\in S\left(  B\right)  $ and $t\in T\left(  B\right)  $ always
 hold, since each vertex can $B$-reach itself (by a path of length $0$).
 
 We shall now prove several properties of attraction basins, which will be used
-in the proof of Lemma \ref{lem.new4} later on. (The impatient reader might
-prefer to skip these fairly simple proofs and return to them as the lemmas are used.)
+in the proof of Lemma \ref{lem.new4} later on. (The adventurous reader can
+treat them as exercises, while the impatient reader might prefer to skip them
+and return to them as the need arises.)
 
 \begin{lemma}
 \label{lem.reach-trans}Let $B$ be a subset of $A$. Let $v,w\in V$ be two
@@ -1309,9 +1310,12 @@ Furthermore,%
 \left(  E\cup C\right)  \cap A\left(  P,Q\right)  =\underbrace{\left(  E\cap
 A\left(  P,Q\right)  \right)  }_{=\varnothing}\cup\underbrace{\left(  C\cap
 A\left(  P,Q\right)  \right)  }_{\substack{=C\\\text{(since }C\subseteq
-A\left(  P,Q\right)  \text{)}}}=\varnothing\cup C=C
+A\left(  P,Q\right)  \text{)}}}=\varnothing\cup C=C.
 \]
-and%
+
+
+\begin{noncompile}
+Also,%
 \[
 \left(  E\cup C\right)  \cap A\left(  Q,P\right)  =\underbrace{\left(  E\cap
 A\left(  Q,P\right)  \right)  }_{=\varnothing}\cup\underbrace{\left(  C\cap
@@ -1319,6 +1323,7 @@ A\left(  Q,P\right)  \right)  }_{=\varnothing}=\varnothing\cup\varnothing
 =\varnothing.
 \]
 
+\end{noncompile}
 
 If $v$ is a vertex in $S\left(  E\right)  $, then $v$ can $E$-reach $s$ and
 thus can $E\cup C$-reach $s$ as well (since $E\subseteq E\cup C$); thus it
